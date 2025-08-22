@@ -162,17 +162,121 @@ function App() {
         </div>
       </header>
 
-      {/* Seção 1: Vídeo do Slogan */}
-      <section id="hero" className="w-full min-h-screen bg-gradient-to-br from-[#009db0] to-[#a1d6dc] flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-title">
-            Vídeo do Slogan
-          </h1>
-          <div className="w-full max-w-4xl mx-auto bg-black/30 rounded-lg p-8">
-            <div className="w-full h-64 md:h-96 bg-gray-800 rounded-lg flex items-center justify-center">
-              <span className="text-gray-400 text-lg">Área do Vídeo</span>
+      {/* Seção 1: Hero */}
+      <section id="hero" className="relative w-full bg-gradient-to-br from-[#009db0] via-[#008ba0] to-[#007a8f] overflow-hidden">
+        {/* Elementos de fundo decorativos */}
+        <div className="absolute inset-0">
+          {/* Círculos decorativos */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#a1d6dc]/20 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#e5007e]/10 rounded-full blur-lg"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#f19100]/10 rounded-full blur-xl"></div>
+          
+          {/* Linhas geométricas sutis */}
+          <div className="absolute top-1/3 right-10 w-px h-32 bg-gradient-to-b from-transparent via-[#a1d6dc]/30 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#a1d6dc]/20 to-transparent"></div>
+        </div>
+        
+        {/* Overlay sutil para melhor contraste */}
+        <div className="absolute inset-0 bg-black/5"></div>
+        
+        {/* Conteúdo principal */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
+            {/* Texto principal */}
+            <div className="text-center lg:text-left space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-title leading-tight">
+                  Transformando
+                  <span className="block text-[#a1d6dc]">vidas através</span>
+                  <span className="block text-[#f19100]">do cuidado</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-white/90 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  A <strong>Communicare</strong> nasceu do sonho de uma fonoaudióloga com mais de 26 anos de experiência. Criamos um espaço de acolhimento, empatia e estímulo para transformar vidas através do desenvolvimento humano.
+                </p>
+              </div>
+              
+              {/* Botões CTA */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#contato" className="inline-flex items-center justify-center px-8 py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title">
+                  Fale conosco
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+                <a href="#quem-somos" className="inline-flex items-center justify-center px-8 py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 font-semibold rounded-lg transition-all duration-300 font-title">
+                  Nossa história
+                </a>
+              </div>
+              
+              {/* Destaques da empresa */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-white font-title">26+</div>
+                  <div className="text-sm text-white/70 font-body">Anos de experiência</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-white font-title">2021</div>
+                  <div className="text-sm text-white/70 font-body">Ano de fundação</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-white font-title">100%</div>
+                  <div className="text-sm text-white/70 font-body">Dedicação humana</div>
+                </div>
+              </div>
             </div>
+            
+            {/* Lado direito - Vídeo */}
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="relative group">
+                {/* Container do vídeo com efeitos elegantes */}
+                <div className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
+                  <video 
+                    className="block"
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                  >
+                    <source src="/videos/videocerto.mp4" type="video/mp4" />
+                    Seu navegador não suporta vídeos.
+                  </video>
+                  
+                  {/* Overlay sutil no vídeo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                  
+                  {/* Borda luminosa sutil */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#a1d6dc]/20 via-transparent to-[#e5007e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                {/* Sombra elegante */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl transform translate-y-6 blur-2xl group-hover:translate-y-8 transition-transform duration-500"></div>
+                
+                {/* Elementos decorativos flutuantes */}
+                <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full animate-pulse shadow-lg">
+                  <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                </div>
+                <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full animate-pulse delay-1000 shadow-lg">
+                  <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                </div>
+                <div className="absolute top-1/2 -left-8 w-8 h-8 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-full animate-pulse delay-500 shadow-lg">
+                  <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                </div>
+                
+                {/* Linhas decorativas sutis */}
+                <div className="absolute top-8 -right-16 w-16 h-px bg-gradient-to-l from-[#a1d6dc]/40 to-transparent"></div>
+                <div className="absolute bottom-8 -left-16 w-16 h-px bg-gradient-to-r from-[#e5007e]/40 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Indicador de scroll */}
+        <div className="relative pb-8 text-center">
+          <div className="flex flex-col items-center space-y-2 text-white/60 animate-bounce">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </div>
       </section>
