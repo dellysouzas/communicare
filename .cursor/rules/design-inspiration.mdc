@@ -1,0 +1,76 @@
+---
+title: Design Inspiration
+---
+
+# Guia de Design e Estilo - Sites de Referência
+
+## Hierarquia de Inspiração (em ordem de prioridade):
+
+### 1. Wildey PD (https://www.wildeypd.com/) - **ESTILO PRINCIPAL**
+- **Paleta de cores**: Tons escuros e elegantes, com destaque para azuis profundos
+- **Tipografia**: Fontes modernas e legíveis, hierarquia clara de títulos
+- **Layout**: Design minimalista e profissional, foco na usabilidade
+- **Elementos visuais**: Gradientes sutis, sombras elegantes, espaçamento generoso
+- **Navegação**: Menu limpo e intuitivo, transições suaves
+
+### 2. Salinas Maragogi (https://www.salinas.com.br/pt/maragogi/)
+- **Paleta de cores**: Tons terrosos e naturais, inspirados na praia
+- **Tipografia**: Fontes orgânicas e acolhedoras
+- **Layout**: Design que transmite tranquilidade e conexão com a natureza
+- **Elementos visuais**: Texturas naturais, formas orgânicas, espaçamento equilibrado
+
+### 3. Allegro Pediatrics (https://www.allegropediatrics.com/)
+- **Paleta de cores**: Tons suaves e acolhedores, apropriados para o público-alvo
+- **Tipografia**: Fontes amigáveis e acessíveis
+- **Layout**: Design limpo e organizado, foco na clareza da informação
+- **Elementos visuais**: Ícones simples, cores pastéis, layout responsivo
+
+## Diretrizes de Implementação:
+
+### Cores (Paleta Oficial da Empresa):
+- **Principal para Fundos**: #009db0 (azul-petróleo) e #a1d6dc (azul claro)
+- **Principal para Textos**: #4c3e92 (roxo/índigo)
+- **Destaques e Elementos**: #e5007e (rosa choque), #f19100 (laranja), #37a935 (verde)
+- **Secundária para Textos**: #1d1d1b (cinza muito escuro)
+
+### Tipografia (Fontes Oficiais da Empresa):
+- **Fonte Principal**: Century Gothic Paneuropean (para títulos e elementos principais)
+- **Fonte Secundária**: Gotham (para corpo de texto e elementos secundários)
+- **Hierarquia**: Diferenciação clara entre H1, H2, H3, etc.
+
+### Layout:
+- **Espaçamento**: Generoso e equilibrado (padding/margin consistentes)
+- **Grid**: Sistema de grid responsivo e flexível
+- **Containers**: Máxima largura controlada para melhor legibilidade
+- **Breakpoints**: Mobile-first com breakpoints bem definidos
+
+### Componentes:
+- **Botões**: Estilo moderno com hover effects sutis
+- **Cards**: Sombras elegantes e bordas arredondadas
+- **Formulários**: Campos limpos com estados visuais claros
+- **Navegação**: Menu responsivo com transições suaves
+
+### Responsividade:
+- **Mobile-first**: Desenvolver primeiro para mobile
+- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
+- **Touch-friendly**: Elementos com tamanho mínimo de 44px para touch
+
+### Performance:
+- **Imagens**: Otimizadas e responsivas
+- **Animações**: CSS transitions suaves, evitar JavaScript pesado
+- **Loading**: Estados de carregamento elegantes
+
+## Tecnologias e Ferramentas:
+- **CSS Framework**: Tailwind CSS (já configurado no projeto)
+- **Componentes**: React com JSX
+- **Build Tool**: Vite
+- **Linting**: ESLint configurado
+
+## Notas Importantes:
+- **NÃO adicionar conteúdo ainda** - apenas estruturar o design
+- Focar na criação de componentes reutilizáveis
+- Manter consistência visual em todo o projeto
+- Priorizar a experiência do usuário e a acessibilidade
+- **Usar SEMPRE a paleta de cores oficial da empresa**
+- **Aplicar as fontes oficiais (Century Gothic Paneuropean e Gotham)**
+- **Respeitar a identidade visual da marca Communicare**

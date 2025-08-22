@@ -1,0 +1,131 @@
+# Estrutura de Componentes - Padrões de Design
+
+## Baseado nos Sites de Referência:
+
+### 1. Communicare (Estilo Principal da Empresa)
+- **Header**: Navegação limpa com logo à esquerda e menu à direita
+- **Hero Section**: Fundo azul-petróleo (#009db0) com texto em roxo (#4c3e92)
+- **Cards**: Sombras elegantes com bordas arredondadas (lg)
+- **Botões**: Azul-petróleo (#009db0) com hover para azul mais escuro
+
+### 2. Salinas Maragogi (Inspiração Natural)
+- **Seções**: Espaçamento generoso entre seções (py-16, py-20)
+- **Imagens**: Bordas arredondadas e sombras sutis
+- **Cores**: Tons terrosos como acentos (#92400e, #78350f)
+
+### 3. Allegro Pediatrics (Clareza e Organização)
+- **Layout**: Containers com largura máxima controlada (max-w-7xl)
+- **Grid**: Sistema de grid responsivo com gap consistente
+- **Tipografia**: Hierarquia clara com espaçamento adequado
+
+## Padrões de Componentes:
+
+### Header/Navigation:
+```jsx
+// Estrutura recomendada
+<header className="bg-white shadow-sm border-b border-gray-200">
+  <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Logo + Menu */}
+  </nav>
+</header>
+```
+
+### Hero Section:
+```jsx
+// Estilo baseado no Wildey PD
+<section className="relative bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+  <div className="absolute inset-0 bg-black/30"></div>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    {/* Conteúdo do Hero */}
+  </div>
+</section>
+```
+
+### Cards:
+```jsx
+// Estilo elegante com sombras
+<div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+  {/* Conteúdo do Card */}
+</div>
+```
+
+### Botões:
+```jsx
+// Botão primário baseado na paleta da Communicare
+<button className="bg-[#009db0] hover:bg-[#008ba0] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+  {/* Texto do Botão */}
+</button>
+```
+
+### Containers:
+```jsx
+// Container responsivo com padding consistente
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* Conteúdo */}
+</div>
+```
+
+### Grid System:
+```jsx
+// Grid responsivo com gap consistente
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {/* Items do Grid */}
+</div>
+```
+
+## Espaçamento e Layout:
+
+### Margens e Padding:
+- **Seções**: `py-16` (desktop) ou `py-12` (mobile)
+- **Componentes**: `p-6` ou `p-8` para cards
+- **Gaps**: `gap-6` ou `gap-8` para grids
+
+### Breakpoints:
+- **Mobile**: `px-4` (16px)
+- **Tablet**: `sm:px-6` (24px)
+- **Desktop**: `lg:px-8` (32px)
+
+### Larguras Máximas:
+- **Container**: `max-w-7xl` (1280px)
+- **Texto**: `max-w-4xl` para melhor legibilidade
+- **Cards**: Largura flexível com padding consistente
+
+## Cores do Sistema:
+
+### Primárias (Communicare):
+- `bg-[#009db0]` - Botões e elementos principais
+- `bg-[#008ba0]` - Hover states
+- `text-[#4c3e92]` - Links e acentos
+
+### Neutros:
+- `bg-gray-50` - Fundos sutis
+- `bg-white` - Fundos principais
+- `text-gray-900` - Texto principal
+- `text-gray-600` - Texto secundário
+
+### Estados:
+- `hover:bg-blue-900` - Hover em botões
+- `hover:shadow-xl` - Hover em cards
+- `transition-all duration-200` - Transições suaves
+
+## Responsividade:
+
+### Mobile-First:
+- Começar com layout mobile
+- Adicionar breakpoints para telas maiores
+- Usar `sm:`, `md:`, `lg:` para responsividade
+
+### Touch-Friendly:
+- Botões com mínimo de 44px de altura
+- Espaçamento adequado entre elementos clicáveis
+- Estados visuais claros para interações
+
+## Notas de Implementação:
+- **NÃO implementar conteúdo ainda** - apenas estrutura
+- Focar em componentes reutilizáveis
+- Manter consistência visual
+- Testar responsividade em todos os breakpoints
+- **Usar SEMPRE a paleta de cores oficial da Communicare**
+- **Aplicar as fontes oficiais (Century Gothic Paneuropean e Gotham)**
+- **Respeitar a identidade visual da marca**
+

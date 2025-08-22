@@ -1,0 +1,250 @@
+# Sistema de Tipografia e Cores
+
+## Baseado nos Sites de Referência:
+
+### 1. Communicare (Estilo Principal da Empresa)
+- **Tipografia**: Century Gothic Paneuropean (títulos) e Gotham (corpo)
+- **Cores**: Paleta oficial da empresa com azuis, roxos e cores vibrantes
+- **Contraste**: Alto contraste para legibilidade
+
+### 2. Salinas Maragogi (Inspiração Natural)
+- **Tipografia**: Fontes orgânicas e acolhedoras
+- **Cores**: Tons terrosos e naturais
+- **Atmosfera**: Tranquilidade e conexão com a natureza
+
+### 3. Allegro Pediatrics (Clareza)
+- **Tipografia**: Fontes amigáveis e acessíveis
+- **Cores**: Tons suaves e acolhedores
+- **Foco**: Clareza e organização da informação
+
+## Sistema de Tipografia:
+
+### Hierarquia de Títulos:
+```css
+/* H1 - Título Principal */
+text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900
+
+/* H2 - Títulos de Seção */
+text-3xl md:text-4xl font-semibold text-gray-900
+
+/* H3 - Subtítulos */
+text-2xl md:text-3xl font-semibold text-gray-800
+
+/* H4 - Títulos Menores */
+text-xl md:text-2xl font-medium text-gray-800
+
+/* H5 - Títulos de Card */
+text-lg md:text-xl font-medium text-gray-800
+
+/* H6 - Títulos Muito Pequenos */
+text-base md:text-lg font-medium text-gray-700
+```
+
+### Corpo de Texto:
+```css
+/* Texto Principal */
+text-base md:text-lg text-gray-700 leading-relaxed
+
+/* Texto Secundário */
+text-sm md:text-base text-gray-600 leading-relaxed
+
+/* Texto Pequeno */
+text-xs md:text-sm text-gray-500 leading-relaxed
+
+/* Texto Destacado */
+text-base md:text-lg text-blue-800 font-medium
+```
+
+### Espaçamento de Texto:
+```css
+/* Espaçamento entre linhas */
+leading-relaxed (1.625)
+leading-normal (1.5)
+leading-tight (1.25)
+
+/* Espaçamento entre parágrafos */
+space-y-4 (16px)
+space-y-6 (24px)
+space-y-8 (32px)
+```
+
+## Sistema de Cores:
+
+### Cores Primárias (Communicare):
+```css
+/* Cores Principais para Fundos */
+bg-[#009db0]: #009db0 (azul-petróleo)
+bg-[#a1d6dc]: #a1d6dc (azul claro)
+
+/* Cor Principal para Textos */
+text-[#4c3e92]: #4c3e92 (roxo/índigo)
+
+/* Cores para Destaques e Elementos */
+bg-[#e5007e]: #e5007e (rosa choque)
+bg-[#f19100]: #f19100 (laranja)
+bg-[#37a935]: #37a935 (verde)
+
+/* Cor Secundária para Textos */
+text-[#1d1d1b]: #1d1d1b (cinza muito escuro)
+```
+
+### Cores Secundárias (Salinas Maragogi):
+```css
+/* Tons Terrosos */
+bg-amber-800: #92400e
+bg-amber-700: #b45309
+bg-amber-600: #d97706
+
+/* Tons Naturais */
+bg-stone-700: #44403c
+bg-stone-600: #57534e
+bg-stone-500: #78716c
+```
+
+### Cores Neutras:
+```css
+/* Cinzas Escuros */
+bg-gray-900: #111827
+bg-gray-800: #1f2937
+bg-gray-700: #374151
+bg-gray-600: #4b5563
+
+/* Cinzas Médios */
+bg-gray-500: #6b7280
+bg-gray-400: #9ca3af
+bg-gray-300: #d1d5db
+
+/* Cinzas Claros */
+bg-gray-200: #e5e7eb
+bg-gray-100: #f3f4f6
+bg-gray-50: #f9fafb
+```
+
+### Cores de Estado:
+```css
+/* Sucesso */
+bg-green-600: #16a34a
+text-green-600: #16a34a
+
+/* Aviso */
+bg-yellow-600: #ca8a04
+text-yellow-600: #ca8a04
+
+/* Erro */
+bg-red-600: #dc2626
+text-red-600: #dc2626
+
+/* Informação */
+bg-blue-600: #2563eb
+text-blue-600: #2563eb
+```
+
+## Aplicação de Cores:
+
+### Fundos:
+```css
+/* Fundo Principal */
+bg-white
+
+/* Fundo Secundário */
+bg-gray-50
+
+/* Fundo Escuro */
+bg-gray-900
+
+/* Fundo Gradiente */
+bg-gradient-to-br from-blue-900 to-blue-800
+```
+
+### Texto:
+```css
+/* Texto Principal */
+text-gray-900
+
+/* Texto Secundário */
+text-gray-700
+
+/* Texto Terciário */
+text-gray-600
+
+/* Texto em Fundo Escuro */
+text-white
+
+/* Texto Destacado */
+text-blue-800
+```
+
+### Bordas:
+```css
+/* Bordas Sutis */
+border-gray-200
+
+/* Bordas Médias */
+border-gray-300
+
+/* Bordas Destacadas */
+border-blue-300
+
+/* Bordas de Foco */
+border-blue-500
+```
+
+## Acessibilidade:
+
+### Contraste:
+- **Alto Contraste**: Texto escuro em fundo claro
+- **Contraste Mínimo**: 4.5:1 para texto normal
+- **Contraste Alto**: 7:1 para texto pequeno
+
+### Estados Visuais:
+```css
+/* Hover */
+hover:text-blue-700
+hover:bg-blue-50
+
+/* Focus */
+focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+
+/* Active */
+active:bg-blue-700
+active:text-white
+```
+
+## Responsividade de Tipografia:
+
+### Mobile-First:
+```css
+/* Títulos */
+text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+
+/* Corpo */
+text-sm sm:text-base md:text-lg
+
+/* Espaçamento */
+py-8 sm:py-12 md:py-16 lg:py-20
+```
+
+## Fontes Recomendadas:
+
+### Fontes Oficiais da Empresa:
+- **Títulos**: Century Gothic Paneuropean
+- **Corpo**: Gotham
+
+### Fallbacks (caso as fontes oficiais não estejam disponíveis):
+```css
+/* Para Century Gothic Paneuropean */
+font-family: 'Century Gothic Paneuropean', 'Century Gothic', 'Arial', sans-serif
+
+/* Para Gotham */
+font-family: 'Gotham', 'Helvetica Neue', 'Arial', sans-serif
+```
+
+## Notas de Implementação:
+- **NÃO implementar conteúdo ainda** - apenas sistema de design
+- Manter consistência em todo o projeto
+- Testar contraste e legibilidade
+- Usar variáveis CSS para manutenção
+- **Usar SEMPRE a paleta de cores oficial da Communicare**
+- **Aplicar as fontes oficiais (Century Gothic Paneuropean e Gotham)**
+- **Respeitar a identidade visual da marca**
+
