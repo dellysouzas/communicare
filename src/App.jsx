@@ -163,7 +163,7 @@ function App() {
       </header>
 
       {/* Seção 1: Hero */}
-      <section id="hero" className="relative w-full bg-gradient-to-br from-[#009db0] via-[#008ba0] to-[#007a8f] overflow-hidden">
+      <section id="hero" className="relative w-full bg-gradient-to-br from-[#00b8cc] via-[#00a8bc] to-[#0098ac] overflow-hidden">
         {/* Elementos de fundo decorativos */}
         <div className="absolute inset-0">
           {/* Círculos decorativos */}
@@ -185,54 +185,97 @@ function App() {
             {/* Texto principal */}
             <div className="text-center lg:text-left space-y-8">
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-title leading-tight">
+                <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-white font-title leading-tight">
                   Transformando
                   <span className="block text-[#a1d6dc]">vidas através</span>
-                  <span className="block text-[#f19100]">do cuidado</span>
+                  <span className="block text-[#f4a261]">do cuidado</span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-white/90 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  A <strong>Communicare</strong> nasceu do sonho de uma fonoaudióloga com mais de 26 anos de experiência. Criamos um espaço de acolhimento, empatia e estímulo para transformar vidas através do desenvolvimento humano.
+                  A <strong>Communicare</strong> nasceu do sonho de uma fonoaudióloga com mais de 26 anos de experiência. Criamos um espaço de <span className="text-[#a1d6dc] font-semibold">acolhimento</span>, <span className="text-[#a1d6dc] font-semibold">empatia</span> e <span className="text-[#a1d6dc] font-semibold">estímulo</span> para transformar vidas através do desenvolvimento humano.
                 </p>
               </div>
               
               {/* Botões CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#contato" className="inline-flex items-center justify-center px-8 py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title">
+              <div className="flex flex-col gap-6 sm:flex-row sm:gap-4 justify-center lg:justify-start">
+                <a href="#contato" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
                   Fale conosco
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-3 sm:ml-2 w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-                <a href="#quem-somos" className="inline-flex items-center justify-center px-8 py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 font-semibold rounded-lg transition-all duration-300 font-title">
+                <a href="#quem-somos" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/40 hover:border-white/60 font-semibold rounded-xl sm:rounded-lg transition-all duration-300 font-title text-lg sm:text-base">
                   Nossa história
                 </a>
               </div>
               
               {/* Destaques da empresa */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-white/20">
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-white font-title">26+</div>
-                  <div className="text-sm text-white/70 font-body">Anos de experiência</div>
+                  <div className="text-xs sm:text-sm text-white/70 font-body">Anos de experiência</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-white font-title">2021</div>
-                  <div className="text-sm text-white/70 font-body">Ano de fundação</div>
+                  <div className="text-xs sm:text-sm text-white/70 font-body">Ano de fundação</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-white font-title">100%</div>
-                  <div className="text-sm text-white/70 font-body">Dedicação humana</div>
+                  <div className="text-xs sm:text-sm text-white/70 font-body">Dedicação humana</div>
+                </div>
+              </div>
+              
+              {/* Vídeo - Aparece depois dos números no mobile */}
+              <div className="flex lg:hidden items-center justify-center pt-8">
+                <div className="relative group">
+                  {/* Container do vídeo com efeitos elegantes */}
+                  <div className="relative w-full max-w-sm bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
+                    <video 
+                      className="block w-full h-auto"
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline
+                    >
+                      <source src="/videos/videocerto.mp4" type="video/mp4" />
+                      Seu navegador não suporta vídeos.
+                    </video>
+                    
+                    {/* Overlay sutil no vídeo */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                    
+                    {/* Borda luminosa sutil */}
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#a1d6dc]/20 via-transparent to-[#e5007e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Sombra elegante */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl transform translate-y-6 blur-2xl group-hover:translate-y-8 transition-transform duration-500"></div>
+                  
+                  {/* Elementos decorativos flutuantes */}
+                  <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full animate-pulse shadow-lg">
+                    <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full animate-pulse delay-1000 shadow-lg">
+                    <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div className="absolute top-1/2 -left-8 w-8 h-8 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-full animate-pulse delay-500 shadow-lg">
+                    <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                  </div>
+                  
+                  {/* Linhas decorativas sutis */}
+                  <div className="absolute top-8 -right-16 w-16 h-px bg-gradient-to-l from-[#a1d6dc]/40 to-transparent"></div>
+                  <div className="absolute bottom-8 -left-16 w-16 h-px bg-gradient-to-r from-[#e5007e]/40 to-transparent"></div>
                 </div>
               </div>
             </div>
             
-            {/* Lado direito - Vídeo */}
+            {/* Vídeo - Desktop (lado direito) */}
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative group">
                 {/* Container do vídeo com efeitos elegantes */}
-                <div className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
+                <div className="relative w-full max-w-sm lg:max-w-none bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
                   <video 
-                    className="block"
+                    className="block w-full h-auto"
                     autoPlay 
                     muted 
                     loop 
