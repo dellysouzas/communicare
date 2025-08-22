@@ -1,9 +1,89 @@
-
-
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  
+  // Efeito para animar elementos quando entrarem na viewport
+  useEffect(() => {
+    // Função para animar a foto da fundadora quando entrar na tela
+    const animateFounderPhoto = () => {
+      const founderSection = document.getElementById('quem-somos');
+      if (!founderSection) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Quando a seção "Quem somos" entrar na viewport
+            const founderPhoto = entry.target.querySelector('.founder-photo');
+            if (founderPhoto) {
+              // Adiciona a animação zoomIn
+              founderPhoto.classList.add('animate__animated', 'animate__zoomIn');
+              
+              // Remove a classe após a animação terminar
+              founderPhoto.addEventListener('animationend', () => {
+                founderPhoto.classList.remove('animate__animated', 'animate__zoomIn');
+              }, { once: true });
+            }
+            
+            // Para de observar após animar
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3, // Anima quando 30% da seção estiver visível
+        rootMargin: '0px 0px -50px 0px' // Anima um pouco antes de entrar completamente
+      });
+      
+      observer.observe(founderSection);
+    };
+    
+    // Função para animar os diferenciais quando entrarem na tela
+    const animateDifferentials = () => {
+      const differentialsSection = document.getElementById('diferenciais');
+      if (!differentialsSection) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Quando a seção "Diferenciais" entrar na viewport
+            const differentialCards = entry.target.querySelectorAll('.differential-card');
+            
+            differentialCards.forEach((card, index) => {
+              const animation = card.dataset.animation;
+              const delay = parseInt(card.dataset.delay);
+              
+              // Anima cada card com delay sequencial
+              setTimeout(() => {
+                card.classList.add('animate__animated', `animate__${animation}`);
+                
+                // Remove a classe após a animação terminar
+                card.addEventListener('animationend', () => {
+                  card.classList.remove('animate__animated', `animate__${animation}`);
+                }, { once: true });
+              }, delay);
+            });
+            
+            // Para de observar após animar
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2, // Anima quando 20% da seção estiver visível
+        rootMargin: '0px 0px -100px 0px' // Anima um pouco antes de entrar completamente
+      });
+      
+      observer.observe(differentialsSection);
+    };
+    
+    // Executa as animações
+    animateFounderPhoto();
+    animateDifferentials();
+    
+    // Cleanup
+    return () => {
+      // Limpa observers se necessário
+    };
+  }, []);
   
   return (
     <div className="min-h-screen bg-white">
@@ -397,11 +477,14 @@ function App() {
                   
                   {/* Foto da fundadora */}
                   <div className="relative mb-8">
-                    <div className="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-[#e5007e] to-[#f19100] shadow-2xl">
+                    <div className="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-[#e5007e] to-[#f19100] shadow-2xl group-hover:shadow-3xl transition-all duration-500 founder-photo" style={{
+                      '--animate-duration': '1.5s',
+                      '--animate-delay': '0.2s'
+                    }}>
                       <img 
                         src="/profissionais/ana sem fundo.png" 
                         alt="Ana Grécia - Fundadora da Communicare" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-105"
                       />
                     </div>
                     {/* Borda luminosa sutil */}
@@ -428,7 +511,7 @@ function App() {
                 <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#e5007e] to-[#f19100] rounded-full"></div>
                 <div className="pl-8">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    A <span className="font-bold text-[#4c3e92]">Communicare</span> nasceu em agosto de 2021, em um dos momentos mais desafiadores da nossa história: a <span className="font-semibold text-[#e5007e]">pandemia</span>. O que poderia ser apenas um sonho antigo tornou-se realidade quando percebemos a necessidade urgente dos nossos pacientes diante das mudanças impostas pela nova rotina.
+                    A <span className="font-bold text-[#4c3e92]">Communicare</span> nasceu no Recife/PE em agosto de 2021, em um dos momentos mais desafiadores da nossa história: a pandemia. O que poderia ser apenas um sonho antigo tornou-se realidade quando percebemos a necessidade urgente dos nossos pacientes diante das mudanças impostas pela nova rotina.
                   </p>
                 </div>
               </div>
@@ -447,15 +530,46 @@ function App() {
       </section>
 
       {/* Seção 3: Diferenciais */}
-      <section id="diferenciais" className="w-full py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="diferenciais" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#fff7ed] via-[#fed7aa] to-[#fdba74] relative overflow-hidden">
+        {/* Elementos decorativos de fundo */}
+        <div className="absolute inset-0">
+          {/* Formas geométricas criativas */}
+          <div className="absolute top-10 left-10 w-32 h-32 bg-[#4c3e92]/20 rounded-full blur-xl"></div>
+          <div className="absolute top-10 right-10 w-24 h-24 bg-[#e5007e]/15 rounded-full blur-lg"></div>
+          <div className="absolute bottom-10 left-1/3 w-40 h-40 bg-[#4c3e92]/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 right-1/3 w-28 h-28 bg-[#a1d6dc]/15 rounded-full blur-lg"></div>
+          
+          {/* Triângulos decorativos */}
+          <div className="absolute top-1/4 left-20 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-[#4c3e92]/20 transform rotate-45"></div>
+          <div className="absolute top-1/3 right-32 w-0 h-0 border-l-[15px] border-r-[15px] border-b-[25px] border-l-transparent border-r-transparent border-b-[#e5007e]/15 transform -rotate-12"></div>
+          <div className="absolute bottom-1/4 right-20 w-0 h-0 border-l-[25px] border-r-[25px] border-b-[40px] border-l-transparent border-r-transparent border-b-[#4c3e92]/10 transform rotate-90"></div>
+          
+          {/* Ondas decorativas */}
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#4c3e92]/10 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#e5007e]/10 to-transparent"></div>
+          
+          {/* Estrelas decorativas */}
+          <div className="absolute top-20 left-1/4 w-6 h-6 opacity-30">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute top-32 right-1/4 w-8 h-8 opacity-25">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-32 left-1/4 w-7 h-7 opacity-20">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          
+
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title leading-tight">
               <span className="block text-[#4c3e92]">O que nos torna</span>
               <span className="block text-[#e5007e]">únicos</span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-8">
               Descubra os diferenciais que fazem da Communicare uma referência em 
               <span className="font-semibold text-[#4c3e92]"> desenvolvimento humanizado</span>, 
               <span className="font-semibold text-[#e5007e]"> cuidando com afeto</span> e 
@@ -464,46 +578,52 @@ function App() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Diferencial 1 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-[#e5007e] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-2xl">1</span>
+            {/* Diferencial 1: Atendimento Individualizado */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#a1d6dc]/20 group differential-card" data-animation="zoomIn" data-delay="0">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 interactive-animate">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Diferencial 1
+              <h3 className="text-xl font-bold text-[#4c3e92] mb-4 font-title">
+                Atendimento Individualizado
               </h3>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded mx-auto"></div>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Respeitamos a <span className="font-semibold text-[#e5007e]">singularidade</span> de cada pessoa, 
+                criando um plano personalizado para o seu desenvolvimento único.
+              </p>
             </div>
 
-            {/* Diferencial 2 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-[#f19100] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-2xl">2</span>
+            {/* Diferencial 2: Proximidade da Diretora */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#a1d6dc]/20 group differential-card" data-animation="zoomIn" data-delay="200">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 interactive-animate">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Diferencial 2
+              <h3 className="text-xl font-bold text-[#4c3e92] mb-4 font-title">
+                Proximidade da Diretora
               </h3>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded mx-auto"></div>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                A diretora Ana Grécia está <span className="font-semibold text-[#f19100]">próxima e acessível</span> 
+                em cada etapa do processo, garantindo acompanhamento direto.
+              </p>
             </div>
 
-            {/* Diferencial 3 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-[#37a935] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-2xl">3</span>
+            {/* Diferencial 3: Acompanhamento Interdisciplinar */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#a1d6dc]/20 group differential-card" data-animation="zoomIn" data-delay="400">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 interactive-animate">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Diferencial 3
+              <h3 className="text-xl font-bold text-[#4c3e92] mb-4 font-title">
+                Acompanhamento Interdisciplinar
               </h3>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded mx-auto"></div>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Trabalhamos <span className="font-semibold text-[#37a935]">junto aos responsáveis</span>, 
+                escolas e equipe interdisciplinar para resultados integrados.
+              </p>
             </div>
           </div>
         </div>
