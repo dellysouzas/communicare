@@ -3,7 +3,7 @@
 ## Baseado nos Sites de Referência:
 
 ### 1. Communicare (Estilo Principal da Empresa)
-- **Tipografia**: Century Gothic Paneuropean (títulos) e Gotham (corpo)
+- **Tipografia**: Quicksand (títulos) e Open Sans (corpo) - fontes que combinam com a logomarca
 - **Cores**: Paleta oficial da empresa com azuis, roxos e cores vibrantes
 - **Contraste**: Alto contraste para legibilidade
 
@@ -226,17 +226,17 @@ py-8 sm:py-12 md:py-16 lg:py-20
 
 ## Fontes Recomendadas:
 
-### Fontes Oficiais da Empresa:
-- **Títulos**: Century Gothic Paneuropean
-- **Corpo**: Gotham
+### Fontes Atualizadas (Que Combinam com a Logomarca):
+- **Títulos**: Quicksand (arredondada e amigável)
+- **Corpo**: Open Sans (legível e acolhedora)
 
-### Fallbacks (caso as fontes oficiais não estejam disponíveis):
+### Fallbacks (caso as fontes não estejam disponíveis):
 ```css
-/* Para Century Gothic Paneuropean */
-font-family: 'Century Gothic Paneuropean', 'Century Gothic', 'Arial', sans-serif
+/* Para Títulos (Quicksand) */
+font-family: 'Quicksand', 'Nunito', 'Comfortaa', 'Arial', sans-serif
 
-/* Para Gotham */
-font-family: 'Gotham', 'Helvetica Neue', 'Arial', sans-serif
+/* Para Corpo de Texto (Open Sans) */
+font-family: 'Open Sans', 'Source Sans Pro', 'Lato', 'Arial', sans-serif
 ```
 
 ## Notas de Implementação:
@@ -245,6 +245,6 @@ font-family: 'Gotham', 'Helvetica Neue', 'Arial', sans-serif
 - Testar contraste e legibilidade
 - Usar variáveis CSS para manutenção
 - **Usar SEMPRE a paleta de cores oficial da Communicare**
-- **Aplicar as fontes oficiais (Century Gothic Paneuropean e Gotham)**
+- **Aplicar as fontes atualizadas (Quicksand e Open Sans) que combinam com a logomarca**
 - **Respeitar a identidade visual da marca**
 

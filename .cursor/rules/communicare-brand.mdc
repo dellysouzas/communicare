@@ -17,17 +17,17 @@
 
 ## Tipografia Oficial:
 
-### Fontes Principais:
-- **Century Gothic Paneuropean** - Para títulos e elementos principais
-- **Gotham** - Para corpo de texto e elementos secundários
+### Fontes Principais (Atualizadas para Combinar com a Logomarca):
+- **Quicksand** - Para títulos e elementos principais (fonte arredondada e amigável)
+- **Open Sans** - Para corpo de texto e elementos secundários (fonte legível e acolhedora)
 
 ### Implementação CSS:
 ```css
 /* Títulos */
-font-family: 'Century Gothic Paneuropean', 'Century Gothic', 'Arial', sans-serif;
+font-family: 'Quicksand', 'Nunito', 'Comfortaa', 'Arial', sans-serif;
 
 /* Corpo de Texto */
-font-family: 'Gotham', 'Helvetica Neue', 'Arial', sans-serif;
+font-family: 'Open Sans', 'Source Sans Pro', 'Lato', 'Arial', sans-serif;
 ```
 
 ## Logomarca:
@@ -141,12 +141,12 @@ border-[#a1d6dc] /* Azul claro */
 
 ### Uso Obrigatório:
 - **SEMPRE** usar a paleta de cores oficial
-- **SEMPRE** aplicar as fontes oficiais
+- **SEMPRE** aplicar as fontes atualizadas (Quicksand e Open Sans)
 - **SEMPRE** respeitar a identidade visual da marca
 
 ### Proibições:
 - **NUNCA** usar cores fora da paleta oficial
-- **NUNCA** usar fontes diferentes das oficiais
+- **NUNCA** usar fontes diferentes das atualizadas
 - **NUNCA** alterar a logomarca
 
 ### Manutenção:
