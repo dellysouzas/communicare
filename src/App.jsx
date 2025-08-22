@@ -174,6 +174,34 @@ function App() {
           {/* Linhas geométricas sutis */}
           <div className="absolute top-1/3 right-10 w-px h-32 bg-gradient-to-b from-transparent via-[#a1d6dc]/30 to-transparent"></div>
           <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#a1d6dc]/20 to-transparent"></div>
+          
+          {/* Estrelas decorativas - Lado esquerdo */}
+          <div className="absolute top-16 left-8 w-8 h-8 opacity-30 transform -rotate-12">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute top-1/3 left-6 w-6 h-6 opacity-20 transform rotate-45">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-1/3 left-10 w-10 h-10 opacity-25 transform -rotate-30">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-20 left-4 w-5 h-5 opacity-15 transform rotate-15">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          
+          {/* Estrelas decorativas - Lado direito */}
+          <div className="absolute top-24 right-12 w-7 h-7 opacity-30 transform rotate-60">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute top-1/2 right-8 w-9 h-9 opacity-20 transform -rotate-45">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-1/4 right-6 w-6 h-6 opacity-25 transform rotate-20">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-16 right-10 w-8 h-8 opacity-15 transform -rotate-75">
+            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
         </div>
         
         {/* Overlay sutil para melhor contraste */}
