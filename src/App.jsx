@@ -106,57 +106,57 @@ function App() {
             </button>
           </div>
         </div>
-        
-        {/* Menu Mobile Dropdown */}
+            
+            {/* Menu Mobile Dropdown */}
         <div className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-[#a1d6dc] transform transition-all duration-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
-          <div className="px-4 py-6 space-y-2">
-            {/* Quem somos */}
-            <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
-              <a href="#quem-somos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
-                Quem somos
-              </a>
-            </div>
-            
-            {/* Diferenciais */}
-            <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
-              <a href="#diferenciais" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
-                Diferenciais
-              </a>
-            </div>
-            
-            {/* Serviços */}
-            <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
-              <a href="#servicos" className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
-                Serviços
-              </a>
-            </div>
-            
-            {/* Profissionais */}
-            <div className="bg-gradient-to-r from-[#009db0]/10 to-transparent rounded-lg p-3 border-l-4 border-[#009db0]">
-              <a href="#profissionais" className="block text-[#4c3e92] hover:text-[#009db0] font-semibold transition-colors duration-200 font-title py-2">
-                Profissionais
-              </a>
-            </div>
-            
-            {/* Depoimentos */}
-            <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
-              <a href="#depoimentos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
-                Depoimentos
-              </a>
-            </div>
-            
-            {/* Contato */}
-            <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
-              <a href="#contato" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
-                Contato
-              </a>
-            </div>
-            
-            {/* Botão CTA Mobile */}
-            <div className="pt-4 mt-6 border-t border-gray-200">
-              <a href="#contato" className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
-                Agende sua consulta
-              </a>
+              <div className="px-4 py-6 space-y-2">
+                {/* Quem somos */}
+                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
+                  <a href="#quem-somos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                    Quem somos
+                  </a>
+                </div>
+                
+                {/* Diferenciais */}
+                <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
+                  <a href="#diferenciais" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                    Diferenciais
+                  </a>
+                </div>
+                
+                {/* Serviços */}
+                <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
+                  <a href="#servicos" className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
+                    Serviços
+                  </a>
+                </div>
+                
+                {/* Profissionais */}
+                <div className="bg-gradient-to-r from-[#009db0]/10 to-transparent rounded-lg p-3 border-l-4 border-[#009db0]">
+                  <a href="#profissionais" className="block text-[#4c3e92] hover:text-[#009db0] font-semibold transition-colors duration-200 font-title py-2">
+                    Profissionais
+                  </a>
+                </div>
+                
+                {/* Depoimentos */}
+                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
+                  <a href="#depoimentos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                    Depoimentos
+                  </a>
+                </div>
+                
+                {/* Contato */}
+                <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
+                  <a href="#contato" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                    Contato
+                  </a>
+                </div>
+                
+                {/* Botão CTA Mobile */}
+                <div className="pt-4 mt-6 border-t border-gray-200">
+                  <a href="#contato" className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
+                    Agende sua consulta
+                  </a>
             </div>
           </div>
         </div>
@@ -176,30 +176,27 @@ function App() {
           <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#a1d6dc]/20 to-transparent"></div>
           
           {/* Estrelas decorativas - Lado esquerdo */}
-          <div className="absolute top-16 left-8 w-8 h-8 opacity-30 transform -rotate-12">
+          <div className="absolute top-8 left-4 w-6 h-6 opacity-20 transform -rotate-12">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
-          <div className="absolute top-1/3 left-6 w-6 h-6 opacity-20 transform rotate-45">
+          <div className="absolute top-1/3 left-2 w-4 h-4 opacity-15 transform rotate-45">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
-          <div className="absolute bottom-1/3 left-10 w-10 h-10 opacity-25 transform -rotate-30">
-            <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
-          </div>
-          <div className="absolute bottom-20 left-4 w-5 h-5 opacity-15 transform rotate-15">
+          <div className="absolute bottom-1/3 left-3 w-8 h-8 opacity-25 transform -rotate-30">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
           
           {/* Estrelas decorativas - Lado direito */}
-          <div className="absolute top-24 right-12 w-7 h-7 opacity-30 transform rotate-60">
+          <div className="absolute top-8 right-4 w-7 h-7 opacity-30 transform rotate-60">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
-          <div className="absolute top-1/2 right-8 w-9 h-9 opacity-20 transform -rotate-45">
+          <div className="absolute top-1/2 right-2 w-9 h-9 opacity-20 transform -rotate-45">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
-          <div className="absolute bottom-1/4 right-6 w-6 h-6 opacity-25 transform rotate-20">
+          <div className="absolute bottom-1/4 right-3 w-6 h-6 opacity-25 transform rotate-20">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
-          <div className="absolute bottom-16 right-10 w-8 h-8 opacity-15 transform -rotate-75">
+          <div className="absolute bottom-8 right-4 w-8 h-8 opacity-15 transform -rotate-75">
             <img src="/elementos/estrela.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
           </div>
         </div>
@@ -353,29 +350,97 @@ function App() {
       </section>
 
       {/* Seção 2: Quem somos */}
-      <section id="quem-somos" className="w-full py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="quem-somos" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#f8fafc] via-[#e8f4f8] to-[#f0f9ff] relative overflow-hidden">
+        {/* Elementos decorativos de fundo */}
+        <div className="absolute inset-0">
+          {/* Círculos decorativos sutis */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#a1d6dc]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#e5007e]/5 rounded-full blur-lg"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#f19100]/8 rounded-full blur-xl"></div>
+          
+          {/* Linhas geométricas sutis */}
+          <div className="absolute top-1/3 right-10 w-px h-32 bg-gradient-to-b from-transparent via-[#a1d6dc]/20 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#e5007e]/15 to-transparent"></div>
+          
+          {/* Anzol decorativo sutil */}
+          <div className="absolute top-16 right-16 w-16 h-16 opacity-20 transform rotate-12">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-20 left-16 w-12 h-12 opacity-15 transform -rotate-6">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute top-1/2 left-8 w-14 h-14 opacity-25 transform rotate-45">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#4c3e92] mb-6 font-title">
-              Quem somos
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title">
+              <span className="block text-[#4c3e92]">Cuidando de cada</span>
+              <span className="block text-[#e5007e]">criança e adolescente</span>
+              <span className="block text-[#f19100]">com amor e dedicação</span>
             </h2>
-            <div className="w-24 h-1 bg-[#e5007e] mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] mx-auto mt-6 rounded-full"></div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-                          <h3 className="text-2xl font-semibold text-[#4c3e92] font-title">
-              Título da Seção
-            </h3>
-              <div className="space-y-4">
-                <div className="w-full h-4 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-4 bg-gray-200 rounded"></div>
-                <div className="w-5/6 h-4 bg-gray-200 rounded"></div>
+          {/* Layout de duas colunas: Imagem da fundadora + Texto */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-3 items-stretch max-w-4xl mx-auto">
+            {/* Coluna da esquerda - Imagem da fundadora */}
+            <div className="text-center lg:text-left flex items-center justify-center lg:justify-start">
+              <div className="relative group w-full">
+                {/* Container principal com sombra e borda */}
+                <div className="w-80 h-full mx-auto lg:mx-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#e8f4f8] rounded-3xl p-8 shadow-2xl border border-[#a1d6dc]/30 overflow-hidden">
+                  {/* Elementos decorativos de fundo */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#e5007e]/5 to-[#f19100]/5 rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[#a1d6dc]/10 to-[#4c3e92]/5 rounded-full blur-xl"></div>
+                  
+                  {/* Foto da fundadora */}
+                  <div className="relative mb-8">
+                    <div className="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-[#e5007e] to-[#f19100] shadow-2xl">
+                      <img 
+                        src="/profissionais/ana sem fundo.png" 
+                        alt="Ana Grécia - Fundadora da Communicare" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Borda luminosa sutil */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#e5007e]/20 via-transparent to-[#f19100]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Informações da fundadora */}
+                  <div className="text-center relative z-10">
+                    <h3 className="text-3xl font-bold text-[#4c3e92] mb-2 font-title">Ana Grécia</h3>
+                    <p className="text-xl text-gray-700 mb-4 font-medium">Fundadora e Fonoaudióloga</p>
+                  </div>
+                  
+                  {/* Elementos decorativos flutuantes */}
+                  <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full animate-pulse delay-1000 shadow-lg">
+                    <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="bg-[#a1d6dc] rounded-lg p-8 h-64 flex items-center justify-center">
-              <span className="text-[#4c3e92] text-lg">Imagem/Ilustração</span>
+            {/* Coluna da direita - Texto da história */}
+            <div className="space-y-8">
+              <div className="relative">
+                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#e5007e] to-[#f19100] rounded-full"></div>
+                <div className="pl-8">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    A <span className="font-bold text-[#4c3e92]">Communicare</span> nasceu em agosto de 2021, em um dos momentos mais desafiadores da nossa história: a <span className="font-semibold text-[#e5007e]">pandemia</span>. O que poderia ser apenas um sonho antigo tornou-se realidade quando percebemos a necessidade urgente dos nossos pacientes diante das mudanças impostas pela nova rotina.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#f19100] to-[#a1d6dc] rounded-full"></div>
+                <div className="pl-8">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Com mais de <span className="font-semibold text-[#f19100]">26 anos de experiência</span> como fonoaudióloga, nossa fundadora <span className="font-bold text-[#4c3e92]">Ana Grécia</span> decidiu transformar esse desafio em oportunidade: criar um espaço de acolhimento, empatia e estímulo, dedicado a contribuir ainda mais para o desenvolvimento e bem-estar daqueles que confiam em nosso trabalho.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -385,10 +450,17 @@ function App() {
       <section id="diferenciais" className="w-full py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#4c3e92] mb-6 font-title">
-              Diferenciais
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title leading-tight">
+              <span className="block text-[#4c3e92]">O que nos torna</span>
+              <span className="block text-[#e5007e]">únicos</span>
             </h2>
-            <div className="w-24 h-1 bg-[#f19100] mx-auto"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Descubra os diferenciais que fazem da Communicare uma referência em 
+              <span className="font-semibold text-[#4c3e92]"> desenvolvimento humanizado</span>, 
+              <span className="font-semibold text-[#e5007e]"> cuidando com afeto</span> e 
+              <span className="font-semibold text-[#f19100]"> excelência profissional</span>
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
