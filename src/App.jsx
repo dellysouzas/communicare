@@ -1,6 +1,10 @@
 
 
+import { useState } from 'react'
+
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -8,25 +12,153 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logos/Colorida.png" alt="Communicare" className="h-12 w-auto" />
+            <img src="/logos/Elemento colorido.png" alt="Communicare" className="h-16 w-auto" />
           </div>
           
           {/* Navegação */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#quem-somos" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Quem Somos</a>
-            <a href="#diferenciais" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Diferenciais</a>
-            <a href="#servicos" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Serviços</a>
-            <a href="#profissionais" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Profissionais</a>
-            <a href="#depoimentos" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Depoimentos</a>
-            <a href="#contato" className="text-[#4c3e92] hover:text-[#009db0] font-medium transition-colors duration-200">Contato</a>
+            <a href="#quem-somos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Quem somos</span>
+              <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
+            
+            <a href="#diferenciais" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Diferenciais</span>
+              <div className="absolute inset-0 bg-[#f19100] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
+            
+            <a href="#servicos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Serviços</span>
+              <div className="absolute inset-0 bg-[#37a935] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
+            
+            <a href="#profissionais" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Profissionais</span>
+              <div className="absolute inset-0 bg-[#009db0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
+            
+            <a href="#depoimentos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Depoimentos</span>
+              <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
+            
+            <a href="#contato" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-4 py-2 rounded-lg overflow-hidden">
+              <span className="relative z-10">Contato</span>
+              <div className="absolute inset-0 bg-[#f19100] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            </a>
           </nav>
 
+          {/* Botão CTA */}
+          <div className="hidden md:block">
+            <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl font-title">
+              Agende sua consulta
+            </a>
+          </div>
+
           {/* Menu Mobile */}
-          <button className="md:hidden text-[#4c3e92] hover:text-[#009db0]">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center space-x-3">
+            {/* Botão CTA Mobile */}
+            <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 font-title text-sm">
+              Agende sua consulta
+            </a>
+            
+            {/* Menu Hamburguer */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`p-3 rounded-xl transition-all duration-500 ease-out transform hover:scale-110 ${
+                isMobileMenuOpen 
+                  ? 'bg-gradient-to-br from-[#e5007e] to-[#f19100] text-white shadow-lg scale-105 rotate-12' 
+                  : 'text-[#4c3e92] hover:text-[#009db0] hover:bg-gradient-to-br hover:from-[#4c3e92]/10 hover:to-[#009db0]/10'
+              }`}
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center relative">
+                {/* Linha superior com animação lúdica */}
+                <span className={`block w-5 h-0.5 bg-current transform transition-all duration-500 ease-out ${
+                  isMobileMenuOpen 
+                    ? 'rotate-45 translate-y-1.5 scale-110' 
+                    : 'rotate-0 translate-y-0 scale-100'
+                }`}></span>
+                
+                {/* Linha do meio com efeito de desaparecimento */}
+                <span className={`block w-5 h-0.5 bg-current my-1 transform transition-all duration-500 ease-out ${
+                  isMobileMenuOpen 
+                    ? 'opacity-0 scale-0 rotate-180' 
+                    : 'opacity-100 scale-100 rotate-0'
+                }`}></span>
+                
+                {/* Linha inferior com animação lúdica */}
+                <span className={`block w-5 h-0.5 bg-current transform transition-all duration-500 ease-out ${
+                  isMobileMenuOpen 
+                    ? '-rotate-45 -translate-y-1.5 scale-110' 
+                    : 'rotate-0 translate-y-0 scale-100'
+                }`}></span>
+                
+                {/* Elementos decorativos que aparecem quando aberto */}
+                <div className={`absolute inset-0 transition-all duration-500 ease-out ${
+                  isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                }`}>
+                  {/* Pontos decorativos */}
+                  <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white rounded-full animate-ping"></div>
+                  <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '0.2s'}}></div>
+                  <div className="absolute top-1/2 -right-0.5 w-0.5 h-0.5 bg-white rounded-full animate-ping" style={{animationDelay: '0.4s'}}></div>
+                </div>
+              </div>
+            </button>
+            
+            {/* Menu Mobile Dropdown */}
+            <div className={`absolute top-full left-0 right-0 bg-white shadow-xl border-t border-[#a1d6dc] transform transition-all duration-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
+              <div className="px-4 py-6 space-y-2">
+                {/* Quem somos */}
+                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
+                  <a href="#quem-somos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                    Quem somos
+                  </a>
+                </div>
+                
+                {/* Diferenciais */}
+                <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
+                  <a href="#diferenciais" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                    Diferenciais
+                  </a>
+                </div>
+                
+                {/* Serviços */}
+                <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
+                  <a href="#servicos" className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
+                    Serviços
+                  </a>
+                </div>
+                
+                {/* Profissionais */}
+                <div className="bg-gradient-to-r from-[#009db0]/10 to-transparent rounded-lg p-3 border-l-4 border-[#009db0]">
+                  <a href="#profissionais" className="block text-[#4c3e92] hover:text-[#009db0] font-semibold transition-colors duration-200 font-title py-2">
+                    Profissionais
+                  </a>
+                </div>
+                
+                {/* Depoimentos */}
+                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
+                  <a href="#depoimentos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                    Depoimentos
+                  </a>
+                </div>
+                
+                {/* Contato */}
+                <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
+                  <a href="#contato" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                    Contato
+                  </a>
+                </div>
+                
+                {/* Botão CTA Mobile */}
+                <div className="pt-4 mt-6 border-t border-gray-200">
+                  <a href="#contato" className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
+                    Agende sua consulta
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -45,12 +177,12 @@ function App() {
         </div>
       </section>
 
-      {/* Seção 2: Quem Somos */}
+      {/* Seção 2: Quem somos */}
       <section id="quem-somos" className="w-full py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#4c3e92] mb-6 font-title">
-              Quem Somos
+              Quem somos
             </h2>
             <div className="w-24 h-1 bg-[#e5007e] mx-auto"></div>
           </div>
@@ -362,7 +494,7 @@ function App() {
                 <div className="w-full h-12 bg-white/20 rounded-lg"></div>
                 <div className="w-full h-12 bg-white/20 rounded-lg"></div>
                 <div className="w-full h-24 bg-white/20 rounded-lg"></div>
-                <button className="w-full bg-[#e5007e] hover:bg-[#cc0072] text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200">
+                <button className="w-full bg-[#e5007e] hover:bg-[#cc0072] text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200 font-title">
                   Enviar Mensagem
                 </button>
               </div>
@@ -374,13 +506,32 @@ function App() {
       {/* Footer */}
       <footer className="w-full bg-[#4c3e92] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo e Descrição */}
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1 sm:col-span-2 lg:col-span-2">
               <img src="/logos/Branca.png" alt="Communicare" className="h-12 w-auto mb-4" />
-              <div className="space-y-2">
-                <div className="w-full h-4 bg-white/20 rounded"></div>
-                <div className="w-3/4 h-4 bg-white/20 rounded"></div>
+              <p className="text-white/80 text-sm leading-relaxed mb-4">
+                Clínica especializada em comunicação e desenvolvimento humano, oferecendo serviços personalizados para melhorar suas habilidades de comunicação e relacionamento.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
+                  <span className="sr-only">Facebook</span>
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
+                  <span className="sr-only">Instagram</span>
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.875.875 1.297 2.026 1.297 3.323s-.422 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-1.297c-.49.49-1.297.49-1.787 0s-.49-1.297 0-1.787c.49-.49 1.297-.49 1.787 0s.49 1.297 0 1.787z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
+                  <span className="sr-only">LinkedIn</span>
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
               </div>
             </div>
             
@@ -389,11 +540,13 @@ function App() {
               <h4 className="text-lg font-semibold mb-4 font-title">
                 Links Rápidos
               </h4>
-              <div className="space-y-2">
-                <div className="w-20 h-3 bg-white/20 rounded"></div>
-                <div className="w-24 h-3 bg-white/20 rounded"></div>
-                <div className="w-16 h-3 bg-white/20 rounded"></div>
-              </div>
+              <ul className="space-y-3">
+                <li><a href="#quem-somos" className="text-white/70 hover:text-white transition-colors duration-200 text-sm">Quem somos</a></li>
+                <li><a href="#diferenciais" className="text-white/70 hover:text-white transition-colors duration-200 text-sm">Diferenciais</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white transition-colors duration-200 text-sm">Serviços</a></li>
+                <li><a href="#profissionais" className="text-white/70 hover:text-white transition-colors duration-200 text-sm">Profissionais</a></li>
+                <li><a href="#depoimentos" className="text-white/70 hover:text-white transition-colors duration-200 text-sm">Depoimentos</a></li>
+              </ul>
             </div>
             
             {/* Contato */}
@@ -401,16 +554,27 @@ function App() {
               <h4 className="text-lg font-semibold mb-4 font-title">
                 Contato
               </h4>
-              <div className="space-y-2">
-                <div className="w-28 h-3 bg-white/20 rounded"></div>
-                <div className="w-32 h-3 bg-white/20 rounded"></div>
-                <div className="w-24 h-3 bg-white/20 rounded"></div>
-              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center text-white/70 text-sm">
+                  <span className="mr-2">📞</span>
+                  (81) 99999-9999
+                </li>
+                <li className="flex items-center text-white/70 text-sm">
+                  <span className="mr-2">📧</span>
+                  contato@communicare.com
+                </li>
+                <li className="flex items-center text-white/70 text-sm">
+                  <span className="mr-2">📍</span>
+                  Recife, PE
+                </li>
+              </ul>
             </div>
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
-            <div className="w-48 h-4 bg-white/20 rounded mx-auto"></div>
+            <p className="text-white/60 text-sm">
+              © 2024 Communicare. Todos os direitos reservados.
+            </p>
           </div>
         </div>
       </footer>
