@@ -605,8 +605,7 @@ function App() {
                 Proximidade da Diretora
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                A diretora Ana Grécia está <span className="font-semibold text-[#f19100]">próxima e acessível</span> 
-                em cada etapa do processo, garantindo acompanhamento direto.
+                A diretora Ana Grécia está <span className="font-semibold text-[#f19100]">próxima e acessível </span>em cada etapa do processo, garantindo acompanhamento direto.
               </p>
             </div>
 
