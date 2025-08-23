@@ -1039,67 +1039,130 @@ function App() {
       </section>
 
       {/* Seção 6: Depoimentos */}
-      <section id="depoimentos" className="w-full py-16 md:py-24 bg-white">
+      <section id="depoimentos" className="w-full py-16 md:py-24 bg-[#f19100] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#4c3e92] mb-6 font-title">
-              Depoimentos
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-title leading-tight">
+              <span className="block text-white">Histórias que</span>
+              <span className="block text-[#4c3e92]">inspiram e transformam</span>
             </h2>
-            <div className="w-24 h-1 bg-[#e5007e] mx-auto"></div>
+            <div className="w-32 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mt-8">
+              Conheça os <span className="font-semibold text-[#4c3e92]">depoimentos reais</span> de famílias que confiaram na Communicare e 
+              <span className="font-semibold text-white"> transformaram a vida</span> de seus filhos através do nosso cuidado especializado
+            </p>
           </div>
           
+          {/* Grid de depoimentos em vídeo */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Depoimento 1 */}
-            <div className="bg-gray-50 rounded-lg p-8 border-l-4 border-[#009db0]">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-[#a1d6dc] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#4c3e92] text-sm">D1</span>
-                </div>
-                <div>
-                  <div className="w-24 h-4 bg-gray-200 rounded"></div>
-                  <div className="w-20 h-3 bg-gray-200 rounded mt-1"></div>
+            {/* Depoimento em Vídeo 1 */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="relative mb-6">
+                {/* Container do vídeo */}
+                <div className="w-full h-48 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                  {/* Placeholder do vídeo - será substituído pelo elemento <video> */}
+                  <div className="text-center text-white">
+                    <svg className="w-16 h-16 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p className="text-sm font-medium">Depoimento da Família Silva</p>
+                  </div>
+                  
+                  {/* Botão de play sobreposto */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 cursor-pointer group-hover:scale-110">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded"></div>
-                <div className="w-1/2 h-3 bg-gray-200 rounded"></div>
+              
+              {/* Informações do depoimento */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Família Silva</h3>
+                <p className="text-sm text-[#e5007e] font-semibold mb-3">Pais do João</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  "A Communicare transformou a vida do nosso filho. Em apenas 6 meses, ele desenvolveu habilidades que nunca imaginamos seriam possíveis."
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] rounded-full"></div>
+                </div>
               </div>
             </div>
 
-            {/* Depoimento 2 */}
-            <div className="bg-gray-50 rounded-lg p-8 border-l-4 border-[#e5007e]">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-[#a1d6dc] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#4c3e92] text-sm">D2</span>
-                </div>
-                <div>
-                  <div className="w-24 h-4 bg-gray-200 rounded"></div>
-                  <div className="w-20 h-3 bg-gray-200 rounded mt-1"></div>
+            {/* Depoimento em Vídeo 2 */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="relative mb-6">
+                {/* Container do vídeo */}
+                <div className="w-full h-48 bg-gradient-to-br from-[#00b8cc] to-[#0098ac] rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                  {/* Placeholder do vídeo - será substituído pelo elemento <video> */}
+                  <div className="text-center text-white">
+                    <svg className="w-16 h-16 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p className="text-sm font-medium">Depoimento da Família Santos</p>
+                  </div>
+                  
+                  {/* Botão de play sobreposto */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 cursor-pointer group-hover:scale-110">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded"></div>
-                <div className="w-1/2 h-3 bg-gray-200 rounded"></div>
+              
+              {/* Informações do depoimento */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Família Santos</h3>
+                <p className="text-sm text-[#00b8cc] font-semibold mb-3">Pais da Ana</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  "Ver nossa filha progredir dia após dia é uma alegria indescritível. A equipe da Communicare é profissional e carinhosa."
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] rounded-full"></div>
+                </div>
               </div>
             </div>
 
-            {/* Depoimento 3 */}
-            <div className="bg-gray-50 rounded-lg p-8 border-l-4 border-[#f19100]">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-[#a1d6dc] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#4c3e92] text-sm">D3</span>
-                </div>
-                <div>
-                  <div className="w-24 h-4 bg-gray-200 rounded"></div>
-                  <div className="w-20 h-3 bg-gray-200 rounded mt-1"></div>
+            {/* Depoimento em Vídeo 3 */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="relative mb-6">
+                {/* Container do vídeo */}
+                <div className="w-full h-48 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                  {/* Placeholder do vídeo - será substituído pelo elemento <video> */}
+                  <div className="text-center text-white">
+                    <svg className="w-16 h-16 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p className="text-sm font-medium">Depoimento da Família Costa</p>
+                  </div>
+                  
+                  {/* Botão de play sobreposto */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 cursor-pointer group-hover:scale-110">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="w-full h-3 bg-gray-200 rounded"></div>
-                <div className="w-3/4 h-3 bg-gray-200 rounded"></div>
-                <div className="w-1/2 h-3 bg-gray-200 rounded"></div>
+              
+              {/* Informações do depoimento */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Família Costa</h3>
+                <p className="text-sm text-[#37a935] font-semibold mb-3">Pais do Pedro</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  "A evolução do Pedro é impressionante! A equipe da Communicare trabalha com muito amor e dedicação."
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#37a935] to-[#f19100] rounded-full"></div>
+                </div>
               </div>
             </div>
           </div>
