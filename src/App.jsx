@@ -530,7 +530,7 @@ function App() {
       </section>
 
       {/* Seção 3: Diferenciais */}
-      <section id="diferenciais" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#fff7ed] via-[#fed7aa] to-[#fdba74] relative overflow-hidden">
+      <section id="diferenciais" className="w-full py-16 md:py-24 bg-[#f19100] relative overflow-hidden">
         {/* Elementos decorativos de fundo */}
         <div className="absolute inset-0">
           {/* Formas geométricas criativas */}
@@ -543,10 +543,6 @@ function App() {
           <div className="absolute top-1/4 left-20 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-[#4c3e92]/20 transform rotate-45"></div>
           <div className="absolute top-1/3 right-32 w-0 h-0 border-l-[15px] border-r-[15px] border-b-[25px] border-l-transparent border-r-transparent border-b-[#e5007e]/15 transform -rotate-12"></div>
           <div className="absolute bottom-1/4 right-20 w-0 h-0 border-l-[25px] border-r-[25px] border-b-[40px] border-l-transparent border-r-transparent border-b-[#4c3e92]/10 transform rotate-90"></div>
-          
-          {/* Ondas decorativas */}
-          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#4c3e92]/10 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#e5007e]/10 to-transparent"></div>
           
           {/* Estrelas decorativas */}
           <div className="absolute top-20 left-1/4 w-6 h-6 opacity-30">
@@ -564,16 +560,16 @@ function App() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title leading-tight">
-              <span className="block text-[#4c3e92]">O que nos torna</span>
-              <span className="block text-[#e5007e]">únicos</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-title leading-tight">
+              <span className="block text-white">O que nos torna</span>
+              <span className="block text-[#4c3e92]">únicos</span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-8">
+            <div className="w-32 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-white max-w-3xl mx-auto mt-8">
               Descubra os diferenciais que fazem da Communicare uma referência em 
               <span className="font-semibold text-[#4c3e92]"> desenvolvimento humanizado</span>, 
-              <span className="font-semibold text-[#e5007e]"> cuidando com afeto</span> e 
-              <span className="font-semibold text-[#f19100]"> excelência profissional</span>
+              <span className="font-semibold text-white"> cuidando com afeto</span> e 
+              <span className="font-semibold text-[#4c3e92]"> excelência profissional</span>
             </p>
           </div>
           
