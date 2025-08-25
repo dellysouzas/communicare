@@ -827,10 +827,12 @@ function App() {
                 {/* Bruna Rafaella - Psicóloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Bruna Rafaella (sem fundo).png" 
+                        alt="Bruna Rafaella - Psicóloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Bruna Rafaella</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
@@ -841,10 +843,12 @@ function App() {
                 {/* Suelen Basante - Psicóloga e Aplicadora ABA */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Suelen Basante (sem fundo).png" 
+                        alt="Suelen Basante - Psicóloga e Aplicadora ABA" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Suelen Basante</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
@@ -852,29 +856,37 @@ function App() {
                   </div>
                 </div>
 
-                {/* Érica Filgueira - Psicóloga */}
+                {/* Érica Figueira - Psicóloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Erica_Figueira_sem_fundo.png" 
+                        alt="Érica Figueira - Psicóloga" 
+                        className="w-full h-full object-cover rounded-full"
+                        onError={(e) => {
+                          console.log('Erro ao carregar imagem:', e.target.src);
+                          e.target.style.display = 'none';
+                        }}
+                      />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Filgueira</h3>
+                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Figueira</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
                     <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
-                {/* Larissa Beserra - Terapeuta Ocupacional */}
+                {/* Larissa Bezerra - Terapeuta Ocupacional */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#4c3e92] to-[#3a2e6f] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Larissa Bezerra (sem fundo).png" 
+                        alt="Larissa Bezerra - Terapeuta Ocupacional" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Beserra</h3>
+                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Bezerra</h3>
                     <p className="text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
                     <div className="w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
@@ -883,10 +895,12 @@ function App() {
                 {/* Maria Carolina - Psicóloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Maria Carolina (sem fundo).png" 
+                        alt="Maria Carolina - Psicóloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Carolina</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
@@ -897,10 +911,12 @@ function App() {
                 {/* Maria Victória - Terapeuta Ocupacional */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#4c3e92] to-[#3a2e6f] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Maria Victoria (sem fundo).png" 
+                        alt="Maria Victória - Terapeuta Ocupacional" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Victória</h3>
                     <p className="text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
@@ -911,10 +927,12 @@ function App() {
                 {/* Renata Veras - Psicomotricista */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Renata Veras (sem fundo).png" 
+                        alt="Renata Veras - Psicomotricista" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Renata Veras</h3>
                     <p className="text-sm text-[#37a935] font-semibold mb-3">Psicomotricista</p>
@@ -925,10 +943,12 @@ function App() {
                 {/* Izaura Souza - Nutricionista */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#f4a261] to-[#e76f51] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Izaura Souza (sem fundo).png" 
+                        alt="Izaura Souza - Nutricionista" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Izaura Souza</h3>
                     <p className="text-sm text-[#f4a261] font-semibold mb-3">Nutricionista</p>
@@ -939,10 +959,12 @@ function App() {
                 {/* Marina Mariah - Fonoaudióloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#00b8cc] to-[#0098ac] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Marina Mariah (sem fundo).png" 
+                        alt="Marina Mariah - Fonoaudióloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Marina Mariah</h3>
                     <p className="text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
@@ -953,10 +975,12 @@ function App() {
                 {/* Livânia Rodrigues - Psicóloga e Aplicadora ABA */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Livania Rodrigues (sem fundo).png" 
+                        alt="Livânia Rodrigues - Psicóloga e Aplicadora ABA" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Livânia Rodrigues</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
@@ -967,10 +991,12 @@ function App() {
                 {/* Thais Ohanny - Fonoaudióloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#00b8cc] to-[#0098ac] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Thais Ohanny (sem fundo).png" 
+                        alt="Thais Ohanny - Fonoaudióloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Ohanny</h3>
                     <p className="text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
@@ -981,10 +1007,12 @@ function App() {
                 {/* Maria Gabriela - Psicóloga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Maria Gabriela (sem fundo).png" 
+                        alt="Maria Gabriela - Psicóloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Gabriela</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
@@ -995,10 +1023,12 @@ function App() {
                 {/* Thais Farinha - Psicóloga e Supervisora ABA */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Thais Farinha (sem fundo).png" 
+                        alt="Thais Farinha - Psicóloga e Supervisora ABA" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Farinha</h3>
                     <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Supervisora ABA</p>
@@ -1009,10 +1039,12 @@ function App() {
                 {/* Camilla Magalhães - Psicopedagoga */}
                 <div className="w-full md:w-1/2 lg:w-1/4 px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                      </svg>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais-sem-fundo/Camilla Magalhaes (sem fundo).png" 
+                        alt="Camilla Magalhães - Psicopedagoga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Camilla Magalhães</h3>
                     <p className="text-sm text-[#f19100] font-semibold mb-3">Psicopedagoga</p>
