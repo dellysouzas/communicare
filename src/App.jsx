@@ -4,6 +4,19 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   
+  // Estados do Wizard
+  const [currentWizardStep, setCurrentWizardStep] = useState(1);
+  const [formData, setFormData] = useState({
+    responsavelNome: '',
+    responsavelTelefone: '',
+    idade: '',
+    encaminhamento: '',
+    quemEncaminhou: '',
+    especialidade: '',
+    profissionalPreferencia: '',
+    horarioPreferencia: ''
+  });
+  
   // Efeito para animar elementos quando entrarem na viewport
   useEffect(() => {
     // Função para animar a foto da fundadora quando entrar na tela
@@ -97,6 +110,42 @@ function App() {
 
   const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
+  };
+
+  // Função para lidar com o envio do formulário
+  const handleWizardSubmit = (e) => {
+    e.preventDefault();
+    
+    // Aqui você pode implementar a lógica de envio
+    // Por exemplo, enviar para um endpoint da API ou WhatsApp
+    const message = `🚀 *NOVO AGENDAMENTO - COMMUNICARE* 🚀
+
+👤 *Responsável:* ${formData.responsavelNome}
+📱 *Telefone:* ${formData.responsavelTelefone}
+👶 *Idade da criança:* ${formData.idade}
+📋 *Encaminhamento:* ${formData.encaminhamento === 'sim' ? `Sim - ${formData.quemEncaminhou}` : 'Não'}
+🏥 *Especialidade:* ${formData.especialidade}
+👩‍⚕️ *Profissional preferido:* ${formData.profissionalPreferencia || 'Sem preferência'}
+⏰ *Horário preferido:* ${formData.horarioPreferencia || 'Sem preferência'}
+
+_Formulário enviado via site da Communicare_`;
+
+    // Abrir WhatsApp com a mensagem
+    const whatsappUrl = `https://wa.me/5581998660984?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Resetar formulário
+    setFormData({
+      responsavelNome: '',
+      responsavelTelefone: '',
+      idade: '',
+      encaminhamento: '',
+      quemEncaminhou: '',
+      especialidade: '',
+      profissionalPreferencia: '',
+      horarioPreferencia: ''
+    });
+    setCurrentWizardStep(1);
   };
 
   // Efeito para atualizar o carrossel quando currentSlide mudar
@@ -1333,52 +1382,474 @@ function App() {
       <section id="contato" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#009db0] to-[#a1d6dc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#4c3e92] mb-6 font-title">
-              Contato
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-title leading-tight">
+              <span className="block text-white">Vamos conversar sobre</span>
+              <span className="block text-[#f4a261]">o futuro do seu filho?</span>
             </h2>
-            <div className="w-24 h-1 bg-white mx-auto"></div>
+            <div className="w-32 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mt-8">
+              Agende uma <span className="font-semibold text-[#4c3e92]">visita gratuita</span> e sem compromisso para conhecer nossos espaços e 
+              <span className="font-semibold text-white"> conversar sobre as necessidades</span> da sua família
+            </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Formulário Wizard */}
+            <div className="bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl">
+              <div className="text-center mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#4c3e92] to-[#e5007e] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 font-title">
+                  Aproveite sua visita gratuita
+                </h3>
+                <p className="text-white/80 text-sm">
+                  Preencha o formulário e nossa equipe entrará em contato
+                </p>
+              </div>
+              
+              {/* Indicadores de Progresso */}
+              <div className="flex justify-center mb-10">
+                {[1, 2, 3, 4].map((step) => (
+                  <div key={step} className="flex items-center">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-500 transform ${
+                      step <= currentWizardStep 
+                        ? 'bg-gradient-to-br from-[#4c3e92] to-[#e5007e] text-white shadow-lg scale-110' 
+                        : 'bg-white/20 text-white/60'
+                    }`}>
+                      {step}
+                    </div>
+                    {step < 4 && (
+                      <div className={`w-16 h-1 mx-3 transition-all duration-500 rounded-full ${
+                        step < currentWizardStep 
+                          ? 'bg-gradient-to-r from-[#4c3e92] to-[#e5007e]' 
+                          : 'bg-white/20'
+                      }`}></div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Formulário Wizard */}
+              <form onSubmit={handleWizardSubmit} className="space-y-6">
+                {/* Etapa 1: Informações Básicas */}
+                {currentWizardStep === 1 && (
+                  <div className="space-y-6 animate-fadeIn">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#4c3e92] to-[#00b8cc] rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        Informações do Responsável
+                      </h4>
+                      <p className="text-white/70 text-sm">
+                        Vamos começar com seus dados de contato
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#4c3e92]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                          Nome Completo *
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.responsavelNome}
+                          onChange={(e) => setFormData({...formData, responsavelNome: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#4c3e92] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          placeholder="Digite o nome completo"
+                          required
+                        />
+                      </div>
+                      
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          </svg>
+                          Telefone/WhatsApp *
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.responsavelTelefone}
+                          onChange={(e) => setFormData({...formData, responsavelTelefone: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          placeholder="(81) 99999-9999"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Etapa 2: Informações da Criança */}
+                {currentWizardStep === 2 && (
+                  <div className="space-y-6 animate-fadeIn">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        Sobre a Criança/Adolescente
+                      </h4>
+                      <p className="text-white/70 text-sm">
+                        Conte-nos um pouco sobre quem será atendido
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" />
+                          </svg>
+                          Idade *
+                        </label>
+                        <select
+                          value={formData.idade}
+                          onChange={(e) => setFormData({...formData, idade: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          required
+                        >
+                          <option value="">Selecione a idade</option>
+                          <option value="0-6 meses">0 a 6 meses</option>
+                          <option value="6-12 meses">6 a 12 meses</option>
+                          <option value="1-2 anos">1 a 2 anos</option>
+                          <option value="2-3 anos">2 a 3 anos</option>
+                          <option value="3-4 anos">3 a 4 anos</option>
+                          <option value="4-5 anos">4 a 5 anos</option>
+                          <option value="5-6 anos">5 a 6 anos</option>
+                          <option value="6-7 anos">6 a 7 anos</option>
+                          <option value="7-8 anos">7 a 8 anos</option>
+                          <option value="8-9 anos">8 a 9 anos</option>
+                          <option value="9-10 anos">9 a 10 anos</option>
+                          <option value="10-12 anos">10 a 12 anos</option>
+                          <option value="12-14 anos">12 a 14 anos</option>
+                          <option value="14-16 anos">14 a 16 anos</option>
+                          <option value="16-18 anos">16 a 18 anos</option>
+                        </select>
+                      </div>
+                      
+                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                        <label className="block text-white/90 text-sm font-medium mb-3 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Possui encaminhamento prévio? *
+                        </label>
+                        <div className="flex space-x-6">
+                          <label className="flex items-center cursor-pointer group">
+                            <div className="w-5 h-5 border-2 border-white/40 rounded-full mr-3 flex items-center justify-center transition-all duration-200 group-hover:border-[#e5007e]">
+                              <input
+                                type="radio"
+                                name="encaminhamento"
+                                value="sim"
+                                checked={formData.encaminhamento === 'sim'}
+                                onChange={(e) => setFormData({...formData, encaminhamento: e.target.value})}
+                                className="sr-only"
+                                required
+                              />
+                              {formData.encaminhamento === 'sim' && (
+                                <div className="w-3 h-3 bg-[#e5007e] rounded-full"></div>
+                              )}
+                            </div>
+                            <span className="text-white/90 group-hover:text-white transition-colors duration-200">Sim</span>
+                          </label>
+                          <label className="flex items-center cursor-pointer group">
+                            <div className="w-5 h-5 border-2 border-white/40 rounded-full mr-3 flex items-center justify-center transition-all duration-200 group-hover:border-[#e5007e]">
+                              <input
+                                type="radio"
+                                name="encaminhamento"
+                                value="nao"
+                                checked={formData.encaminhamento === 'nao'}
+                                onChange={(e) => setFormData({...formData, encaminhamento: e.target.value})}
+                                className="sr-only"
+                                required
+                              />
+                              {formData.encaminhamento === 'nao' && (
+                                <div className="w-3 h-3 bg-[#e5007e] rounded-full"></div>
+                              )}
+                            </div>
+                            <span className="text-white/90 group-hover:text-white transition-colors duration-200">Não</span>
+                          </label>
+                        </div>
+                      </div>
+                      
+                      {formData.encaminhamento === 'sim' && (
+                        <div className="relative animate-fadeIn">
+                          <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                            <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            Quem encaminhou? *
+                          </label>
+                          <select
+                            value={formData.quemEncaminhou}
+                            onChange={(e) => setFormData({...formData, quemEncaminhou: e.target.value})}
+                            className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                            required
+                          >
+                            <option value="">Selecione quem encaminhou</option>
+                            <option value="escola">Escola/Creche</option>
+                            <option value="pediatra">Pediatra</option>
+                            <option value="psicologo">Psicólogo</option>
+                            <option value="fonoaudiologo">Fonoaudiólogo</option>
+                            <option value="psicopedagogo">Psicopedagogo</option>
+                            <option value="neurologista">Neurologista</option>
+                            <option value="outro">Outro</option>
+                          </select>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Etapa 3: Especialidades */}
+                {currentWizardStep === 3 && (
+                  <div className="space-y-6 animate-fadeIn">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#00b8cc] to-[#37a935] rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        Especialidades e Preferências
+                      </h4>
+                      <p className="text-white/70 text-sm">
+                        Escolha o tipo de atendimento desejado
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          Qual especialidade procura? *
+                        </label>
+                        <select
+                          value={formData.especialidade}
+                          onChange={(e) => setFormData({...formData, especialidade: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          required
+                        >
+                          <option value="">Selecione a especialidade</option>
+                          <option value="avaliacao">🎯 Avaliação Gratuita (sem encaminhamento)</option>
+                          <option value="fonoaudiologia">🗣️ Fonoaudiologia</option>
+                          <option value="psicologia">🧠 Psicologia</option>
+                          <option value="psicopedagogia">📚 Psicopedagogia</option>
+                          <option value="terapia_ocupacional">🎨 Terapia Ocupacional</option>
+                          <option value="fisioterapia">💪 Fisioterapia</option>
+                          <option value="nutricao">🥗 Nutrição</option>
+                          <option value="psiquiatria">💊 Psiquiatria</option>
+                          <option value="neurologia">⚡ Neurologia</option>
+                          <option value="pediatria">👶 Pediatria</option>
+                        </select>
+                      </div>
+                      
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                          Tem preferência por alguma profissional?
+                        </label>
+                        <select
+                          value={formData.profissionalPreferencia}
+                          onChange={(e) => setFormData({...formData, profissionalPreferencia: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                        >
+                          <option value="">Sem preferência específica</option>
+                          <option value="ana_grecia">👩‍⚕️ Ana Grécia Calado</option>
+                          <option value="bruna_rafaella">👩‍⚕️ Bruna Rafaella</option>
+                          <option value="camilla_magalhaes">👩‍⚕️ Camilla Magalhães</option>
+                          <option value="erica_figueira">👩‍⚕️ Érica Figueira</option>
+                          <option value="izaura_souza">👩‍⚕️ Izaura Souza</option>
+                          <option value="larissa_bezerra">👩‍⚕️ Larissa Bezerra</option>
+                          <option value="livania_rodrigues">👩‍⚕️ Livânia Rodrigues</option>
+                          <option value="maria_carolina">👩‍⚕️ Maria Carolina</option>
+                          <option value="maria_gabriela">👩‍⚕️ Maria Gabriela</option>
+                          <option value="maria_victoria">👩‍⚕️ Maria Victória</option>
+                          <option value="marina_mariah">👩‍⚕️ Marina Mariah</option>
+                          <option value="renata_veras">👩‍⚕️ Renata Veras</option>
+                          <option value="suelen_basante">👩‍⚕️ Suelen Basante</option>
+                          <option value="thais_farinha">👩‍⚕️ Thais Farinha</option>
+                          <option value="thais_ohanny">👩‍⚕️ Thais Ohanny</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Etapa 4: Horários e Finalização */}
+                {currentWizardStep === 4 && (
+                  <div className="space-y-6 animate-fadeIn">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        Horários e Finalização
+                      </h4>
+                      <p className="text-white/70 text-sm">
+                        Última etapa! Confirme suas preferências
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Preferência de horário para agendamento
+                        </label>
+                        <select
+                          value={formData.horarioPreferencia}
+                          onChange={(e) => setFormData({...formData, horarioPreferencia: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#e5007e] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                        >
+                          <option value="">Sem preferência específica</option>
+                          <option value="manha">🌅 Manhã (08h às 12h)</option>
+                          <option value="tarde">🌇 Tarde (13h às 17h)</option>
+                          <option value="manha_tarde">🕐 Manhã ou Tarde</option>
+                          <option value="especifico">⏰ Horário específico</option>
+                        </select>
+                      </div>
+                      
+                      <div className="bg-gradient-to-br from-[#4c3e92]/30 to-[#e5007e]/20 rounded-xl p-6 border border-white/20 shadow-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-10 h-10 bg-gradient-to-br from-[#4c3e92] to-[#e5007e] rounded-full flex items-center justify-center mr-3">
+                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <h5 className="text-lg font-bold text-white">Resumo do Agendamento</h5>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-white/90">
+                          <div className="bg-white/10 rounded-lg p-3">
+                            <p className="font-semibold text-[#4c3e92] mb-1">👤 Responsável</p>
+                            <p className="text-white">{formData.responsavelNome}</p>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-3">
+                            <p className="font-semibold text-[#37a935] mb-1">📱 Telefone</p>
+                            <p className="text-white">{formData.responsavelTelefone}</p>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-3">
+                            <p className="font-semibold text-[#f19100] mb-1">👶 Idade</p>
+                            <p className="text-white">{formData.idade}</p>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-3">
+                            <p className="font-semibold text-[#e5007e] mb-1">📋 Encaminhamento</p>
+                            <p className="text-white">{formData.encaminhamento === 'sim' ? `Sim - ${formData.quemEncaminhou}` : 'Não'}</p>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
+                            <p className="font-semibold text-[#00b8cc] mb-1">🏥 Especialidade</p>
+                            <p className="text-white">{formData.especialidade}</p>
+                          </div>
+                          {formData.profissionalPreferencia && (
+                            <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
+                              <p className="font-semibold text-[#37a935] mb-1">👩‍⚕️ Profissional Preferido</p>
+                              <p className="text-white">{formData.profissionalPreferencia}</p>
+                            </div>
+                          )}
+                          {formData.horarioPreferencia && (
+                            <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
+                              <p className="font-semibold text-[#f19100] mb-1">⏰ Horário Preferido</p>
+                              <p className="text-white">{formData.horarioPreferencia}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Navegação do Wizard */}
+                <div className="flex justify-between pt-6">
+                  {currentWizardStep > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => setCurrentWizardStep(currentWizardStep - 1)}
+                      className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Anterior
+                    </button>
+                  )}
+                  {currentWizardStep < 4 ? (
+                    <button
+                      type="button"
+                      onClick={() => setCurrentWizardStep(currentWizardStep + 1)}
+                      className="ml-auto px-8 py-3 bg-gradient-to-r from-[#4c3e92] to-[#00b8cc] hover:from-[#3d2f7a] hover:to-[#009db0] text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                    >
+                      Próximo
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  ) : (
+                    <button
+                      type="submit"
+                      className="ml-auto px-10 py-4 bg-gradient-to-r from-[#e5007e] to-[#f19100] hover:from-[#cc0072] hover:to-[#d98200] text-white rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Agendar Visita
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+            
             {/* Informações de Contato */}
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Entre em Contato
+                Fale conosco
               </h3>
               <div className="space-y-4">
+                                         <div className="flex items-center">
+                           <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
+                             <span className="text-white text-sm">📞</span>
+                           </div>
+                           <a href="https://wa.me/5581998660984" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">(81) 99866-0984</a>
+                         </div>
+                                         <div className="flex items-center">
+                           <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
+                             <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                             </svg>
+                           </div>
+                           <a href="mailto:communicare@greciacalado.com.br" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">communicare@greciacalado.com.br</a>
+                         </div>
+                                         <div className="flex items-center">
+                           <div className="w-8 h-8 bg-white/20 rounded-lg mr-4 flex items-center justify-center">
+                             <span className="text-white text-sm">📍</span>
+                           </div>
+                           <a href="https://maps.app.goo.gl/ubbRa5pxMVYxFRxv5" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">R. João Cardoso Aires, 555 - Boa Viagem, Recife/PE</a>
+                         </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                    <span className="text-white text-sm">📞</span>
+                    <span className="text-white text-sm">🕒</span>
                   </div>
-                  <div className="w-32 h-4 bg-white/20 rounded"></div>
+                  <div className="text-white font-medium">Segunda a sexta, das 08h às 18h</div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                    <span className="text-white text-sm">📧</span>
-                  </div>
-                  <div className="w-40 h-4 bg-white/20 rounded"></div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                    <span className="text-white text-sm">📍</span>
-                  </div>
-                  <div className="w-48 h-4 bg-white/20 rounded"></div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Formulário de Contato */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-              <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Envie uma Mensagem
-              </h3>
-              <div className="space-y-4">
-                <div className="w-full h-12 bg-white/20 rounded-lg"></div>
-                <div className="w-full h-12 bg-white/20 rounded-lg"></div>
-                <div className="w-full h-24 bg-white/20 rounded-lg"></div>
-                <button className="w-full bg-[#e5007e] hover:bg-[#cc0072] text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200 font-title">
-                  Enviar Mensagem
-                </button>
               </div>
             </div>
           </div>
@@ -1386,37 +1857,32 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-[#4c3e92] text-white py-12">
+      <footer className="w-full bg-[#4c3e92] text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo e Descrição */}
             <div className="col-span-1 sm:col-span-2 lg:col-span-2">
-              <img src="/logos/Branca.png" alt="Communicare" className="h-12 w-auto mb-4" />
+              <img src="/logos/Branca.png" alt="Communicare" className="h-28 w-auto mb-2" />
               <p className="text-white/80 text-sm leading-relaxed mb-4">
-                Clínica especializada em comunicação e desenvolvimento humano, oferecendo serviços personalizados para melhorar suas habilidades de comunicação e relacionamento.
+                Communicare Clínica. Especializada em comunicação e desenvolvimento humano, oferecendo serviços personalizados para melhorar suas habilidades de comunicação e relacionamento.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
+                <a href="https://www.instagram.com/communicareclinica/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c0-2.518-2.084-4.557-4.656-4.557H4.656C2.084 0 0 2.039 0 4.557v5.446c0 2.518 2.084 4.557 4.656 4.557h1.766l-.001 1.83c0 .087.087.173.173.173.087 0 .173-.087.173-.173l.001-1.83h1.766c2.572 0 4.656-2.039 4.656-4.557V4.557z"/>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
+                <a href="https://wa.me/5581998660984" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors duration-200">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.335 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.988C24.007 5.367 18.641.001 12.017.001z"/>
                   </svg>
                 </a>
               </div>
             </div>
             
-            {/* Links Rápidos */}
+            {/* Links rápidos */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold font-title">Links Rápidos</h3>
+              <h3 className="text-lg font-semibold font-title">Links rápidos</h3>
               <ul className="space-y-2">
                 <li><a href="#quem-somos" className="text-white/70 hover:text-white transition-colors duration-200">Quem somos</a></li>
                 <li><a href="#diferenciais" className="text-white/70 hover:text-white transition-colors duration-200">Diferenciais</a></li>
@@ -1425,28 +1891,18 @@ function App() {
               </ul>
             </div>
             
-            {/* Contato */}
+            {/* Fale conosco */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold font-title">Contato</h3>
+              <h3 className="text-lg font-semibold font-title">Fale conosco</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-white/70">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  (11) 99999-9999
+                <li className="text-white/70">
+                  <a href="https://wa.me/5581998660984" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">(81) 99866-0984</a>
                 </li>
-                <li className="flex items-center text-white/70">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  contato@communicare.com
+                <li className="text-white/70">
+                  <a href="mailto:communicare@greciacalado.com.br" className="hover:text-white transition-colors duration-200">communicare@greciacalado.com.br</a>
                 </li>
-                <li className="flex items-center text-white/70">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  São Paulo, SP
+                <li className="text-white/70">
+                  <a href="https://maps.app.goo.gl/ubbRa5pxMVYxFRxv5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">R. João Cardoso Aires, 555 - Boa Viagem, Recife/PE</a>
                 </li>
               </ul>
             </div>
@@ -1454,7 +1910,7 @@ function App() {
           
           <div className="mt-8 pt-8 border-t border-white/20 text-center">
             <p className="text-white/60 text-sm">
-              © 2024 Communicare. Todos os direitos reservados.
+              © 2025 Communicare Clínica. Todos os direitos reservados.
             </p>
           </div>
         </div>
@@ -1463,7 +1919,7 @@ function App() {
       {/* Ícone Flutuante do WhatsApp */}
       <div className="fixed bottom-6 right-6 z-50">
         <a 
-          href="https://wa.me/5511999999999" 
+          href="https://wa.me/5581998660984" 
           target="_blank" 
           rel="noopener noreferrer"
           className="block w-16 h-16 bg-[#37a935] rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 flex items-center justify-center group relative"

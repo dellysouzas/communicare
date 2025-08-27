@@ -39,3 +39,37 @@ body {
   flex-shrink: 0;
   width: 100%;
 }
+
+/* Animações para o Wizard */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Estilos para os campos do formulário */
+.wizard-form input:focus,
+.wizard-form select:focus {
+  outline: none;
+  border-color: #4c3e92;
+  box-shadow: 0 0 0 3px rgba(76, 62, 146, 0.1);
+}
+
+/* Transições suaves para os botões */
+.wizard-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.wizard-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
