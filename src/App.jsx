@@ -350,6 +350,11 @@ _Formulário enviado via site da Communicare_`;
     setErrors({});
   }, [currentWizardStep]);
   
+  // Função para fechar o menu mobile
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -357,39 +362,39 @@ _Formulário enviado via site da Communicare_`;
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="#hero" className="transition-transform duration-200 hover:scale-105">
+            <a href="#hero" onClick={closeMobileMenu} className="transition-transform duration-200 hover:scale-105">
               <img src="/logos/Elemento colorido.png" alt="Communicare" className="h-12 sm:h-14 lg:h-16 w-auto" />
             </a>
           </div>
           
           {/* Navegação Desktop */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#quem-somos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#quem-somos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Quem somos</span>
               <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#diferenciais" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#diferenciais" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Diferenciais</span>
               <div className="absolute inset-0 bg-[#f19100] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#servicos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#servicos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Serviços</span>
               <div className="absolute inset-0 bg-[#37a935] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#profissionais" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#profissionais" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Profissionais</span>
               <div className="absolute inset-0 bg-[#009db0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#depoimentos" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#depoimentos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Depoimentos</span>
               <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#contato" className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+            <a href="#contato" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Contato</span>
               <div className="absolute inset-0 bg-[#f19100] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
@@ -397,7 +402,7 @@ _Formulário enviado via site da Communicare_`;
 
           {/* Botão CTA Desktop */}
           <div className="hidden lg:block flex-shrink-0">
-            <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl font-title whitespace-nowrap">
+            <a href="#contato" onClick={closeMobileMenu} className="bg-[#f19100] hover:bg-[#d98200] text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl font-title whitespace-nowrap">
               Agende sua visita
             </a>
           </div>
@@ -405,7 +410,7 @@ _Formulário enviado via site da Communicare_`;
           {/* Menu Mobile */}
           <div className="lg:hidden flex items-center space-x-2 sm:space-x-3">
             {/* Botão CTA Mobile */}
-            <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-3 sm:px-4 py-2 rounded-lg font-medium transition-colors duration-200 font-title text-xs sm:text-sm whitespace-nowrap">
+            <a href="#contato" onClick={closeMobileMenu} className="bg-[#f19100] hover:bg-[#d98200] text-white px-3 sm:px-4 py-2 rounded-lg font-medium transition-colors duration-200 font-title text-xs sm:text-sm whitespace-nowrap">
               Agende sua visita
             </a>
             
@@ -459,49 +464,49 @@ _Formulário enviado via site da Communicare_`;
               <div className="px-4 py-6 space-y-2">
                 {/* Quem somos */}
                 <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
-                  <a href="#quem-somos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#quem-somos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
                     Quem somos
                   </a>
                 </div>
                 
                 {/* Diferenciais */}
                 <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
-                  <a href="#diferenciais" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#diferenciais" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
                     Diferenciais
                   </a>
                 </div>
                 
                 {/* Serviços */}
                 <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
-                  <a href="#servicos" className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#servicos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
                     Serviços
                   </a>
                 </div>
                 
                 {/* Profissionais */}
                 <div className="bg-gradient-to-r from-[#009db0]/10 to-transparent rounded-lg p-3 border-l-4 border-[#009db0]">
-                  <a href="#profissionais" className="block text-[#4c3e92] hover:text-[#009db0] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#profissionais" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#009db0] font-semibold transition-colors duration-200 font-title py-2">
                     Profissionais
                   </a>
                 </div>
                 
                 {/* Depoimentos */}
                 <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
-                  <a href="#depoimentos" className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#depoimentos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
                     Depoimentos
                   </a>
                 </div>
                 
                 {/* Contato */}
                 <div className="bg-gradient-to-r from-[#f19100]/10 to-transparent rounded-lg p-3 border-l-4 border-[#f19100]">
-                  <a href="#contato" className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
+                  <a href="#contato" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#f19100] font-semibold transition-colors duration-200 font-title py-2">
                     Contato
                   </a>
                 </div>
                 
                 {/* Botão CTA Mobile */}
                 <div className="pt-4 mt-6 border-t border-gray-200">
-                  <a href="#contato" className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
+                  <a href="#contato" onClick={closeMobileMenu} className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
                     Agende sua consulta
                   </a>
             </div>
@@ -572,13 +577,13 @@ _Formulário enviado via site da Communicare_`;
               
               {/* Botões CTA */}
               <div className="flex flex-col gap-6 sm:flex-row sm:gap-4 justify-center lg:justify-start">
-                <a href="#contato" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
+                <a href="#contato" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
                   Visite gratuitamente
                   <svg className="ml-3 sm:ml-2 w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-                <a href="#quem-somos" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/40 hover:border-white/60 font-semibold rounded-xl sm:rounded-lg transition-all duration-300 font-title text-lg sm:text-base">
+                <a href="#quem-somos" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/40 hover:border-white/60 font-semibold rounded-xl sm:rounded-lg transition-all duration-300 font-title text-lg sm:text-base">
                   Nossa história
                 </a>
               </div>
@@ -1738,7 +1743,7 @@ _Formulário enviado via site da Communicare_`;
                       <div className={`relative ${showErrors && errors.idade ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" />
                           </svg>
                           Idade *
                         </label>
