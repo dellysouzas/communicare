@@ -664,32 +664,32 @@ function App() {
             <div className="relative group">
               {/* Container do vídeo com efeitos elegantes */}
               <div className="relative w-full max-w-4xl mx-auto bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
-                {/* Placeholder do vídeo - será substituído pelo elemento <video> */}
-                <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-2xl flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <svg className="w-20 h-20 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                    <p className="text-lg font-medium">Vídeo dos Espaços da Clínica</p>
-                    <p className="text-sm opacity-80 mt-2">Em breve: Tour pelos ambientes acolhedores</p>
-                  </div>
-                </div>
+                {/* Vídeo dos espaços da clínica */}
+                <video 
+                  className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-2xl relative z-10"
+                  controls
+                  preload="metadata"
+                  poster="/capa.jpg"
+                >
+                  <source src="/videos/videoespaco.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
                 
                 {/* Overlay sutil no vídeo */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
                 
                 {/* Borda luminosa sutil */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f19100]/20 via-transparent to-[#e5007e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f19100]/20 via-transparent to-[#e5007e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
               
               {/* Sombra elegante */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl transform translate-y-6 blur-2xl group-hover:translate-y-8 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl transform translate-y-6 blur-2xl group-hover:translate-y-8 transition-transform duration-500 -z-10"></div>
               
               {/* Elementos decorativos flutuantes */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full animate-pulse shadow-lg">
+              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full animate-pulse shadow-lg z-20">
                 <div className="absolute inset-1 bg-white/20 rounded-full"></div>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full animate-pulse delay-1000 shadow-lg">
+              <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full animate-pulse delay-1000 shadow-lg z-20">
                 <div className="absolute inset-1 bg-white/20 rounded-full"></div>
               </div>
             </div>
