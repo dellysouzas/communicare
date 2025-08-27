@@ -16,6 +16,8 @@ function App() {
     profissionalPreferencia: '',
     horarioPreferencia: ''
   });
+  const [errors, setErrors] = useState({});
+  const [showErrors, setShowErrors] = useState(false);
   
   // Efeito para animar elementos quando entrarem na viewport
   useEffect(() => {
@@ -112,6 +114,57 @@ function App() {
     setCurrentSlide(slideIndex);
   };
 
+  // Função para validar campos da etapa atual
+  const validateCurrentStep = () => {
+    const newErrors = {};
+    
+    if (currentWizardStep === 1) {
+      if (!formData.responsavelNome.trim()) {
+        newErrors.responsavelNome = 'Nome é obrigatório';
+      }
+      if (!formData.responsavelTelefone.trim()) {
+        newErrors.responsavelTelefone = 'Telefone é obrigatório';
+      }
+    }
+    
+    if (currentWizardStep === 2) {
+      if (!formData.idade) {
+        newErrors.idade = 'Idade é obrigatória';
+      }
+      if (!formData.encaminhamento) {
+        newErrors.encaminhamento = 'Encaminhamento é obrigatório';
+      }
+      if (formData.encaminhamento === 'sim' && !formData.quemEncaminhou) {
+        newErrors.quemEncaminhou = 'Quem encaminhou é obrigatório';
+      }
+    }
+    
+    if (currentWizardStep === 3) {
+      if (!formData.especialidade) {
+        newErrors.especialidade = 'Especialidade é obrigatória';
+      }
+    }
+    
+    setErrors(newErrors);
+    setShowErrors(true);
+    
+    // Se há erros, fazer scroll até o primeiro erro
+    if (Object.keys(newErrors).length > 0) {
+      setTimeout(() => {
+        const firstErrorField = document.querySelector('.error-field');
+        if (firstErrorField) {
+          firstErrorField.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }
+      }, 100);
+      return false;
+    }
+    
+    return true;
+  };
+
   // Função para lidar com o envio do formulário
   const handleWizardSubmit = (e) => {
     e.preventDefault();
@@ -146,6 +199,8 @@ _Formulário enviado via site da Communicare_`;
       horarioPreferencia: ''
     });
     setCurrentWizardStep(1);
+    setErrors({});
+    setShowErrors(false);
   };
 
   // Efeito para atualizar o carrossel quando currentSlide mudar
@@ -157,6 +212,12 @@ _Formulário enviado via site da Communicare_`;
       carousel.style.transform = `translateX(${translateX}%)`;
     }
   }, [currentSlide]);
+
+  // Efeito para limpar erros quando mudar de etapa
+  useEffect(() => {
+    setShowErrors(false);
+    setErrors({});
+  }, [currentWizardStep]);
   
   return (
     <div className="min-h-screen bg-white">
@@ -1452,7 +1513,7 @@ _Formulário enviado via site da Communicare_`;
                     </div>
                     
                     <div className="space-y-4">
-                      <div className="relative">
+                      <div className={`relative ${showErrors && errors.responsavelNome ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#4c3e92]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -1462,14 +1523,31 @@ _Formulário enviado via site da Communicare_`;
                         <input
                           type="text"
                           value={formData.responsavelNome}
-                          onChange={(e) => setFormData({...formData, responsavelNome: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#4c3e92] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          onChange={(e) => {
+                            setFormData({...formData, responsavelNome: e.target.value});
+                            if (showErrors && errors.responsavelNome) {
+                              setErrors({...errors, responsavelNome: null});
+                            }
+                          }}
+                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#4c3e92] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                            showErrors && errors.responsavelNome 
+                              ? 'border-red-400 focus:ring-red-400' 
+                              : 'border-white/30'
+                          }`}
                           placeholder="Digite o nome completo"
                           required
                         />
+                        {showErrors && errors.responsavelNome && (
+                          <div className="absolute -bottom-6 left-0 text-red-400 text-sm flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            {errors.responsavelNome}
+                          </div>
+                        )}
                       </div>
                       
-                      <div className="relative">
+                      <div className={`relative ${showErrors && errors.responsavelTelefone ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -1479,11 +1557,28 @@ _Formulário enviado via site da Communicare_`;
                         <input
                           type="tel"
                           value={formData.responsavelTelefone}
-                          onChange={(e) => setFormData({...formData, responsavelTelefone: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          onChange={(e) => {
+                            setFormData({...formData, responsavelTelefone: e.target.value});
+                            if (showErrors && errors.responsavelTelefone) {
+                              setErrors({...errors, responsavelTelefone: null});
+                            }
+                          }}
+                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                            showErrors && errors.responsavelTelefone 
+                              ? 'border-red-400 focus:ring-red-400' 
+                              : 'border-white/30'
+                          }`}
                           placeholder="(81) 99999-9999"
                           required
                         />
+                        {showErrors && errors.responsavelTelefone && (
+                          <div className="absolute -bottom-6 left-0 text-red-400 text-sm flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            {errors.responsavelTelefone}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -1507,7 +1602,7 @@ _Formulário enviado via site da Communicare_`;
                     </div>
                     
                     <div className="space-y-4">
-                      <div className="relative">
+                      <div className={`relative ${showErrors && errors.idade ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" />
@@ -1516,8 +1611,17 @@ _Formulário enviado via site da Communicare_`;
                         </label>
                         <select
                           value={formData.idade}
-                          onChange={(e) => setFormData({...formData, idade: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          onChange={(e) => {
+                            setFormData({...formData, idade: e.target.value});
+                            if (showErrors && errors.idade) {
+                              setErrors({...errors, idade: null});
+                            }
+                          }}
+                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                            showErrors && errors.idade 
+                              ? 'border-red-400 focus:ring-red-400' 
+                              : 'border-white/30'
+                          }`}
                           required
                         >
                           <option value="">Selecione a idade</option>
@@ -1537,9 +1641,17 @@ _Formulário enviado via site da Communicare_`;
                           <option value="14-16 anos">14 a 16 anos</option>
                           <option value="16-18 anos">16 a 18 anos</option>
                         </select>
+                        {showErrors && errors.idade && (
+                          <div className="absolute -bottom-6 left-0 text-red-400 text-sm flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            {errors.idade}
+                          </div>
+                        )}
                       </div>
                       
-                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                      <div className={`bg-white/10 rounded-xl p-4 border ${showErrors && errors.encaminhamento ? 'border-red-400' : 'border-white/20'} ${showErrors && errors.encaminhamento ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-3 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1554,7 +1666,12 @@ _Formulário enviado via site da Communicare_`;
                                 name="encaminhamento"
                                 value="sim"
                                 checked={formData.encaminhamento === 'sim'}
-                                onChange={(e) => setFormData({...formData, encaminhamento: e.target.value})}
+                                onChange={(e) => {
+                                  setFormData({...formData, encaminhamento: e.target.value});
+                                  if (showErrors && errors.encaminhamento) {
+                                    setErrors({...errors, encaminhamento: null});
+                                  }
+                                }}
                                 className="sr-only"
                                 required
                               />
@@ -1571,7 +1688,12 @@ _Formulário enviado via site da Communicare_`;
                                 name="encaminhamento"
                                 value="nao"
                                 checked={formData.encaminhamento === 'nao'}
-                                onChange={(e) => setFormData({...formData, encaminhamento: e.target.value})}
+                                onChange={(e) => {
+                                  setFormData({...formData, encaminhamento: e.target.value});
+                                  if (showErrors && errors.encaminhamento) {
+                                    setErrors({...errors, encaminhamento: null});
+                                  }
+                                }}
                                 className="sr-only"
                                 required
                               />
@@ -1582,10 +1704,18 @@ _Formulário enviado via site da Communicare_`;
                             <span className="text-white/90 group-hover:text-white transition-colors duration-200">Não</span>
                           </label>
                         </div>
+                        {showErrors && errors.encaminhamento && (
+                          <div className="mt-3 text-red-400 text-sm flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            {errors.encaminhamento}
+                          </div>
+                        )}
                       </div>
                       
                       {formData.encaminhamento === 'sim' && (
-                        <div className="relative animate-fadeIn">
+                        <div className={`relative animate-fadeIn ${showErrors && errors.quemEncaminhou ? 'error-field' : ''}`}>
                           <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                             <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -1594,8 +1724,17 @@ _Formulário enviado via site da Communicare_`;
                           </label>
                           <select
                             value={formData.quemEncaminhou}
-                            onChange={(e) => setFormData({...formData, quemEncaminhou: e.target.value})}
-                            className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                            onChange={(e) => {
+                              setFormData({...formData, quemEncaminhou: e.target.value});
+                              if (showErrors && errors.quemEncaminhou) {
+                                setErrors({...errors, quemEncaminhou: null});
+                              }
+                            }}
+                            className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                              showErrors && errors.quemEncaminhou 
+                                ? 'border-red-400 focus:ring-red-400' 
+                                : 'border-white/30'
+                            }`}
                             required
                           >
                             <option value="">Selecione quem encaminhou</option>
@@ -1607,6 +1746,14 @@ _Formulário enviado via site da Communicare_`;
                             <option value="neurologista">Neurologista</option>
                             <option value="outro">Outro</option>
                           </select>
+                          {showErrors && errors.quemEncaminhou && (
+                            <div className="absolute -bottom-6 left-0 text-red-400 text-sm flex items-center">
+                              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                              </svg>
+                              {errors.quemEncaminhou}
+                            </div>
+                        )}
                         </div>
                       )}
                     </div>
@@ -1631,7 +1778,7 @@ _Formulário enviado via site da Communicare_`;
                     </div>
                     
                     <div className="space-y-4">
-                      <div className="relative">
+                      <div className={`relative ${showErrors && errors.especialidade ? 'error-field' : ''}`}>
                         <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
                           <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -1640,12 +1787,22 @@ _Formulário enviado via site da Communicare_`;
                         </label>
                         <select
                           value={formData.especialidade}
-                          onChange={(e) => setFormData({...formData, especialidade: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          onChange={(e) => {
+                            setFormData({...formData, especialidade: e.target.value});
+                            if (showErrors && errors.especialidade) {
+                              setErrors({...errors, especialidade: null});
+                            }
+                          }}
+                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                            showErrors && errors.especialidade 
+                              ? 'border-red-400 focus:ring-red-400' 
+                              : 'border-white/30'
+                          }`}
                           required
                         >
                           <option value="">Selecione a especialidade</option>
                           <option value="avaliacao">🎯 Avaliação Gratuita (sem encaminhamento)</option>
+                          <option value="plano_interdisciplinar">🔗 Plano Interdisciplinar</option>
                           <option value="fonoaudiologia">🗣️ Fonoaudiologia</option>
                           <option value="psicologia">🧠 Psicologia</option>
                           <option value="psicopedagogia">📚 Psicopedagogia</option>
@@ -1656,6 +1813,14 @@ _Formulário enviado via site da Communicare_`;
                           <option value="neurologia">⚡ Neurologia</option>
                           <option value="pediatria">👶 Pediatria</option>
                         </select>
+                        {showErrors && errors.especialidade && (
+                          <div className="absolute -bottom-6 left-0 text-red-400 text-sm flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            {errors.especialidade}
+                          </div>
+                        )}
                       </div>
                       
                       <div className="relative">
@@ -1726,7 +1891,6 @@ _Formulário enviado via site da Communicare_`;
                           <option value="manha">🌅 Manhã (08h às 12h)</option>
                           <option value="tarde">🌇 Tarde (13h às 17h)</option>
                           <option value="manha_tarde">🕐 Manhã ou Tarde</option>
-                          <option value="especifico">⏰ Horário específico</option>
                         </select>
                       </div>
                       
@@ -1745,30 +1909,30 @@ _Formulário enviado via site da Communicare_`;
                             <p className="text-white">{formData.responsavelNome}</p>
                           </div>
                           <div className="bg-white/10 rounded-lg p-3">
-                            <p className="font-semibold text-[#37a935] mb-1">📱 Telefone</p>
+                            <p className="font-semibold text-[#4c3e92] mb-1">📱 Telefone</p>
                             <p className="text-white">{formData.responsavelTelefone}</p>
                           </div>
                           <div className="bg-white/10 rounded-lg p-3">
-                            <p className="font-semibold text-[#f19100] mb-1">👶 Idade</p>
+                            <p className="font-semibold text-[#4c3e92] mb-1">👶 Idade</p>
                             <p className="text-white">{formData.idade}</p>
                           </div>
                           <div className="bg-white/10 rounded-lg p-3">
-                            <p className="font-semibold text-[#e5007e] mb-1">📋 Encaminhamento</p>
+                            <p className="font-semibold text-[#4c3e92] mb-1">📋 Encaminhamento</p>
                             <p className="text-white">{formData.encaminhamento === 'sim' ? `Sim - ${formData.quemEncaminhou}` : 'Não'}</p>
                           </div>
                           <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
-                            <p className="font-semibold text-[#00b8cc] mb-1">🏥 Especialidade</p>
+                            <p className="font-semibold text-[#4c3e92] mb-1">🏥 Especialidade</p>
                             <p className="text-white">{formData.especialidade}</p>
                           </div>
                           {formData.profissionalPreferencia && (
                             <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
-                              <p className="font-semibold text-[#37a935] mb-1">👩‍⚕️ Profissional Preferido</p>
+                              <p className="font-semibold text-[#4c3e92] mb-1">👩‍⚕️ Profissional Preferido</p>
                               <p className="text-white">{formData.profissionalPreferencia}</p>
                             </div>
                           )}
                           {formData.horarioPreferencia && (
                             <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
-                              <p className="font-semibold text-[#f19100] mb-1">⏰ Horário Preferido</p>
+                              <p className="font-semibold text-[#4c3e92] mb-1">⏰ Horário Preferido</p>
                               <p className="text-white">{formData.horarioPreferencia}</p>
                             </div>
                           )}
@@ -1795,7 +1959,16 @@ _Formulário enviado via site da Communicare_`;
                   {currentWizardStep < 4 ? (
                     <button
                       type="button"
-                      onClick={() => setCurrentWizardStep(currentWizardStep + 1)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Validar etapa atual antes de avançar
+                        if (validateCurrentStep()) {
+                          setCurrentWizardStep(currentWizardStep + 1);
+                          setShowErrors(false);
+                        }
+                      }}
                       className="ml-auto px-8 py-3 bg-gradient-to-r from-[#4c3e92] to-[#00b8cc] hover:from-[#3d2f7a] hover:to-[#009db0] text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
                     >
                       Próximo
@@ -1818,37 +1991,64 @@ _Formulário enviado via site da Communicare_`;
               </form>
             </div>
             
-            {/* Informações de Contato */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
-                Fale conosco
-              </h3>
-              <div className="space-y-4">
-                                         <div className="flex items-center">
-                           <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                             <span className="text-white text-sm">📞</span>
-                           </div>
-                           <a href="https://wa.me/5581998660984" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">(81) 99866-0984</a>
-                         </div>
-                                         <div className="flex items-center">
-                           <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                             <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                             </svg>
-                           </div>
-                           <a href="mailto:communicare@greciacalado.com.br" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">communicare@greciacalado.com.br</a>
-                         </div>
-                                         <div className="flex items-center">
-                           <div className="w-8 h-8 bg-white/20 rounded-lg mr-4 flex items-center justify-center">
-                             <span className="text-white text-sm">📍</span>
-                           </div>
-                           <a href="https://maps.app.goo.gl/ubbRa5pxMVYxFRxv5" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">R. João Cardoso Aires, 555 - Boa Viagem, Recife/PE</a>
-                         </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
-                    <span className="text-white text-sm">🕒</span>
+            {/* Mascote Niki e Informações de Contato */}
+            <div className="space-y-8">
+              {/* Mascote Niki */}
+              <div className="text-center animate-fadeIn">
+                <div className="relative inline-block">
+                  {/* Círculo decorativo em arco */}
+                  <div className="absolute inset-0 w-56 h-56 mx-auto border-4 border-gradient-to-r from-[#4c3e92]/30 via-[#00b8cc]/30 to-[#e5007e]/30 rounded-full transform -rotate-12"></div>
+                  <div className="absolute inset-0 w-56 h-56 mx-auto border-4 border-gradient-to-r from-[#e5007e]/30 via-[#f19100]/30 to-[#37a935]/30 rounded-full transform rotate-12"></div>
+                  
+                  {/* Círculo principal */}
+                  <div className="relative w-52 h-52 bg-gradient-to-br from-[#4c3e92]/10 to-[#00b8cc]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <img 
+                      src="/elementos/mascotesemfundo.png" 
+                      alt="Niki - Mascote da Communicare" 
+                      className="w-48 h-auto drop-shadow-2xl ml-4"
+                    />
                   </div>
-                  <div className="text-white font-medium">Segunda a sexta, das 08h às 18h</div>
+                </div>
+                <h4 className="text-3xl font-bold mb-3 font-title text-white">
+                  Venha e conheça Niki!
+                </h4>
+                <p className="text-xl font-medium text-white">
+                  Nosso mascote está ansioso para te receber na Communicare! 🥰
+                </p>
+              </div>
+
+              {/* Informações de Contato */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-[#4c3e92] mb-4 font-title">
+                  Fale conosco
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
+                      <span className="text-white text-sm">📞</span>
+                    </div>
+                    <a href="https://wa.me/5581998660984" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">(81) 99866-0984</a>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </div>
+                    <a href="mailto:communicare@greciacalado.com.br" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">communicare@greciacalado.com.br</a>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg mr-4 flex items-center justify-center">
+                      <span className="text-white text-sm">📍</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/ubbRa5pxMVYxFRxv5" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-[#f4a261] transition-colors duration-200">R. João Cardoso Aires, 555 - Boa Viagem, Recife/PE</a>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-full mr-4 flex items-center justify-center">
+                      <span className="text-white text-sm">🕒</span>
+                    </div>
+                    <div className="text-white font-medium">Segunda a sexta, das 08h às 18h</div>
+                  </div>
                 </div>
               </div>
             </div>
