@@ -14,7 +14,8 @@ function App() {
     quemEncaminhou: '',
     especialidade: '',
     profissionalPreferencia: '',
-    horarioPreferencia: ''
+    horarioPreferencia: '',
+    comoConheceu: ''
   });
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
@@ -165,21 +166,150 @@ function App() {
     return true;
   };
 
+  // Função para obter descrição completa da especialidade
+  const getEspecialidadeDescricao = (codigo) => {
+    const especialidades = {
+      'avaliacao': '🎯 Avaliação Gratuita (sem encaminhamento)',
+      'plano_interdisciplinar': '🔗 Plano Interdisciplinar',
+      'fonoaudiologia': '🗣️ Fonoaudiologia',
+      'psicologia': '🧠 Psicologia',
+      'psicopedagogia': '📚 Psicopedagogia',
+      'terapia_ocupacional': '🎨 Terapia Ocupacional',
+      'fisioterapia': '💪 Fisioterapia',
+      'nutricao': '🥗 Nutrição',
+      'psiquiatria': '💊 Psiquiatria',
+      'neurologia': '⚡ Neurologia',
+      'pediatria': '👶 Pediatria'
+    };
+    return especialidades[codigo] || codigo;
+  };
+
+  // Função para obter descrição da especialidade SEM emojis (para WhatsApp)
+  const getEspecialidadeDescricaoWhatsApp = (codigo) => {
+    const especialidades = {
+      'avaliacao': 'Avaliação Gratuita (sem encaminhamento)',
+      'plano_interdisciplinar': 'Plano Interdisciplinar',
+      'fonoaudiologia': 'Fonoaudiologia',
+      'psicologia': 'Psicologia',
+      'psicopedagogia': 'Psicopedagogia',
+      'terapia_ocupacional': 'Terapia Ocupacional',
+      'fisioterapia': 'Fisioterapia',
+      'nutricao': 'Nutrição',
+      'psiquiatria': 'Psiquiatria',
+      'neurologia': 'Neurologia',
+      'pediatria': 'Pediatria'
+    };
+    return especialidades[codigo] || codigo;
+  };
+
+  // Função para obter descrição completa do profissional
+  const getProfissionalDescricao = (codigo) => {
+    const profissionais = {
+      'ana_grecia': '👩‍⚕️ Ana Grécia Calado',
+      'bruna_rafaella': '👩‍⚕️ Bruna Rafaella',
+      'camilla_magalhaes': '👩‍⚕️ Camilla Magalhães',
+      'erica_figueira': '👩‍⚕️ Érica Figueira',
+      'izaura_souza': '👩‍⚕️ Izaura Souza',
+      'larissa_bezerra': '👩‍⚕️ Larissa Bezerra',
+      'livania_rodrigues': '👩‍⚕️ Livânia Rodrigues',
+      'maria_carolina': '👩‍⚕️ Maria Carolina',
+      'maria_gabriela': '👩‍⚕️ Maria Gabriela',
+      'maria_victoria': '👩‍⚕️ Maria Victória',
+      'marina_mariah': '👩‍⚕️ Marina Mariah',
+      'renata_veras': '👩‍⚕️ Renata Veras',
+      'suelen_basante': '👩‍⚕️ Suelen Basante',
+      'thais_farinha': '👩‍⚕️ Thais Farinha',
+      'thais_ohanny': '👩‍⚕️ Thais Ohanny'
+    };
+    return profissionais[codigo] || codigo;
+  };
+
+  // Função para obter descrição do profissional SEM emojis (para WhatsApp)
+  const getProfissionalDescricaoWhatsApp = (codigo) => {
+    const profissionais = {
+      'ana_grecia': 'Ana Grécia Calado',
+      'bruna_rafaella': 'Bruna Rafaella',
+      'camilla_magalhaes': 'Camilla Magalhães',
+      'erica_figueira': 'Érica Figueira',
+      'izaura_souza': 'Izaura Souza',
+      'larissa_bezerra': 'Larissa Bezerra',
+      'livania_rodrigues': 'Livânia Rodrigues',
+      'maria_carolina': 'Maria Carolina',
+      'maria_gabriela': 'Maria Gabriela',
+      'maria_victoria': 'Maria Victória',
+      'marina_mariah': 'Marina Mariah',
+      'renata_veras': 'Renata Veras',
+      'suelen_basante': 'Suelen Basante',
+      'thais_farinha': 'Thais Farinha',
+      'thais_ohanny': 'Thais Ohanny'
+    };
+    return profissionais[codigo] || codigo;
+  };
+
+  // Função para obter descrição completa do horário
+  const getHorarioDescricao = (codigo) => {
+    const horarios = {
+      'manha': '🌅 Manhã (08h às 12h)',
+      'tarde': '🌇 Tarde (13h às 17h)',
+      'manha_tarde': '🕐 Manhã ou Tarde'
+    };
+    return horarios[codigo] || codigo;
+  };
+
+  // Função para obter descrição do horário SEM emojis (para WhatsApp)
+  const getHorarioDescricaoWhatsApp = (codigo) => {
+    const horarios = {
+      'manha': 'Manhã (08h às 12h)',
+      'tarde': 'Tarde (13h às 17h)',
+      'manha_tarde': 'Manhã ou Tarde'
+    };
+    return horarios[codigo] || codigo;
+  };
+
+  // Função para obter descrição completa de quem encaminhou
+  const getQuemEncaminhouDescricao = (codigo) => {
+    const encaminhamentos = {
+      'escola': 'Escola/Creche',
+      'pediatra': 'Pediatra',
+      'psicologo': 'Psicólogo',
+      'fonoaudiologo': 'Fonoaudiólogo',
+      'psicopedagogo': 'Psicopedagogo',
+      'neurologista': 'Neurologista',
+      'outro': 'Outro'
+    };
+    return encaminhamentos[codigo] || codigo;
+  };
+
+  // Função para obter descrição completa de como conheceu a Communicare
+  const getComoConheceuDescricao = (codigo) => {
+    const canais = {
+      'google': 'Google/Busca online',
+      'instagram': 'Instagram',
+      'facebook': 'Facebook',
+      'indicacao': 'Indicação de amigo/familiar',
+      'profissional': 'Indicação de profissional da saúde',
+      'escola': 'Escola/Creche',
+      'outro': 'Outro'
+    };
+    return canais[codigo] || codigo;
+  };
+
   // Função para lidar com o envio do formulário
   const handleWizardSubmit = (e) => {
     e.preventDefault();
     
     // Aqui você pode implementar a lógica de envio
     // Por exemplo, enviar para um endpoint da API ou WhatsApp
-    const message = `🚀 *NOVO AGENDAMENTO - COMMUNICARE* 🚀
+    const message = `*NOVO AGENDAMENTO - COMMUNICARE*
 
-👤 *Responsável:* ${formData.responsavelNome}
-📱 *Telefone:* ${formData.responsavelTelefone}
-👶 *Idade da criança:* ${formData.idade}
-📋 *Encaminhamento:* ${formData.encaminhamento === 'sim' ? `Sim - ${formData.quemEncaminhou}` : 'Não'}
-🏥 *Especialidade:* ${formData.especialidade}
-👩‍⚕️ *Profissional preferido:* ${formData.profissionalPreferencia || 'Sem preferência'}
-⏰ *Horário preferido:* ${formData.horarioPreferencia || 'Sem preferência'}
+*Responsável:* ${formData.responsavelNome || 'Não informado'}
+*Telefone:* ${formData.responsavelTelefone || 'Não informado'}
+*Idade da criança:* ${formData.idade || 'Não informado'}
+*Encaminhamento:* ${formData.encaminhamento === 'sim' ? `Sim - ${getQuemEncaminhouDescricao(formData.quemEncaminhou)}` : 'Não'}
+*Especialidade:* ${getEspecialidadeDescricaoWhatsApp(formData.especialidade) || 'Não informado'}
+*Profissional preferido:* ${formData.profissionalPreferencia ? getProfissionalDescricaoWhatsApp(formData.profissionalPreferencia) : 'Sem preferência'}
+*Horário preferido:* ${formData.horarioPreferencia ? getHorarioDescricaoWhatsApp(formData.horarioPreferencia) : 'Sem preferência'}
+*Como conheceu:* ${formData.comoConheceu ? getComoConheceuDescricao(formData.comoConheceu) : 'Não informado'}
 
 _Formulário enviado via site da Communicare_`;
 
@@ -196,7 +326,8 @@ _Formulário enviado via site da Communicare_`;
       quemEncaminhou: '',
       especialidade: '',
       profissionalPreferencia: '',
-      horarioPreferencia: ''
+      horarioPreferencia: '',
+      comoConheceu: ''
     });
     setCurrentWizardStep(1);
     setErrors({});
@@ -226,7 +357,9 @@ _Formulário enviado via site da Communicare_`;
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <img src="/logos/Elemento colorido.png" alt="Communicare" className="h-12 sm:h-14 lg:h-16 w-auto" />
+            <a href="#hero" className="transition-transform duration-200 hover:scale-105">
+              <img src="/logos/Elemento colorido.png" alt="Communicare" className="h-12 sm:h-14 lg:h-16 w-auto" />
+            </a>
           </div>
           
           {/* Navegação Desktop */}
@@ -1853,6 +1986,29 @@ _Formulário enviado via site da Communicare_`;
                           <option value="thais_ohanny">👩‍⚕️ Thais Ohanny</option>
                         </select>
                       </div>
+                      
+                      <div className="relative">
+                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
+                          <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          Como conheceu a Communicare?
+                        </label>
+                        <select
+                          value={formData.comoConheceu}
+                          onChange={(e) => setFormData({...formData, comoConheceu: e.target.value})}
+                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                        >
+                          <option value="">Selecione uma opção</option>
+                          <option value="google">🔍 Google/Busca online</option>
+                          <option value="instagram">📱 Instagram</option>
+                          <option value="facebook">📘 Facebook</option>
+                          <option value="indicacao">👥 Indicação de amigo/familiar</option>
+                          <option value="profissional">👩‍⚕️ Indicação de profissional da saúde</option>
+                          <option value="escola">🏫 Escola/Creche</option>
+                          <option value="outro">✨ Outro</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -1918,22 +2074,28 @@ _Formulário enviado via site da Communicare_`;
                           </div>
                           <div className="bg-white/10 rounded-lg p-3">
                             <p className="font-semibold text-[#4c3e92] mb-1">📋 Encaminhamento</p>
-                            <p className="text-white">{formData.encaminhamento === 'sim' ? `Sim - ${formData.quemEncaminhou}` : 'Não'}</p>
+                            <p className="text-white">{formData.encaminhamento === 'sim' ? `Sim - ${getQuemEncaminhouDescricao(formData.quemEncaminhou)}` : 'Não'}</p>
                           </div>
                           <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
                             <p className="font-semibold text-[#4c3e92] mb-1">🏥 Especialidade</p>
-                            <p className="text-white">{formData.especialidade}</p>
+                            <p className="text-white">{getEspecialidadeDescricao(formData.especialidade)}</p>
                           </div>
                           {formData.profissionalPreferencia && (
                             <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
                               <p className="font-semibold text-[#4c3e92] mb-1">👩‍⚕️ Profissional Preferido</p>
-                              <p className="text-white">{formData.profissionalPreferencia}</p>
+                              <p className="text-white">{getProfissionalDescricao(formData.profissionalPreferencia)}</p>
                             </div>
                           )}
                           {formData.horarioPreferencia && (
                             <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
                               <p className="font-semibold text-[#4c3e92] mb-1">⏰ Horário Preferido</p>
-                              <p className="text-white">{formData.horarioPreferencia}</p>
+                              <p className="text-white">{getHorarioDescricao(formData.horarioPreferencia)}</p>
+                            </div>
+                          )}
+                          {formData.comoConheceu && (
+                            <div className="bg-white/10 rounded-lg p-3 md:col-span-2">
+                              <p className="font-semibold text-[#4c3e92] mb-1">🔍 Como conheceu</p>
+                              <p className="text-white">{getComoConheceuDescricao(formData.comoConheceu)}</p>
                             </div>
                           )}
                         </div>
