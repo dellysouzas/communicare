@@ -873,19 +873,19 @@ function App() {
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ width: 'calc(15 * 100%)' }}
               >
-                {/* Ana - Psicóloga */}
+                {/* Ana Grécia - Fonoaudióloga */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais/ana sem fundo.png" 
-                        alt="Ana - Psicóloga" 
+                        alt="Ana Grécia - Fonoaudióloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ana</h3>
-                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ana Grécia</h3>
+                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
