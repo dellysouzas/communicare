@@ -504,12 +504,7 @@ _Formulário enviado via site da Communicare_`;
                   </a>
                 </div>
                 
-                {/* Botão CTA Mobile */}
-                <div className="pt-4 mt-6 border-t border-gray-200">
-                  <a href="#contato" onClick={closeMobileMenu} className="block w-full bg-[#f19100] hover:bg-[#d98200] text-white py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center font-title shadow-lg">
-                    Agende sua consulta
-                  </a>
-            </div>
+
           </div>
         </div>
       </header>
