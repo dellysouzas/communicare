@@ -89,9 +89,9 @@ function App() {
   // Funções do carrossel
   const scrollCarousel = (direction) => {
     if (direction === 'next') {
-      setCurrentSlide(prev => prev === 13 ? 0 : prev + 1);
+      setCurrentSlide(prev => prev === 14 ? 0 : prev + 1);
     } else {
-      setCurrentSlide(prev => prev === 0 ? 13 : prev - 1);
+      setCurrentSlide(prev => prev === 0 ? 14 : prev - 1);
     }
   };
 
@@ -103,7 +103,7 @@ function App() {
   useEffect(() => {
     const carousel = document.getElementById('professionals-carousel');
     if (carousel) {
-      const slideWidth = 100 / 14; // 14 slides
+      const slideWidth = 100 / 15; // 15 slides
       const translateX = -(currentSlide * slideWidth);
       carousel.style.transform = `translateX(${translateX}%)`;
     }
@@ -155,7 +155,7 @@ function App() {
           {/* Botão CTA Desktop */}
           <div className="hidden lg:block flex-shrink-0">
             <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl font-title whitespace-nowrap">
-              Agende sua consulta
+              Agende sua visita
             </a>
           </div>
 
@@ -163,7 +163,7 @@ function App() {
           <div className="lg:hidden flex items-center space-x-2 sm:space-x-3">
             {/* Botão CTA Mobile */}
             <a href="#contato" className="bg-[#f19100] hover:bg-[#d98200] text-white px-3 sm:px-4 py-2 rounded-lg font-medium transition-colors duration-200 font-title text-xs sm:text-sm whitespace-nowrap">
-              Agende sua consulta
+              Agende sua visita
             </a>
             
             {/* Menu Hamburguer */}
@@ -322,13 +322,15 @@ function App() {
                 
                 <p className="text-lg md:text-xl text-white/90 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   A <strong>Communicare</strong> nasceu do sonho de uma fonoaudióloga com mais de 26 anos de experiência. Criamos um espaço de <span className="text-[#a1d6dc] font-semibold">acolhimento</span>, <span className="text-[#a1d6dc] font-semibold">empatia</span> e <span className="text-[#a1d6dc] font-semibold">estímulo</span> para transformar vidas através do desenvolvimento humano.
+                  <br /><br />
+                  A nossa missão é <span className="text-[#a1d6dc] font-semibold">disseminar o que conhecemos</span>, levando informação e qualidade de vida para muitos lares e famílias.
                 </p>
               </div>
               
               {/* Botões CTA */}
               <div className="flex flex-col gap-6 sm:flex-row sm:gap-4 justify-center lg:justify-start">
-                <a href="#contato" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
-                  Fale conosco
+                <a href="#contato" className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
+                  Visite gratuitamente
                   <svg className="ml-3 sm:ml-2 w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -518,7 +520,7 @@ function App() {
                   {/* Informações da fundadora */}
                   <div className="text-center relative z-10">
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#4c3e92] mb-1 sm:mb-2 font-title">Ana Grécia</h3>
-                    <p className="text-sm sm:text-lg lg:text-xl text-gray-700 mb-2 sm:mb-4 font-medium">Fundadora e Fonoaudióloga</p>
+                    <p className="text-xs sm:text-base lg:text-lg text-gray-700 mb-2 sm:mb-4 font-medium">Fundadora, Diretora e Fonoaudióloga</p>
                   </div>
                   
                   {/* Elementos decorativos flutuantes */}
@@ -614,9 +616,9 @@ function App() {
               </p>
             </div>
 
-            {/* Diferencial 2: Proximidade da Diretora */}
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 lg:p-8 text-center hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#a1d6dc]/20 group differential-card" data-animation="zoomIn" data-delay="200">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300 interactive-animate">
+            {/* Diferencial 2: Proximidade da Diretora - CARRO CHEFE */}
+            <div className="bg-gradient-to-br from-white via-[#fff8e6] to-[#fff0cc] rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-4 sm:p-6 lg:p-8 text-center hover:shadow-2xl sm:hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-[#f19100] group differential-card featured-differential" data-animation="zoomIn" data-delay="200">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-lg sm:shadow-xl group-hover:shadow-xl sm:group-hover:shadow-2xl transition-shadow duration-500 interactive-animate">
                 <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -627,6 +629,9 @@ function App() {
               <p className="text-sm sm:text-base lg:text-gray-600 leading-relaxed">
                 A diretora Ana Grécia está <span className="font-semibold text-[#f19100]">próxima e acessível </span>em cada etapa do processo, garantindo acompanhamento direto.
               </p>
+              <div className="mt-4 flex justify-center">
+                <div className="w-12 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] rounded-full"></div>
+              </div>
             </div>
 
             {/* Diferencial 3: Acompanhamento Interdisciplinar */}
@@ -637,12 +642,56 @@ function App() {
                 </svg>
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title">
-                Acompanhamento Interdisciplinar
+                Equipe Interdisciplinar
               </h3>
               <p className="text-sm sm:text-base lg:text-gray-600 leading-relaxed">
-                Trabalhamos <span className="font-semibold text-[#37a935]">junto aos responsáveis</span>, 
-                escolas e equipe interdisciplinar para resultados integrados.
+                Todas as <span className="font-semibold text-[#37a935]">especialidades atuam juntas</span> nos casos, buscando olhar pro paciente de forma holística.
               </p>
+            </div>
+          </div>
+          
+          {/* Seção dos Espaços da Clínica */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-title">
+              Espaços Acolhedores e Multisensoriais
+            </h3>
+                          <p className="text-lg text-[#4c3e92]/90 max-w-4xl mx-auto mb-8 leading-relaxed">
+                Nossos espaços são <span className="font-semibold text-[#e5007e]">extremamente acolhedores e multisensoriais</span>, 
+                com diversos detalhes pensados para receber cada criança, adolescente e família da melhor maneira possível.
+              </p>
+            
+            {/* Container do Vídeo dos Espaços */}
+            <div className="relative group">
+              {/* Container do vídeo com efeitos elegantes */}
+              <div className="relative w-full max-w-4xl mx-auto bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
+                {/* Placeholder do vídeo - será substituído pelo elemento <video> */}
+                <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-2xl flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <svg className="w-20 h-20 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <p className="text-lg font-medium">Vídeo dos Espaços da Clínica</p>
+                    <p className="text-sm opacity-80 mt-2">Em breve: Tour pelos ambientes acolhedores</p>
+                  </div>
+                </div>
+                
+                {/* Overlay sutil no vídeo */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                
+                {/* Borda luminosa sutil */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f19100]/20 via-transparent to-[#e5007e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Sombra elegante */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl transform translate-y-6 blur-2xl group-hover:translate-y-8 transition-transform duration-500"></div>
+              
+              {/* Elementos decorativos flutuantes */}
+              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full animate-pulse shadow-lg">
+                <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+              </div>
+              <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full animate-pulse delay-1000 shadow-lg">
+                <div className="absolute inset-1 bg-white/20 rounded-full"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -804,7 +853,7 @@ function App() {
               </button>
               
               <div className="text-sm text-gray-600 font-medium">
-                <span>{currentSlide + 1}</span> de <span>14</span>
+                <span>{currentSlide + 1}</span> de <span>15</span>
               </div>
               
               <button 
@@ -822,44 +871,60 @@ function App() {
               <div 
                 id="professionals-carousel" 
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ width: 'calc(14 * 100%)' }}
+                style={{ width: 'calc(15 * 100%)' }}
               >
+                {/* Ana - Psicóloga */}
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img 
+                        src="/profissionais/ana sem fundo.png" 
+                        alt="Ana - Psicóloga" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ana</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                  </div>
+                </div>
+
                 {/* Bruna Rafaella - Psicóloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Bruna Rafaella (sem fundo).png" 
                         alt="Bruna Rafaella - Psicóloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Bruna Rafaella</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Bruna Rafaella</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Suelen Basante - Psicóloga e Aplicadora ABA */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Suelen Basante (sem fundo).png" 
                         alt="Suelen Basante - Psicóloga e Aplicadora ABA" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Suelen Basante</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Suelen Basante</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Érica Figueira - Psicóloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Erica_Figueira_sem_fundo.png" 
                         alt="Érica Figueira - Psicóloga" 
@@ -870,185 +935,185 @@ function App() {
                         }}
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Figueira</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Figueira</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Larissa Bezerra - Terapeuta Ocupacional */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Larissa Bezerra (sem fundo).png" 
                         alt="Larissa Bezerra - Terapeuta Ocupacional" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Bezerra</h3>
-                    <p className="text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Bezerra</h3>
+                    <p className="text-xs sm:text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Maria Carolina - Psicóloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Maria Carolina (sem fundo).png" 
                         alt="Maria Carolina - Psicóloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Carolina</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Carolina</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Maria Victória - Terapeuta Ocupacional */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Maria Victoria (sem fundo).png" 
                         alt="Maria Victória - Terapeuta Ocupacional" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Victória</h3>
-                    <p className="text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Victória</h3>
+                    <p className="text-xs sm:text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Renata Veras - Psicomotricista */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Renata Veras (sem fundo).png" 
                         alt="Renata Veras - Psicomotricista" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Renata Veras</h3>
-                    <p className="text-sm text-[#37a935] font-semibold mb-3">Psicomotricista</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#37a935] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Renata Veras</h3>
+                    <p className="text-xs sm:text-sm text-[#37a935] font-semibold mb-3">Psicomotricista</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#37a935] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Izaura Souza - Nutricionista */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Izaura Souza (sem fundo).png" 
                         alt="Izaura Souza - Nutricionista" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Izaura Souza</h3>
-                    <p className="text-sm text-[#f4a261] font-semibold mb-3">Nutricionista</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#f4a261] to-[#e5007e] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Izaura Souza</h3>
+                    <p className="text-xs sm:text-sm text-[#f4a261] font-semibold mb-3">Nutricionista</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#f4a261] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Marina Mariah - Fonoaudióloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Marina Mariah (sem fundo).png" 
                         alt="Marina Mariah - Fonoaudióloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Marina Mariah</h3>
-                    <p className="text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Marina Mariah</h3>
+                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Livânia Rodrigues - Psicóloga e Aplicadora ABA */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Livania Rodrigues (sem fundo).png" 
                         alt="Livânia Rodrigues - Psicóloga e Aplicadora ABA" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Livânia Rodrigues</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Livânia Rodrigues</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Thais Ohanny - Fonoaudióloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Thais Ohanny (sem fundo).png" 
                         alt="Thais Ohanny - Fonoaudióloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Ohanny</h3>
-                    <p className="text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Ohanny</h3>
+                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Maria Gabriela - Psicóloga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Maria Gabriela (sem fundo).png" 
                         alt="Maria Gabriela - Psicóloga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Gabriela</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Gabriela</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Thais Farinha - Psicóloga e Supervisora ABA */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Thais Farinha (sem fundo).png" 
                         alt="Thais Farinha - Psicóloga e Supervisora ABA" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Farinha</h3>
-                    <p className="text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Supervisora ABA</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Farinha</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Supervisora ABA</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Camilla Magalhães - Psicopedagoga */}
-                <div className="w-full md:w-1/2 lg:w-1/4 px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
                       <img 
                         src="/profissionais-sem-fundo/Camilla Magalhaes (sem fundo).png" 
                         alt="Camilla Magalhães - Psicopedagoga" 
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Camilla Magalhães</h3>
-                    <p className="text-sm text-[#f19100] font-semibold mb-3">Psicopedagoga</p>
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Camilla Magalhães</h3>
+                    <p className="text-xs sm:text-sm text-[#f19100] font-semibold mb-3">Psicopedagoga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -1056,7 +1121,7 @@ function App() {
 
             {/* Indicadores de Navegação */}
             <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: 14 }, (_, i) => (
+              {Array.from({ length: 15 }, (_, i) => (
                 <button
                   key={i}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
