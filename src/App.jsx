@@ -1375,6 +1375,83 @@ _Formulário enviado via site da Communicare_`;
               ))}
             </div>
           </div>
+          
+          {/* Subseção: Como é trabalhar na Communicare */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#4c3e92] mb-3 font-title leading-tight">
+                <span className="block text-[#4c3e92]">Como é trabalhar na</span>
+                <span className="block text-[#e5007e]">Communicare?</span>
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-4 rounded-full"></div>
+              <p className="text-base text-gray-600 max-w-2xl mx-auto">
+                Conheça os <span className="font-semibold text-[#4c3e92]">depoimentos sinceros</span> de nossos profissionais sobre 
+                <span className="font-semibold text-[#e5007e]"> a experiência de fazer parte</span> desta família especial
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+              {/* Depoimento 1: Marina Mariah */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-lg md:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#00b8cc] shadow-lg flex-shrink-0 mx-auto sm:mx-0">
+                    <img 
+                      src="/profissionais-sem-fundo/Marina Mariah (sem fundo).png" 
+                      alt="Marina Mariah - Fonoaudióloga" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 text-center sm:text-left">
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-1 font-title">Marina Mariah</h3>
+                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold">Fonoaudióloga</p>
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#00b8cc] to-[#e5007e] rounded-full"></div>
+                  <div className="pl-4 sm:pl-6">
+                    <blockquote className="text-sm sm:text-base text-gray-700 leading-relaxed italic">
+                      "Mais do que atuar nas queixas, na Communicare temos a parceria para cuidar com propósito, afeto e dedicação, enxergando cada família em sua individualidade e construindo laços significativos que, muitas vezes, ultrapassam a terapia."
+                    </blockquote>
+                  </div>
+                </div>
+                
+                <div className="mt-4 sm:mt-6 flex justify-center">
+                  <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#e5007e] rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Depoimento 2: Érica Figueira */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-lg md:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#e5007e] shadow-lg flex-shrink-0 mx-auto sm:mx-0">
+                    <img 
+                      src="/profissionais-sem-fundo/Erica_Figueira_sem_fundo.png" 
+                      alt="Érica Figueira - Psicóloga" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 text-center sm:text-left">
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-1 font-title">Érica Figueira</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold">Psicóloga</p>
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#e5007e] to-[#f19100] rounded-full"></div>
+                  <div className="pl-4 sm:pl-6">
+                    <blockquote className="text-sm sm:text-base text-gray-700 leading-relaxed italic">
+                      "Há mais de dois anos faço parte dessa família e meu coração se enche de gratidão por estar em um espaço tão especial. Aqui encontrei um ambiente feliz, regado de amor, responsabilidade e parceria. É uma alegria imensa poder exercer a psicologia em um lugar que valoriza o cuidado genuíno com as pessoas e o bem-estar de todos."
+                    </blockquote>
+                  </div>
+                </div>
+                
+                <div className="mt-4 sm:mt-6 flex justify-center">
+                  <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
