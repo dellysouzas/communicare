@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevenir scroll horizontal no celular */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Fontes da marca Communicare */
 .font-title {
   font-family: 'Quicksand', 'Nunito', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
