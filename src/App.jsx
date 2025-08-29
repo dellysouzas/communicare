@@ -1664,28 +1664,28 @@ _Formulário enviado via site da Communicare_`;
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Formulário Wizard */}
-            <div className="bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#4c3e92] to-[#e5007e] rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#4c3e92] to-[#e5007e] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg">
+                  <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2 font-title">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 font-title">
                   Aproveite sua visita gratuita
                 </h3>
-                <p className="text-white/80 text-sm">
+                <p className="text-white/80 text-xs sm:text-sm">
                   Preencha o formulário e nossa equipe entrará em contato
                 </p>
               </div>
               
               {/* Indicadores de Progresso */}
-              <div className="flex justify-center mb-10">
+              <div className="flex justify-center mb-6 sm:mb-10">
                 {[1, 2, 3, 4].map((step) => (
                   <div key={step} className="flex items-center">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-500 transform ${
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-sm sm:text-base lg:text-lg font-bold transition-all duration-500 transform ${
                       step <= currentWizardStep 
                         ? 'bg-gradient-to-br from-[#4c3e92] to-[#e5007e] text-white shadow-lg scale-110' 
                         : 'bg-white/20 text-white/60'
@@ -1693,7 +1693,7 @@ _Formulário enviado via site da Communicare_`;
                       {step}
                     </div>
                     {step < 4 && (
-                      <div className={`w-16 h-1 mx-3 transition-all duration-500 rounded-full ${
+                      <div className={`w-8 sm:w-12 lg:w-16 h-1 mx-1 sm:mx-2 lg:mx-3 transition-all duration-500 rounded-full ${
                         step < currentWizardStep 
                           ? 'bg-gradient-to-r from-[#4c3e92] to-[#e5007e]' 
                           : 'bg-white/20'
@@ -1704,28 +1704,28 @@ _Formulário enviado via site da Communicare_`;
               </div>
 
               {/* Formulário Wizard */}
-              <form onSubmit={handleWizardSubmit} className="space-y-6">
+              <form onSubmit={handleWizardSubmit} className="space-y-4 sm:space-y-6">
                 {/* Etapa 1: Informações Básicas */}
                 {currentWizardStep === 1 && (
-                  <div className="space-y-6 animate-fadeIn">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#4c3e92] to-[#00b8cc] rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="space-y-4 sm:space-y-6 animate-fadeIn">
+                    <div className="text-center mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#4c3e92] to-[#00b8cc] rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
                         Informações do Responsável
                       </h4>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-xs sm:text-sm">
                         Vamos começar com seus dados de contato
                       </p>
                     </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className={`relative ${showErrors && errors.responsavelNome ? 'error-field' : ''}`}>
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#4c3e92]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#4c3e92]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                           Nome Completo *
@@ -1739,7 +1739,7 @@ _Formulário enviado via site da Communicare_`;
                               setErrors({...errors, responsavelNome: null});
                             }
                           }}
-                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#4c3e92] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#4c3e92] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base ${
                             showErrors && errors.responsavelNome 
                               ? 'border-red-400 focus:ring-red-400' 
                               : 'border-white/30'
@@ -1758,8 +1758,8 @@ _Formulário enviado via site da Communicare_`;
                       </div>
                       
                       <div className={`relative ${showErrors && errors.responsavelTelefone ? 'error-field' : ''}`}>
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                           </svg>
                           Telefone/WhatsApp *
@@ -1773,7 +1773,7 @@ _Formulário enviado via site da Communicare_`;
                               setErrors({...errors, responsavelTelefone: null});
                             }
                           }}
-                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base ${
                             showErrors && errors.responsavelTelefone 
                               ? 'border-red-400 focus:ring-red-400' 
                               : 'border-white/30'
@@ -1796,25 +1796,25 @@ _Formulário enviado via site da Communicare_`;
 
                 {/* Etapa 2: Informações da Criança */}
                 {currentWizardStep === 2 && (
-                  <div className="space-y-6 animate-fadeIn">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="space-y-4 sm:space-y-6 animate-fadeIn">
+                    <div className="text-center mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#f19100] to-[#e5007e] rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
                         Sobre a Criança/Adolescente
                       </h4>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-xs sm:text-sm">
                         Conte-nos um pouco sobre quem será atendido
                       </p>
                     </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className={`relative ${showErrors && errors.idade ? 'error-field' : ''}`}>
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" />
                           </svg>
                           Idade *
@@ -1827,7 +1827,7 @@ _Formulário enviado via site da Communicare_`;
                               setErrors({...errors, idade: null});
                             }
                           }}
-                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base ${
                             showErrors && errors.idade 
                               ? 'border-red-400 focus:ring-red-400' 
                               : 'border-white/30'
@@ -1861,9 +1861,9 @@ _Formulário enviado via site da Communicare_`;
                         )}
                       </div>
                       
-                      <div className={`bg-white/10 rounded-xl p-4 border ${showErrors && errors.encaminhamento ? 'border-red-400' : 'border-white/20'} ${showErrors && errors.encaminhamento ? 'error-field' : ''}`}>
-                        <label className="block text-white/90 text-sm font-medium mb-3 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className={`bg-white/10 rounded-xl p-3 sm:p-4 border ${showErrors && errors.encaminhamento ? 'border-red-400' : 'border-white/20'} ${showErrors && errors.encaminhamento ? 'error-field' : ''}`}>
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-2 sm:mb-3 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           Possui encaminhamento prévio? *
@@ -1926,8 +1926,8 @@ _Formulário enviado via site da Communicare_`;
                       
                       {formData.encaminhamento === 'sim' && (
                         <div className={`relative animate-fadeIn ${showErrors && errors.quemEncaminhou ? 'error-field' : ''}`}>
-                          <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                            <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                            <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                             Quem encaminhou? *
@@ -1940,7 +1940,7 @@ _Formulário enviado via site da Communicare_`;
                                 setErrors({...errors, quemEncaminhou: null});
                               }
                             }}
-                            className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                            className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base ${
                               showErrors && errors.quemEncaminhou 
                                 ? 'border-red-400 focus:ring-red-400' 
                                 : 'border-white/30'
@@ -1972,25 +1972,25 @@ _Formulário enviado via site da Communicare_`;
 
                 {/* Etapa 3: Especialidades */}
                 {currentWizardStep === 3 && (
-                  <div className="space-y-6 animate-fadeIn">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#00b8cc] to-[#37a935] rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="space-y-4 sm:space-y-6 animate-fadeIn">
+                    <div className="text-center mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#00b8cc] to-[#37a935] rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
                         Especialidades e Preferências
                       </h4>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-xs sm:text-sm">
                         Escolha o tipo de atendimento desejado
                       </p>
                     </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className={`relative ${showErrors && errors.especialidade ? 'error-field' : ''}`}>
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#00b8cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                           Qual especialidade procura? *
@@ -2003,7 +2003,7 @@ _Formulário enviado via site da Communicare_`;
                               setErrors({...errors, especialidade: null});
                             }
                           }}
-                          className={`w-full px-4 py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 ${
+                          className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#00b8cc] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base ${
                             showErrors && errors.especialidade 
                               ? 'border-red-400 focus:ring-red-400' 
                               : 'border-white/30'
@@ -2034,8 +2034,8 @@ _Formulário enviado via site da Communicare_`;
                       </div>
                       
                       <div className="relative">
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#37a935]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                           Tem preferência por alguma profissional?
@@ -2043,7 +2043,7 @@ _Formulário enviado via site da Communicare_`;
                         <select
                           value={formData.profissionalPreferencia}
                           onChange={(e) => setFormData({...formData, profissionalPreferencia: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#37a935] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base"
                         >
                           <option value="">Sem preferência específica</option>
                           <option value="ana_grecia">👩‍⚕️ Ana Grécia Calado</option>
@@ -2065,8 +2065,8 @@ _Formulário enviado via site da Communicare_`;
                       </div>
                       
                       <div className="relative">
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#f19100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                           Como conheceu a Communicare?
@@ -2074,7 +2074,7 @@ _Formulário enviado via site da Communicare_`;
                         <select
                           value={formData.comoConheceu}
                           onChange={(e) => setFormData({...formData, comoConheceu: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f19100] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base"
                         >
                           <option value="">Selecione uma opção</option>
                           <option value="google">🔍 Google/Busca online</option>
@@ -2092,25 +2092,25 @@ _Formulário enviado via site da Communicare_`;
 
                 {/* Etapa 4: Horários e Finalização */}
                 {currentWizardStep === 4 && (
-                  <div className="space-y-6 animate-fadeIn">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="space-y-4 sm:space-y-6 animate-fadeIn">
+                    <div className="text-center mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#e5007e] to-[#f19100] rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
                         Horários e Finalização
                       </h4>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-xs sm:text-sm">
                         Última etapa! Confirme suas preferências
                       </p>
                     </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="relative">
-                        <label className="block text-white/90 text-sm font-medium mb-2 flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <label className="block text-white/90 text-xs sm:text-sm font-medium mb-1 sm:mb-2 flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#e5007e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           Preferência de horário para agendamento
@@ -2118,7 +2118,7 @@ _Formulário enviado via site da Communicare_`;
                         <select
                           value={formData.horarioPreferencia}
                           onChange={(e) => setFormData({...formData, horarioPreferencia: e.target.value})}
-                          className="w-full px-4 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#e5007e] focus:border-transparent transition-all duration-300 focus:bg-white/25"
+                          className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#e5007e] focus:border-transparent transition-all duration-300 focus:bg-white/25 text-sm sm:text-base"
                         >
                           <option value="">Sem preferência específica</option>
                           <option value="manha">🌅 Manhã (08h às 12h)</option>
@@ -2182,14 +2182,14 @@ _Formulário enviado via site da Communicare_`;
                 )}
 
                 {/* Navegação do Wizard */}
-                <div className="flex justify-between pt-6">
+                <div className="flex justify-between pt-4 sm:pt-6">
                   {currentWizardStep > 1 && (
                     <button
                       type="button"
                       onClick={() => setCurrentWizardStep(currentWizardStep - 1)}
-                      className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                      className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center text-sm sm:text-base"
                     >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
                       Anterior
@@ -2208,19 +2208,19 @@ _Formulário enviado via site da Communicare_`;
                           setShowErrors(false);
                         }
                       }}
-                      className="ml-auto px-8 py-3 bg-gradient-to-r from-[#4c3e92] to-[#00b8cc] hover:from-[#3d2f7a] hover:to-[#009db0] text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                      className="ml-auto px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-[#4c3e92] to-[#00b8cc] hover:from-[#3d2f7a] hover:to-[#009db0] text-white rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center text-sm sm:text-base"
                     >
                       Próximo
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
                   ) : (
                     <button
                       type="submit"
-                      className="ml-auto px-10 py-4 bg-gradient-to-r from-[#e5007e] to-[#f19100] hover:from-[#cc0072] hover:to-[#d98200] text-white rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center"
+                      className="ml-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#e5007e] to-[#f19100] hover:from-[#cc0072] hover:to-[#d98200] text-white rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center"
                     >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       Agendar Visita
