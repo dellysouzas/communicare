@@ -1385,7 +1385,7 @@ _Formulário enviado via site da Communicare_`;
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-4 rounded-full"></div>
               <p className="text-base text-gray-600 max-w-2xl mx-auto">
-                Conheça os <span className="font-semibold text-[#4c3e92]">depoimentos sinceros</span> de nossos profissionais sobre 
+                Conheça alguns <span className="font-semibold text-[#4c3e92]">depoimentos</span> de nossas profissionais sobre 
                 <span className="font-semibold text-[#e5007e]"> a experiência de fazer parte</span> desta família especial
               </p>
             </div>
