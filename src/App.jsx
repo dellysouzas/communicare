@@ -208,9 +208,9 @@ function App() {
       'ana_grecia': '👩‍⚕️ Ana Grécia Calado',
       'bruna_rafaella': '👩‍⚕️ Bruna Rafaella',
       'camilla_magalhaes': '👩‍⚕️ Camilla Magalhães',
-      'erica_figueira': '👩‍⚕️ Érica Figueira',
+              'erica_figueira': '👩‍⚕️ Érica Filgueira',
       'izaura_souza': '👩‍⚕️ Izaura Souza',
-      'larissa_bezerra': '👩‍⚕️ Larissa Bezerra',
+              'larissa_bezerra': '👩‍⚕️ Larissa Beserra',
       'livania_rodrigues': '👩‍⚕️ Livânia Rodrigues',
       'maria_carolina': '👩‍⚕️ Maria Carolina',
       'maria_gabriela': '👩‍⚕️ Maria Gabriela',
@@ -230,9 +230,9 @@ function App() {
       'ana_grecia': 'Ana Grécia Calado',
       'bruna_rafaella': 'Bruna Rafaella',
       'camilla_magalhaes': 'Camilla Magalhães',
-      'erica_figueira': 'Érica Figueira',
+              'erica_figueira': 'Érica Filgueira',
       'izaura_souza': 'Izaura Souza',
-      'larissa_bezerra': 'Larissa Bezerra',
+              'larissa_bezerra': 'Larissa Beserra',
       'livania_rodrigues': 'Livânia Rodrigues',
       'maria_carolina': 'Maria Carolina',
       'maria_gabriela': 'Maria Gabriela',
@@ -1164,37 +1164,37 @@ _Formulário enviado via site da Communicare_`;
                   </div>
                 </div>
 
-                {/* Érica Figueira - Psicóloga */}
+                {/* Érica Filgueira - Psicóloga */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Erica_Figueira_sem_fundo.png" 
-                        alt="Érica Figueira - Psicóloga" 
-                        className="w-full h-full object-cover rounded-full"
+                                              <img 
+                          src="/profissionais-sem-fundo/Erica_Filgueira_sem_fundo.png" 
+                          alt="Érica Filgueira - Psicóloga" 
+                          className="w-full h-full object-cover rounded-full"
                         onError={(e) => {
                           console.log('Erro ao carregar imagem:', e.target.src);
                           e.target.style.display = 'none';
                         }}
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Figueira</h3>
+                                            <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Érica Filgueira</h3>
                     <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
                     <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
 
-                {/* Larissa Bezerra - Terapeuta Ocupacional */}
+                {/* Larissa Beserra - Terapeuta Ocupacional */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Larissa Bezerra (sem fundo).png" 
-                        alt="Larissa Bezerra - Terapeuta Ocupacional" 
-                        className="w-full h-full object-cover rounded-full"
+                                              <img 
+                          src="/profissionais-sem-fundo/Larissa Beserra (sem fundo).png" 
+                          alt="Larissa Beserra - Terapeuta Ocupacional" 
+                          className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Bezerra</h3>
+                                            <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Larissa Beserra</h3>
                     <p className="text-xs sm:text-sm text-[#4c3e92] font-semibold mb-3">Terapeuta Ocupacional</p>
                     <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#4c3e92] to-[#e5007e] mx-auto rounded-full"></div>
                   </div>
@@ -1421,18 +1421,18 @@ _Formulário enviado via site da Communicare_`;
                 </div>
               </div>
 
-              {/* Depoimento 2: Érica Figueira */}
+              {/* Depoimento 2: Érica Filgueira */}
               <div className="bg-white/95 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-lg md:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#e5007e] shadow-lg flex-shrink-0 mx-auto sm:mx-0">
-                    <img 
-                      src="/profissionais-sem-fundo/Erica_Figueira_sem_fundo.png" 
-                      alt="Érica Figueira - Psicóloga" 
-                      className="w-full h-full object-cover"
+                                          <img 
+                        src="/profissionais-sem-fundo/Erica_Filgueira_sem_fundo.png" 
+                        alt="Érica Filgueira - Psicóloga" 
+                        className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-1 font-title">Érica Figueira</h3>
+                                            <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-1 font-title">Érica Filgueira</h3>
                     <p className="text-xs sm:text-sm text-[#e5007e] font-semibold">Psicóloga</p>
                   </div>
                 </div>
@@ -2049,9 +2049,9 @@ _Formulário enviado via site da Communicare_`;
                           <option value="ana_grecia">👩‍⚕️ Ana Grécia Calado</option>
                           <option value="bruna_rafaella">👩‍⚕️ Bruna Rafaella</option>
                           <option value="camilla_magalhaes">👩‍⚕️ Camilla Magalhães</option>
-                          <option value="erica_figueira">👩‍⚕️ Érica Figueira</option>
+                          <option value="erica_figueira">👩‍⚕️ Érica Filgueira</option>
                           <option value="izaura_souza">👩‍⚕️ Izaura Souza</option>
-                          <option value="larissa_bezerra">👩‍⚕️ Larissa Bezerra</option>
+                          <option value="larissa_bezerra">👩‍⚕️ Larissa Beserra</option>
                           <option value="livania_rodrigues">👩‍⚕️ Livânia Rodrigues</option>
                           <option value="maria_carolina">👩‍⚕️ Maria Carolina</option>
                           <option value="maria_gabriela">👩‍⚕️ Maria Gabriela</option>
@@ -2303,7 +2303,7 @@ _Formulário enviado via site da Communicare_`;
             <div className="col-span-1 sm:col-span-2 lg:col-span-2">
               <img src="/logos/Branca.png" alt="Communicare" className="h-28 w-auto mb-2" />
               <p className="text-white/80 text-sm leading-relaxed mb-4">
-                Communicare Clínica. Especializada em comunicação e desenvolvimento humano, oferecendo serviços personalizados para melhorar suas habilidades de comunicação e relacionamento.
+                Communicare. Uma clínica especialista no desenvolvimento humano interdisciplinar, reunindo diversas especialidades que atuam juntas em busca do progresso da criança e do adolescente. Somos um ambiente de acolhimento emocional, experiências sensoriais e visão global.
               </p>
               <div className="flex space-x-4">
                 <a href="https://www.instagram.com/communicareclinica/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-200">
@@ -2327,6 +2327,7 @@ _Formulário enviado via site da Communicare_`;
                 <li><a href="#diferenciais" className="text-white/70 hover:text-white transition-colors duration-200">Diferenciais</a></li>
                 <li><a href="#servicos" className="text-white/70 hover:text-white transition-colors duration-200">Serviços</a></li>
                 <li><a href="#profissionais" className="text-white/70 hover:text-white transition-colors duration-200">Profissionais</a></li>
+                <li><a href="#depoimentos" className="text-white/70 hover:text-white transition-colors duration-200">Depoimentos</a></li>
               </ul>
             </div>
             
