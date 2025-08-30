@@ -356,9 +356,9 @@ _Formulário enviado via site da Communicare_`;
   };
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-20">
       {/* Header */}
-      <header className="w-full bg-white shadow-sm border-b border-[#a1d6dc] sticky top-0 z-50">
+      <header className="w-full bg-white shadow-sm border-b border-[#a1d6dc] fixed top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
