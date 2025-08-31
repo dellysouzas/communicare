@@ -1472,34 +1472,7 @@ _Formulário enviado via site da Communicare_`;
           
           {/* Grid de depoimentos em vídeo */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Depoimento em Vídeo 1 */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="relative mb-6">
-                {/* Container do vídeo */}
-                <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 border-4 border-[#e5007e]">
-                  <video 
-                    className="w-full h-full object-cover"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/depo1.mp4" type="video/mp4" />
-                    Seu navegador não suporta vídeos.
-                  </video>
-                </div>
-              </div>
-              
-                              {/* Informações do depoimento */}
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Taiza, Júlia e Liz</h3>
-                  <p className="text-sm text-[#e5007e] font-semibold mb-3">Mãe e ex pacientes</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    "Estava preocupada com o desenvolvimento da fala da minha filha e procurei a Ana para me ajudar. De forma muito segura e tranquila, a Ana conseguiu transmitir muitas vivências."
-                  </p>
-                  <div className="mt-4 flex justify-center">
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] rounded-full"></div>
-                  </div>
-                </div>
-            </div>
+
 
             {/* Depoimento em Vídeo 2 */}
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
