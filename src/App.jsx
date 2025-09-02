@@ -1402,10 +1402,10 @@ _Formulário enviado via site da Communicare_`;
                 
                 <div className="relative z-10">
                   {/* Grid das duas fotos lado a lado */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
+                  <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                     {/* Layse Guerra */}
                     <div className="text-center">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#e5007e]/25 transition-all duration-300 overflow-hidden border-2 border-white">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#e5007e]/25 transition-all duration-300 overflow-hidden border-2 border-white">
                         <img 
                           src="/profissionais/Layse Guerra.png" 
                           alt="Layse Guerra - Recepção" 
@@ -1413,7 +1413,7 @@ _Formulário enviado via site da Communicare_`;
                         />
                       </div>
                       
-                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#4c3e92] mb-2 font-title">Layse Guerra</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Layse Guerra</h3>
                       
                       {/* Ícone decorativo */}
                       <div className="mt-3 sm:mt-4 text-[#e5007e] opacity-60 group-hover:opacity-100 transition-opacity duration-300">
@@ -1425,7 +1425,7 @@ _Formulário enviado via site da Communicare_`;
 
                     {/* Ivone Araujo */}
                     <div className="text-center">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#f19100]/25 transition-all duration-300 overflow-hidden border-2 border-white">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#f19100]/25 transition-all duration-300 overflow-hidden border-2 border-white">
                         <img 
                           src="/profissionais/Ivone Araujo.png" 
                           alt="Ivone Araujo - Recepção" 
@@ -1433,7 +1433,7 @@ _Formulário enviado via site da Communicare_`;
                         />
                       </div>
                       
-                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ivone Araujo</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ivone Araujo</h3>
                       
                       {/* Ícone decorativo */}
                       <div className="mt-3 sm:mt-4 text-[#f19100] opacity-60 group-hover:opacity-100 transition-opacity duration-300">
