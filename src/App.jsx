@@ -1066,6 +1066,8 @@ _Formulário enviado via site da Communicare_`;
         </div>
       </section>
 
+
+
       {/* Seção 5: Nossos Profissionais */}
       <section id="profissionais" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#f8fafc] via-[#e8f4f8] to-[#f0f9ff] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1376,6 +1378,76 @@ _Formulário enviado via site da Communicare_`;
             </div>
           </div>
           
+          {/* Subseção: Time da Recepção */}
+          <div className="mt-16">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#4c3e92] mb-4 font-title leading-tight">
+                <span className="block text-[#4c3e92]">Nosso time da</span>
+                <span className="block text-[#e5007e]">recepção</span>
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-6 rounded-full"></div>
+              <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                As primeiras pessoas que você conhece quando chega na <span className="font-semibold text-[#4c3e92]">Communicare</span>. 
+                Com <span className="font-semibold text-[#e5007e]">sorrisos acolhedores</span> e 
+                <span className="font-semibold text-[#f19100]"> carinho especial</span>, elas fazem de cada visita uma experiência única e confortável para você e sua família.
+              </p>
+            </div>
+            
+            {/* Card único com as duas meninas da recepção */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg border border-white/30 p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
+                {/* Elementos decorativos de fundo */}
+                <div className="absolute -top-2 -right-2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#e5007e]/10 to-[#f19100]/10 rounded-full blur-lg group-hover:scale-125 transition-transform duration-500"></div>
+                <div className="absolute -top-2 -left-2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#f19100]/10 to-[#00b8cc]/10 rounded-full blur-lg group-hover:scale-125 transition-transform duration-500"></div>
+                
+                <div className="relative z-10">
+                  {/* Grid das duas fotos lado a lado */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
+                    {/* Layse Guerra */}
+                    <div className="text-center">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#e5007e]/25 transition-all duration-300 overflow-hidden border-2 border-white">
+                        <img 
+                          src="/profissionais/Layse Guerra.png" 
+                          alt="Layse Guerra - Recepção" 
+                          className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      
+                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#4c3e92] mb-2 font-title">Layse Guerra</h3>
+                      
+                      {/* Ícone decorativo */}
+                      <div className="mt-3 sm:mt-4 text-[#e5007e] opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Ivone Araujo */}
+                    <div className="text-center">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#f19100]/25 transition-all duration-300 overflow-hidden border-2 border-white">
+                        <img 
+                          src="/profissionais/Ivone Araujo.png" 
+                          alt="Ivone Araujo - Recepção" 
+                          className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      
+                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ivone Araujo</h3>
+                      
+                      {/* Ícone decorativo */}
+                      <div className="mt-3 sm:mt-4 text-[#f19100] opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           {/* Subseção: Como é trabalhar na Communicare */}
           <div className="mt-16">
             <div className="text-center mb-8">
@@ -1453,7 +1525,11 @@ _Formulário enviado via site da Communicare_`;
             </div>
           </div>
         </div>
+        
+
       </section>
+
+
 
       {/* Seção 6: Depoimentos */}
       <section id="depoimentos" className="w-full py-16 md:py-24 bg-[#f19100] relative overflow-hidden">
