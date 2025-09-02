@@ -1428,12 +1428,12 @@ _Formulário enviado via site da Communicare_`;
                       <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-[#f19100]/25 transition-all duration-300 overflow-hidden border-2 border-white">
                         <img 
                           src="/profissionais/Ivone Araujo.png" 
-                          alt="Ivone Araujo - Recepção" 
+                          alt="Ivone Araújo - Recepção" 
                           className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
                       
-                      <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ivone Araujo</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Ivone Araújo</h3>
                       
                       {/* Ícone decorativo */}
                       <div className="mt-3 sm:mt-4 text-[#f19100] opacity-60 group-hover:opacity-100 transition-opacity duration-300">
