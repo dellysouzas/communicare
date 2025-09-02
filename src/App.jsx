@@ -1383,7 +1383,7 @@ _Formulário enviado via site da Communicare_`;
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#4c3e92] mb-4 font-title leading-tight">
                 <span className="block text-[#4c3e92]">Nosso time da</span>
-                <span className="block text-[#e5007e]">recepção</span>
+                <span className="block text-[#e5007e]">Recepção</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto mb-6 rounded-full"></div>
               <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
