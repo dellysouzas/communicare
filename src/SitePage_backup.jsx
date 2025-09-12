@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function SitePage() {
+function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   
@@ -369,9 +369,9 @@ _Formulário enviado via site da Communicare_`;
           
           {/* Navegação Desktop */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#servicos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
-              <span className="relative z-10">Serviços</span>
-              <div className="absolute inset-0 bg-[#37a935] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            <a href="#quem-somos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+              <span className="relative z-10">Quem somos</span>
+              <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
             <a href="#diferenciais" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
@@ -379,9 +379,9 @@ _Formulário enviado via site da Communicare_`;
               <div className="absolute inset-0 bg-[#f19100] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
-            <a href="#quem-somos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
-              <span className="relative z-10">Quem somos</span>
-              <div className="absolute inset-0 bg-[#e5007e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
+            <a href="#servicos" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
+              <span className="relative z-10">Serviços</span>
+              <div className="absolute inset-0 bg-[#37a935] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
             </a>
             
             <a href="#profissionais" onClick={closeMobileMenu} className="text-[#4c3e92] hover:text-white font-semibold transition-all duration-300 font-title relative group px-3 py-2 rounded-lg overflow-hidden whitespace-nowrap">
@@ -462,10 +462,10 @@ _Formulário enviado via site da Communicare_`;
             {/* Menu Mobile Dropdown */}
         <div className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-[#a1d6dc] transform transition-all duration-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
               <div className="px-4 py-6 space-y-2">
-                {/* Serviços */}
-                <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
-                  <a href="#servicos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
-                    Serviços
+                {/* Quem somos */}
+                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
+                  <a href="#quem-somos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
+                    Quem somos
                   </a>
                 </div>
                 
@@ -476,10 +476,10 @@ _Formulário enviado via site da Communicare_`;
                   </a>
                 </div>
                 
-                {/* Quem somos */}
-                <div className="bg-gradient-to-r from-[#e5007e]/10 to-transparent rounded-lg p-3 border-l-4 border-[#e5007e]">
-                  <a href="#quem-somos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#e5007e] font-semibold transition-colors duration-200 font-title py-2">
-                    Quem somos
+                {/* Serviços */}
+                <div className="bg-gradient-to-r from-[#37a935]/10 to-transparent rounded-lg p-3 border-l-4 border-[#37a935]">
+                  <a href="#servicos" onClick={closeMobileMenu} className="block text-[#4c3e92] hover:text-[#37a935] font-semibold transition-colors duration-200 font-title py-2">
+                    Serviços
                   </a>
                 </div>
                 
@@ -557,23 +557,23 @@ _Formulário enviado via site da Communicare_`;
             {/* Texto principal */}
             <div className="text-center lg:text-left space-y-8">
               <div className="space-y-6">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-title leading-tight">
-                  Acolhimento, empatia e estímulos
-                  <span className="text-[#a1d6dc]"> para o desenvolvimento</span>
-                  <span className="block text-[#f4a261]">de crianças e adolescentes</span>
+                <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-white font-title leading-tight">
+                  Transformando
+                  <span className="block text-[#a1d6dc]">vidas através</span>
+                  <span className="block text-[#f4a261]">do cuidado</span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-white/90 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Nascemos do um sonho de uma fonoaudióloga com mais de 26 anos de experiência. Hoje, oferecemos um ambiente acolhedor, seguro e profissional com atendimentos em <span className="text-[#a1d6dc] font-semibold">psicologia</span>, <span className="text-[#a1d6dc] font-semibold">psicopedagogia</span>, <span className="text-[#a1d6dc] font-semibold">psicomotricidade</span>, <span className="text-[#a1d6dc] font-semibold">fonoaudiologia</span>, <span className="text-[#a1d6dc] font-semibold">terapia ocupacional</span>, <span className="text-[#a1d6dc] font-semibold">terapia alimentar</span> e <span className="text-[#a1d6dc] font-semibold">aplicação ABA</span> — tudo voltado para o desenvolvimento integral de crianças e adolescentes em Recife/PE.
+                  A <strong>Communicare</strong> nasceu do sonho de uma fonoaudióloga com mais de 26 anos de experiência. Criamos um espaço de <span className="text-[#a1d6dc] font-semibold">acolhimento</span>, <span className="text-[#a1d6dc] font-semibold">empatia</span> e <span className="text-[#a1d6dc] font-semibold">estímulo</span> para transformar vidas através do desenvolvimento humano.
                   <br /><br />
-                  <span className="text-white font-bold text-xl">Entre em contato e dê o próximo passo na jornada do seu filho(a)!</span>
+                  A nossa missão é <span className="text-[#a1d6dc] font-semibold">disseminar o que conhecemos</span>, levando informação e qualidade de vida para muitos lares e famílias.
                 </p>
               </div>
               
               {/* Botões CTA */}
               <div className="flex flex-col gap-6 sm:flex-row sm:gap-4 justify-center lg:justify-start">
                 <a href="#contato" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
-                  Quero evolução para o meu filho(a)
+                  Visite gratuitamente
                   <svg className="ml-3 sm:ml-2 w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -698,127 +698,101 @@ _Formulário enviado via site da Communicare_`;
         </div>
       </section>
 
-      {/* Seção 4: Quem somos */}
-      <section id="servicos" className="w-full py-12 sm:py-16 md:py-24 bg-gradient-to-br from-[#f8fafc] via-[#e8f4f8] to-[#f0f9ff] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title leading-tight">
-              <span className="block text-[#4c3e92]">Nossos serviços são</span>
-              <span className="block text-[#e5007e]">realizados com amor</span>
+      {/* Seção 2: Quem somos */}
+      <section id="quem-somos" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#f8fafc] via-[#e8f4f8] to-[#f0f9ff] relative overflow-hidden">
+        {/* Elementos decorativos de fundo */}
+        <div className="absolute inset-0">
+          {/* Círculos decorativos sutis */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#a1d6dc]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#e5007e]/5 rounded-full blur-lg"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#f19100]/8 rounded-full blur-xl"></div>
+          
+          {/* Linhas geométricas sutis */}
+          <div className="absolute top-1/3 right-10 w-px h-32 bg-gradient-to-b from-transparent via-[#a1d6dc]/20 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#e5007e]/15 to-transparent"></div>
+          
+          {/* Anzol decorativo sutil */}
+          <div className="absolute top-16 right-16 w-16 h-16 opacity-20 transform rotate-12">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute bottom-20 left-16 w-12 h-12 opacity-15 transform -rotate-6">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+          <div className="absolute top-1/2 left-8 w-14 h-14 opacity-25 transform rotate-45">
+            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4c3e92] mb-6 font-title">
+              <span className="block text-[#4c3e92]">Cuidando de cada</span>
+              <span className="block text-[#e5007e]">criança e adolescente</span>
+              <span className="block text-[#f19100]">com amor e dedicação</span>
             </h2>
-            <div className="w-32 h-1 bg-[#4c3e92] mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-[#4c3e92]/80 max-w-3xl mx-auto mt-8">
-              Oferecemos uma gama completa de serviços especializados para 
-              <span className="font-semibold text-[#009db0]"> desenvolvimento infantil</span>, 
-              <span className="font-semibold text-[#e5007e]"> reabilitação</span> e 
-              <span className="font-semibold text-[#f19100]"> bem-estar</span>
-            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] mx-auto mt-6 rounded-full"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {/* Psicologia */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+          {/* Layout de duas colunas: Imagem da fundadora + Texto */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-3 items-stretch max-w-4xl mx-auto">
+            {/* Coluna da esquerda - Imagem da fundadora */}
+            <div className="text-center lg:text-left flex items-center justify-center lg:justify-start">
+              <div className="relative group w-full">
+                {/* Container principal com sombra e borda */}
+                <div className="w-full max-w-sm sm:max-w-md lg:w-80 h-full mx-auto lg:mx-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#e8f4f8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl lg:shadow-2xl border border-[#a1d6dc]/30 overflow-hidden">
+                  {/* Elementos decorativos de fundo */}
+                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-[#e5007e]/5 to-[#f19100]/5 rounded-full blur-lg lg:blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 bg-gradient-to-br from-[#a1d6dc]/10 to-[#4c3e92]/5 rounded-full blur-md lg:blur-xl"></div>
+                  
+                  {/* Foto da fundadora */}
+                  <div className="relative mb-4 sm:mb-6 lg:mb-8">
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 mx-auto rounded-full overflow-hidden border-2 sm:border-3 lg:border-4 border-gradient-to-r from-[#e5007e] to-[#f19100] shadow-lg lg:shadow-2xl group-hover:shadow-xl lg:group-hover:shadow-3xl transition-all duration-500 founder-photo" style={{
+                      '--animate-duration': '1.5s',
+                      '--animate-delay': '0.2s'
+                    }}>
+                      <img 
+                        src="/profissionais/ana sem fundo.png" 
+                        alt="Ana Grécia - Fundadora da Communicare" 
+                        className="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                    {/* Borda luminosa sutil */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#e5007e]/20 via-transparent to-[#f19100]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Informações da fundadora */}
+                  <div className="text-center relative z-10">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#4c3e92] mb-1 sm:mb-2 font-title">Ana Grécia</h3>
+                    <p className="text-xs sm:text-base lg:text-lg text-gray-700 mb-2 sm:mb-4 font-medium">Fundadora, Diretora e Fonoaudióloga</p>
+                  </div>
+                  
+                  {/* Elementos decorativos flutuantes */}
+                  <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full animate-pulse delay-1000 shadow-md sm:shadow-lg">
+                    <div className="absolute inset-0.5 sm:inset-1 bg-white/20 rounded-full"></div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Psicologia
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Apoio emocional e psicológico para <span className="font-semibold text-[#e5007e]">crianças, adolescentes</span> e suas famílias, fortalecendo a autoestima e ajudando no enfrentamento de desafios.
-              </p>
             </div>
-
-            {/* Psicopedagogia */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
+            
+            {/* Coluna da direita - Texto da história */}
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+              <div className="relative">
+                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#e5007e] to-[#f19100] rounded-full"></div>
+                <div className="pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                    A <span className="font-bold text-[#4c3e92]">Communicare</span> nasceu no Recife/PE em agosto de 2021, em um dos momentos mais desafiadores da nossa história: a pandemia. O que poderia ser apenas um sonho antigo tornou-se realidade quando percebemos a necessidade urgente dos nossos pacientes diante das mudanças impostas pela nova rotina.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Psicopedagogia
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Auxílio no processo de <span className="font-semibold text-[#f19100]">aprendizagem</span>, identificando dificuldades escolares e desenvolvendo estratégias para o avanço educacional.
-              </p>
-            </div>
-
-            {/* Psicomotricidade */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              
+              <div className="relative">
+                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#f19100] to-[#a1d6dc] rounded-full"></div>
+                <div className="pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                    Com mais de <span className="font-semibold text-[#f19100]">26 anos de experiência</span> como fonoaudióloga, nossa fundadora <span className="font-bold text-[#4c3e92]">Ana Grécia</span> decidiu transformar esse desafio em oportunidade: criar um espaço de acolhimento, empatia e estímulo, dedicado a contribuir ainda mais para o desenvolvimento e bem-estar daqueles que confiam em nosso trabalho.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Psicomotricidade
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Estimulação do <span className="font-semibold text-[#37a935]">corpo e movimento</span>, promovendo desenvolvimento motor, cognitivo e socioemocional de forma integrada.
-              </p>
-            </div>
-
-            {/* Fonoaudiologia */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#00b8cc] to-[#0098ac] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Fonoaudiologia
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Acompanhamento especializado para aprimorar a <span className="font-semibold text-[#00b8cc]">comunicação, linguagem</span>, fala, voz e funções orais.
-              </p>
-            </div>
-
-            {/* Terapia Ocupacional */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#4c3e92] to-[#3a2e6f] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Terapia Ocupacional
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Desenvolvimento da <span className="font-semibold text-[#4c3e92]">autonomia e independência</span> nas atividades do dia a dia, com foco em habilidades práticas e sociais.
-              </p>
-            </div>
-
-            {/* Terapia Alimentar */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f4a261] to-[#e76f51] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Terapia Alimentar
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
-                Intervenção para crianças com dificuldades na <span className="font-semibold text-[#f4a261]">alimentação</span>, promovendo uma relação mais saudável e prazerosa com os alimentos.
-              </p>
-            </div>
-
-            {/* Aplicação e Supervisão ABA */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group md:col-span-2 lg:col-span-3">
-              <div className="w-20 h-20 sm:w-22 sm:h-22 lg:w-24 lg:h-24 bg-gradient-to-br from-[#e5007e] via-[#f19100] to-[#37a935] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
-                <svg className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
-                Aplicação e Supervisão ABA
-              </h3>
-              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
-                Atendimento baseado na <span className="font-semibold text-[#e5007e]">Análise do Comportamento Aplicada (ABA)</span>, com estratégias personalizadas para promover habilidades e reduzir barreiras no desenvolvimento. Nossa equipe especializada trabalha com <span className="font-semibold text-[#f19100]">metodologias comprovadas</span> para criar um ambiente de aprendizado eficaz e acolhedor.
-              </p>
             </div>
           </div>
         </div>
@@ -966,101 +940,127 @@ _Formulário enviado via site da Communicare_`;
         </div>
       </section>
 
-      {/* Seção 2: Nossos Serviços */}
-      <section id="quem-somos" className="w-full py-16 md:py-24 bg-gradient-to-br from-[#00b8cc] via-[#00a8bc] to-[#0098ac] relative overflow-hidden">
-        {/* Elementos decorativos de fundo */}
-        <div className="absolute inset-0">
-          {/* Círculos decorativos sutis */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-[#a1d6dc]/10 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-[#e5007e]/5 rounded-full blur-lg"></div>
-          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#f19100]/8 rounded-full blur-xl"></div>
-          
-          {/* Linhas geométricas sutis */}
-          <div className="absolute top-1/3 right-10 w-px h-32 bg-gradient-to-b from-transparent via-[#a1d6dc]/20 to-transparent"></div>
-          <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-[#e5007e]/15 to-transparent"></div>
-          
-          {/* Anzol decorativo sutil */}
-          <div className="absolute top-16 right-16 w-16 h-16 opacity-20 transform rotate-12">
-            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
-          </div>
-          <div className="absolute bottom-20 left-16 w-12 h-12 opacity-15 transform -rotate-6">
-            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
-          </div>
-          <div className="absolute top-1/2 left-8 w-14 h-14 opacity-25 transform rotate-45">
-            <img src="/elementos/anzol.png" alt="" className="w-full h-full object-contain brightness-0 invert" />
-          </div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-title">
-                <span className="block text-white">Cuidando de cada</span>
-                <span className="block text-[#a1d6dc]">criança e adolescente</span>
-                <span className="block text-[#f4a261]">com amor e dedicação</span>
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#f4a261] to-[#a1d6dc] mx-auto mt-6 rounded-full"></div>
+      {/* Seção 4: Nossos Serviços */}
+      <section id="servicos" className="w-full py-12 sm:py-16 md:py-24 bg-gradient-to-br from-[#00b8cc] via-[#00a8bc] to-[#0098ac] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-title leading-tight">
+              <span className="block text-white">Nossos serviços são</span>
+              <span className="block text-[#f4a261]">realizados com amor</span>
+            </h2>
+            <div className="w-32 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mt-8">
+              Oferecemos uma gama completa de serviços especializados para 
+              <span className="font-semibold text-[#a1d6dc]"> desenvolvimento infantil</span>, 
+              <span className="font-semibold text-white"> reabilitação</span> e 
+              <span className="font-semibold text-[#f4a261]"> bem-estar</span>
+            </p>
           </div>
           
-          {/* Layout de duas colunas: Imagem da fundadora + Texto */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-3 items-stretch max-w-4xl mx-auto">
-            {/* Coluna da esquerda - Imagem da fundadora */}
-            <div className="text-center lg:text-left flex items-center justify-center lg:justify-start">
-              <div className="relative group w-full">
-                {/* Container principal com sombra e borda */}
-                <div className="w-full max-w-sm sm:max-w-md lg:w-80 h-full mx-auto lg:mx-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#e8f4f8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl lg:shadow-2xl border border-[#a1d6dc]/30 overflow-hidden">
-                  {/* Elementos decorativos de fundo */}
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-[#e5007e]/5 to-[#f19100]/5 rounded-full blur-lg lg:blur-2xl"></div>
-                  <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 bg-gradient-to-br from-[#a1d6dc]/10 to-[#4c3e92]/5 rounded-full blur-md lg:blur-xl"></div>
-                  
-                  {/* Foto da fundadora */}
-                  <div className="relative mb-4 sm:mb-6 lg:mb-8">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 mx-auto rounded-full overflow-hidden border-2 sm:border-3 lg:border-4 border-gradient-to-r from-[#e5007e] to-[#f19100] shadow-lg lg:shadow-2xl group-hover:shadow-xl lg:group-hover:shadow-3xl transition-all duration-500 founder-photo" style={{
-                      '--animate-duration': '1.5s',
-                      '--animate-delay': '0.2s'
-                    }}>
-                      <img 
-                        src="/profissionais/ana sem fundo.png" 
-                        alt="Ana Grécia - Fundadora da Communicare" 
-                        className="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                    {/* Borda luminosa sutil */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#e5007e]/20 via-transparent to-[#f19100]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  
-                  {/* Informações da fundadora */}
-                  <div className="text-center relative z-10">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#4c3e92] mb-1 sm:mb-2 font-title">Ana Grécia</h3>
-                    <p className="text-xs sm:text-base lg:text-lg text-gray-700 mb-2 sm:mb-4 font-medium">Fundadora, Diretora e Fonoaudióloga</p>
-                  </div>
-                  
-                  {/* Elementos decorativos flutuantes */}
-                  <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-full animate-pulse delay-1000 shadow-md sm:shadow-lg">
-                    <div className="absolute inset-0.5 sm:inset-1 bg-white/20 rounded-full"></div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {/* Psicologia */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#e5007e] to-[#cc0072] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Psicologia
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Apoio emocional e psicológico para <span className="font-semibold text-[#e5007e]">crianças, adolescentes</span> e suas famílias, fortalecendo a autoestima e ajudando no enfrentamento de desafios.
+              </p>
             </div>
-            
-            {/* Coluna da direita - Texto da história */}
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-              <div className="relative">
-                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#e5007e] to-[#f19100] rounded-full"></div>
-                <div className="pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-                    A <span className="font-bold text-white">Communicare</span> nasceu no Recife/PE em agosto de 2021, em um dos momentos mais desafiadores da nossa história: a pandemia. O que poderia ser apenas um sonho antigo tornou-se realidade quando percebemos a necessidade urgente dos nossos pacientes diante das mudanças impostas pela nova rotina.
-                  </p>
-                </div>
+
+            {/* Psicopedagogia */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f19100] to-[#d98200] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
               </div>
-              
-              <div className="relative">
-                <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-[#f19100] to-[#a1d6dc] rounded-full"></div>
-                <div className="pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-                    Com mais de <span className="font-semibold text-[#f4a261]">26 anos de experiência</span> como fonoaudióloga, nossa fundadora <span className="font-bold text-white">Ana Grécia</span> decidiu transformar esse desafio em oportunidade: criar um espaço de acolhimento, empatia e estímulo, dedicado a contribuir ainda mais para o desenvolvimento e bem-estar daqueles que confiam em nosso trabalho.
-                  </p>
-                </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Psicopedagogia
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Auxílio no processo de <span className="font-semibold text-[#f19100]">aprendizagem</span>, identificando dificuldades escolares e desenvolvendo estratégias para o avanço educacional.
+              </p>
+            </div>
+
+            {/* Psicomotricidade */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#37a935] to-[#2d8a2b] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Psicomotricidade
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Estimulação do <span className="font-semibold text-[#37a935]">corpo e movimento</span>, promovendo desenvolvimento motor, cognitivo e socioemocional de forma integrada.
+              </p>
+            </div>
+
+            {/* Fonoaudiologia */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#00b8cc] to-[#0098ac] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Fonoaudiologia
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Acompanhamento especializado para aprimorar a <span className="font-semibold text-[#00b8cc]">comunicação, linguagem</span>, fala, voz e funções orais.
+              </p>
+            </div>
+
+            {/* Terapia Ocupacional */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#4c3e92] to-[#3a2e6f] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Terapia Ocupacional
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Desenvolvimento da <span className="font-semibold text-[#4c3e92]">autonomia e independência</span> nas atividades do dia a dia, com foco em habilidades práticas e sociais.
+              </p>
+            </div>
+
+            {/* Terapia Alimentar */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#f4a261] to-[#e76f51] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Terapia Alimentar
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center">
+                Intervenção para crianças com dificuldades na <span className="font-semibold text-[#f4a261]">alimentação</span>, promovendo uma relação mais saudável e prazerosa com os alimentos.
+              </p>
+            </div>
+
+            {/* Aplicação e Supervisão ABA */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border border-white/30 p-4 sm:p-6 lg:p-8 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group md:col-span-2 lg:col-span-3">
+              <div className="w-20 h-20 sm:w-22 sm:h-22 lg:w-24 lg:h-24 bg-gradient-to-br from-[#e5007e] via-[#f19100] to-[#37a935] rounded-xl sm:rounded-2xl mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center shadow-md sm:shadow-lg group-hover:shadow-lg sm:group-hover:shadow-2xl transition-shadow duration-300">
+                <svg className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#4c3e92] mb-2 sm:mb-3 lg:mb-4 font-title text-center">
+                Aplicação e Supervisão ABA
+              </h3>
+              <p className="text-sm sm:text-base lg:text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
+                Atendimento baseado na <span className="font-semibold text-[#e5007e]">Análise do Comportamento Aplicada (ABA)</span>, com estratégias personalizadas para promover habilidades e reduzir barreiras no desenvolvimento. Nossa equipe especializada trabalha com <span className="font-semibold text-[#f19100]">metodologias comprovadas</span> para criar um ambiente de aprendizado eficaz e acolhedor.
+              </p>
             </div>
           </div>
         </div>
@@ -2372,9 +2372,9 @@ _Formulário enviado via site da Communicare_`;
             <div className="space-y-4">
               <h3 className="text-lg font-semibold font-title">Links rápidos</h3>
               <ul className="space-y-2">
-                <li><a href="#servicos" className="text-white/70 hover:text-white transition-colors duration-200">Serviços</a></li>
-                <li><a href="#diferenciais" className="text-white/70 hover:text-white transition-colors duration-200">Diferenciais</a></li>
                 <li><a href="#quem-somos" className="text-white/70 hover:text-white transition-colors duration-200">Quem somos</a></li>
+                <li><a href="#diferenciais" className="text-white/70 hover:text-white transition-colors duration-200">Diferenciais</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white transition-colors duration-200">Serviços</a></li>
                 <li><a href="#profissionais" className="text-white/70 hover:text-white transition-colors duration-200">Profissionais</a></li>
                 <li><a href="#depoimentos" className="text-white/70 hover:text-white transition-colors duration-200">Depoimentos</a></li>
               </ul>
@@ -2441,4 +2441,4 @@ _Formulário enviado via site da Communicare_`;
   )
 }
 
-export default SitePage
+export default HomePage
