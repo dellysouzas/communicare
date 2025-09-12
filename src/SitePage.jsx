@@ -1549,8 +1549,65 @@ _Formulário enviado via site da Communicare_`;
           {/* Grid de depoimentos em vídeo */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+            {/* Depoimento em Vídeo 1 - Keila */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="relative mb-6">
+                {/* Container do vídeo */}
+                <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 border-4 border-[#e5007e]">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="/videos/depokeila.mp4" type="video/mp4" />
+                    Seu navegador não suporta vídeos.
+                  </video>
+                </div>
+              </div>
+              
+              {/* Informações do depoimento */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Keila</h3>
+                <p className="text-sm text-[#e5007e] font-semibold mb-3">Mãe de paciente</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  "Ao longo desses anos aqui na Communicare, a gente acompanha o desenvolvimento do meu filho. Eu adoro a localização da clínica, o espaço físico, que meu filho também gosta, o atendimento da equipe e os profissionais."
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#e5007e] to-[#4c3e92] rounded-full"></div>
+                </div>
+              </div>
+            </div>
 
-            {/* Depoimento em Vídeo 2 */}
+            {/* Depoimento em Vídeo 2 - Fabiana */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+              <div className="relative mb-6">
+                {/* Container do vídeo */}
+                <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 border-4 border-[#37a935]">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="/videos/depofabiana.mp4" type="video/mp4" />
+                    Seu navegador não suporta vídeos.
+                  </video>
+                </div>
+              </div>
+              
+              {/* Informações do depoimento */}
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Fabiana</h3>
+                <p className="text-sm text-[#37a935] font-semibold mb-3">Mãe de paciente</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  "Desde o primeiro momento, a gente foi muito bem acolhido aqui. Foi amor à primeira vista. A gente só tem a agradecer, pois meu filho tem evoluído bastante durante todo esse tempo."
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#37a935] to-[#f19100] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Depoimento em Vídeo 3 */}
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
               <div className="relative mb-6">
                 {/* Container do vídeo */}
@@ -1608,34 +1665,6 @@ _Formulário enviado via site da Communicare_`;
                 </div>
             </div>
 
-            {/* Depoimento em Vídeo 4 */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-              <div className="relative mb-6">
-                {/* Container do vídeo */}
-                <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 border-4 border-[#f19100]">
-                  <video 
-                    className="w-full h-full object-cover"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/depo4.mp4" type="video/mp4" />
-                    Seu navegador não suporta vídeos.
-                  </video>
-                </div>
-              </div>
-              
-                              {/* Informações do depoimento */}
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-[#4c3e92] mb-2 font-title">Vanusa</h3>
-                  <p className="text-sm text-[#f19100] font-semibold mb-3">Mãe de ex paciente</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    "Aos 3 anos, meu filho não falava nada ainda. Eu não acreditava mais em nenhum profissional, mas levei meu filho para Ana Grécia e foi a melhor coisa. Conheci uma profissional brilhante."
-                  </p>
-                  <div className="mt-4 flex justify-center">
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] rounded-full"></div>
-                  </div>
-                </div>
-            </div>
 
             {/* Depoimento em Vídeo 5 */}
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
@@ -1694,6 +1723,7 @@ _Formulário enviado via site da Communicare_`;
                   </div>
                 </div>
             </div>
+
           </div>
         </div>
       </section>
