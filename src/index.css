@@ -1,27 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Prevenir scroll horizontal no celular */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100%;
 }
 
 /* Fontes da marca Communicare */
 .font-title {
-  font-family: 'Quicksand', 'Nunito', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Quicksand", "Nunito", "Comfortaa", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .font-body {
-  font-family: 'Open Sans', 'Source Sans Pro', 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Open Sans", "Source Sans Pro", "Lato", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Aplicar fonte do corpo por padrão */
 body {
-  font-family: 'Open Sans', 'Source Sans Pro', 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Open Sans", "Source Sans Pro", "Lato", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Estilos específicos para o carrossel */
@@ -68,6 +72,73 @@ body {
   outline: none;
   border-color: #4c3e92;
   box-shadow: 0 0 0 3px rgba(76, 62, 146, 0.1);
+}
+
+/* Estilos para elementos select e option - correção para Windows */
+select {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+select option {
+  background-color: white !important;
+  color: #374151 !important;
+  padding: 8px 12px;
+}
+
+/* Estilos específicos para selects com fundo transparente */
+select.bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+select.bg-white\/20 option {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+/* Garantir que o dropdown seja visível no Windows */
+select:focus {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+select:focus option {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+/* Correção específica para formulários com fundo gradiente */
+.wizard-form select {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+.wizard-form select option {
+  background-color: white !important;
+  color: #374151 !important;
+  padding: 8px 12px;
+}
+
+/* Forçar visibilidade das opções no dropdown */
+select option:hover,
+select option:focus,
+select option:checked {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+/* Estilos para quando o select está aberto */
+select:active,
+select:focus {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+/* Garantir que as opções sejam sempre visíveis */
+select option[value] {
+  background-color: white !important;
+  color: #374151 !important;
 }
 
 /* Transições suaves para os botões */
