@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 function SitePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVideoLoading, setIsVideoLoading] = useState(true)
   
   // Estados do Wizard
   const [currentWizardStep, setCurrentWizardStep] = useState(1);
@@ -354,6 +355,15 @@ _Formulário enviado via site da Communicare_`;
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  // Handlers para controle de carregamento do vídeo
+  const handleVideoLoad = () => {
+    setIsVideoLoading(false);
+  };
+
+  const handleVideoError = () => {
+    setIsVideoLoading(false);
+  };
   
   return (
     <div className="min-h-screen bg-white pt-20">
@@ -607,10 +617,24 @@ _Formulário enviado via site da Communicare_`;
                       muted 
                       loop 
                       playsInline
+                      preload="metadata"
+                      poster="/capa.jpg"
+                      onLoadedData={handleVideoLoad}
+                      onError={handleVideoError}
                     >
                       <source src="/videos/videocerto.mp4" type="video/mp4" />
                       Seu navegador não suporta vídeos.
                     </video>
+                    
+                    {/* Indicador de carregamento */}
+                    {isVideoLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm">
+                        <div className="flex flex-col items-center space-y-2">
+                          <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <span className="text-white/80 text-sm font-medium">Carregando vídeo...</span>
+                        </div>
+                      </div>
+                    )}
                     
                     {/* Overlay sutil no vídeo */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
@@ -651,10 +675,24 @@ _Formulário enviado via site da Communicare_`;
                     muted 
                     loop 
                     playsInline
+                    preload="metadata"
+                    poster="/capa.jpg"
+                    onLoadedData={handleVideoLoad}
+                    onError={handleVideoError}
                   >
                     <source src="/videos/videocerto.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos.
                   </video>
+                  
+                  {/* Indicador de carregamento */}
+                  {isVideoLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm">
+                      <div className="flex flex-col items-center space-y-2">
+                        <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <span className="text-white/80 text-sm font-medium">Carregando vídeo...</span>
+                      </div>
+                    </div>
+                  )}
                   
                   {/* Overlay sutil no vídeo */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
