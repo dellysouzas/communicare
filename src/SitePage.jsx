@@ -572,14 +572,11 @@ _Formulário enviado via site da Communicare_`;
               
               {/* Botões CTA */}
               <div className="flex flex-col gap-6 sm:flex-row sm:gap-4 justify-center lg:justify-start">
-                <a href="#contato" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
+                <a href="https://wa.me/5581998660984?text=Olá! Vim através do site da Communicare e quero mais informações sobre a clínica." target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:px-8 sm:py-4 bg-[#e5007e] hover:bg-[#cc0072] text-white font-semibold rounded-xl sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-title text-lg sm:text-base">
                   Quero evolução para o meu filho(a)
                   <svg className="ml-3 sm:ml-2 w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
-                <a href="#quem-somos" onClick={closeMobileMenu} className="inline-flex items-center justify-center px-10 py-5 sm:px-8 sm:py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/40 hover:border-white/60 font-semibold rounded-xl sm:rounded-lg transition-all duration-300 font-title text-lg sm:text-base">
-                  Nossa história
                 </a>
               </div>
               
@@ -2471,7 +2468,7 @@ _Formulário enviado via site da Communicare_`;
       {/* Ícone Flutuante do WhatsApp */}
       <div className="fixed bottom-6 right-6 z-50">
         <a 
-          href="https://wa.me/5581998660984" 
+          href="https://wa.me/5581998660984?text=Olá! Vim através do site da Communicare e quero mais informações sobre a clínica." 
           target="_blank" 
           rel="noopener noreferrer"
           className="block w-16 h-16 bg-[#37a935] rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 flex items-center justify-center group relative"
