@@ -106,9 +106,9 @@ function HomePage() {
   // Funções do carrossel
   const scrollCarousel = (direction) => {
     if (direction === 'next') {
-      setCurrentSlide(prev => prev === 14 ? 0 : prev + 1);
+      setCurrentSlide(prev => prev === 12 ? 0 : prev + 1);
     } else {
-      setCurrentSlide(prev => prev === 0 ? 14 : prev - 1);
+      setCurrentSlide(prev => prev === 0 ? 12 : prev - 1);
     }
   };
 
@@ -207,20 +207,18 @@ function HomePage() {
   const getProfissionalDescricao = (codigo) => {
     const profissionais = {
       'ana_grecia': '👩‍⚕️ Ana Grécia Calado',
+      'beatriz_albuquerque': '👩‍⚕️ Beatriz Albuquerque',
       'bruna_rafaella': '👩‍⚕️ Bruna Rafaella',
-      'camilla_magalhaes': '👩‍⚕️ Camilla Magalhães',
               'erica_figueira': '👩‍⚕️ Érica Filgueira',
       'izaura_souza': '👩‍⚕️ Izaura Souza',
               'larissa_bezerra': '👩‍⚕️ Larissa Beserra',
+      'laura_vidal': '👩‍⚕️ Laura Vidal',
       'livania_rodrigues': '👩‍⚕️ Livânia Rodrigues',
       'maria_carolina': '👩‍⚕️ Maria Carolina',
-      'maria_gabriela': '👩‍⚕️ Maria Gabriela',
       'maria_victoria': '👩‍⚕️ Maria Victória',
       'marina_mariah': '👩‍⚕️ Marina Mariah',
       'renata_veras': '👩‍⚕️ Renata Veras',
-      'suelen_basante': '👩‍⚕️ Suelen Basante',
-      'thais_farinha': '👩‍⚕️ Thais Farinha',
-      'thais_ohanny': '👩‍⚕️ Thais Ohanny'
+      'thais_farinha': '👩‍⚕️ Thais Farinha'
     };
     return profissionais[codigo] || codigo;
   };
@@ -229,20 +227,18 @@ function HomePage() {
   const getProfissionalDescricaoWhatsApp = (codigo) => {
     const profissionais = {
       'ana_grecia': 'Ana Grécia Calado',
+      'beatriz_albuquerque': 'Beatriz Albuquerque',
       'bruna_rafaella': 'Bruna Rafaella',
-      'camilla_magalhaes': 'Camilla Magalhães',
               'erica_figueira': 'Érica Filgueira',
       'izaura_souza': 'Izaura Souza',
               'larissa_bezerra': 'Larissa Beserra',
+      'laura_vidal': 'Laura Vidal',
       'livania_rodrigues': 'Livânia Rodrigues',
       'maria_carolina': 'Maria Carolina',
-      'maria_gabriela': 'Maria Gabriela',
       'maria_victoria': 'Maria Victória',
       'marina_mariah': 'Marina Mariah',
       'renata_veras': 'Renata Veras',
-      'suelen_basante': 'Suelen Basante',
-      'thais_farinha': 'Thais Farinha',
-      'thais_ohanny': 'Thais Ohanny'
+      'thais_farinha': 'Thais Farinha'
     };
     return profissionais[codigo] || codigo;
   };
@@ -339,7 +335,7 @@ _Formulário enviado via site da Communicare_`;
   useEffect(() => {
     const carousel = document.getElementById('professionals-carousel');
     if (carousel) {
-      const slideWidth = 100 / 15; // 15 slides
+      const slideWidth = 100 / 13; // 13 slides
       const translateX = -(currentSlide * slideWidth);
       carousel.style.transform = `translateX(${translateX}%)`;
     }
@@ -1136,7 +1132,7 @@ _Formulário enviado via site da Communicare_`;
               </button>
               
               <div className="text-sm text-gray-600 font-medium">
-                <span>{currentSlide + 1}</span> de <span>15</span>
+                <span>{currentSlide + 1}</span> de <span>13</span>
               </div>
               
               <button 
@@ -1154,7 +1150,7 @@ _Formulário enviado via site da Communicare_`;
               <div 
                 id="professionals-carousel" 
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ width: 'calc(15 * 100%)' }}
+                style={{ width: 'calc(13 * 100%)' }}
               >
                 {/* Ana Grécia - Fonoaudióloga */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
@@ -1184,22 +1180,6 @@ _Formulário enviado via site da Communicare_`;
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Bruna Rafaella</h3>
                     <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Suelen Basante - Psicóloga e Aplicadora ABA */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Suelen Basante (sem fundo).png" 
-                        alt="Suelen Basante - Psicóloga e Aplicadora ABA" 
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Suelen Basante</h3>
-                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga e Aplicadora ABA</p>
                     <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
@@ -1336,38 +1316,6 @@ _Formulário enviado via site da Communicare_`;
                   </div>
                 </div>
 
-                {/* Thais Ohanny - Fonoaudióloga */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Thais Ohanny (sem fundo).png" 
-                        alt="Thais Ohanny - Fonoaudióloga" 
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Thais Ohanny</h3>
-                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
-                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Maria Gabriela - Psicóloga */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Maria Gabriela (sem fundo).png" 
-                        alt="Maria Gabriela - Psicóloga" 
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Maria Gabriela</h3>
-                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
-                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
-                  </div>
-                </div>
-
                 {/* Thais Farinha - Psicóloga e Supervisora ABA */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
@@ -1384,27 +1332,44 @@ _Formulário enviado via site da Communicare_`;
                   </div>
                 </div>
 
-                {/* Camilla Magalhães - Psicopedagoga */}
+                {/* Beatriz Albuquerque - Psicóloga */}
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-                      <img 
-                        src="/profissionais-sem-fundo/Camilla Magalhaes (sem fundo).png" 
-                        alt="Camilla Magalhães - Psicopedagoga" 
+                      <img
+                        src="/communicare/beatriz-albuquerque.jpeg"
+                        alt="Beatriz Albuquerque - Psicóloga"
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Camilla Magalhães</h3>
-                    <p className="text-xs sm:text-sm text-[#f19100] font-semibold mb-3">Psicopedagoga</p>
-                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#f19100] to-[#e5007e] mx-auto rounded-full"></div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Beatriz Albuquerque</h3>
+                    <p className="text-xs sm:text-sm text-[#e5007e] font-semibold mb-3">Psicóloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#e5007e] to-[#f19100] mx-auto rounded-full"></div>
                   </div>
                 </div>
+
+                {/* Laura Vidal - Fonoaudióloga */}
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 sm:px-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                      <img
+                        src="/communicare/laura-vidal.jpeg"
+                        alt="Laura Vidal - Fonoaudióloga"
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-[#4c3e92] mb-2 font-title">Laura Vidal</h3>
+                    <p className="text-xs sm:text-sm text-[#00b8cc] font-semibold mb-3">Fonoaudióloga</p>
+                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#00b8cc] to-[#f19100] mx-auto rounded-full"></div>
+                  </div>
+                </div>
+
               </div>
             </div>
 
             {/* Indicadores de Navegação */}
             <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: 15 }, (_, i) => (
+              {Array.from({ length: 13 }, (_, i) => (
                 <button
                   key={i}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
@@ -2163,20 +2128,18 @@ _Formulário enviado via site da Communicare_`;
                         >
                           <option value="">Sem preferência específica</option>
                           <option value="ana_grecia">👩‍⚕️ Ana Grécia Calado</option>
+                          <option value="beatriz_albuquerque">👩‍⚕️ Beatriz Albuquerque</option>
                           <option value="bruna_rafaella">👩‍⚕️ Bruna Rafaella</option>
-                          <option value="camilla_magalhaes">👩‍⚕️ Camilla Magalhães</option>
                           <option value="erica_figueira">👩‍⚕️ Érica Filgueira</option>
                           <option value="izaura_souza">👩‍⚕️ Izaura Souza</option>
                           <option value="larissa_bezerra">👩‍⚕️ Larissa Beserra</option>
+                          <option value="laura_vidal">👩‍⚕️ Laura Vidal</option>
                           <option value="livania_rodrigues">👩‍⚕️ Livânia Rodrigues</option>
                           <option value="maria_carolina">👩‍⚕️ Maria Carolina</option>
-                          <option value="maria_gabriela">👩‍⚕️ Maria Gabriela</option>
                           <option value="maria_victoria">👩‍⚕️ Maria Victória</option>
                           <option value="marina_mariah">👩‍⚕️ Marina Mariah</option>
                           <option value="renata_veras">👩‍⚕️ Renata Veras</option>
-                          <option value="suelen_basante">👩‍⚕️ Suelen Basante</option>
                           <option value="thais_farinha">👩‍⚕️ Thais Farinha</option>
-                          <option value="thais_ohanny">👩‍⚕️ Thais Ohanny</option>
                         </select>
                       </div>
                       
